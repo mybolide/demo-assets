@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>个人中心 (Personal Center)</title>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#f20d0d",
+                        "background-light": "#f8f5f5",
+                        "background-dark": "#221010",
+                    },
+                    fontFamily: {
+                        "display": ["Plus Jakarta Sans", "PingFang SC", "Noto Sans SC", "sans-serif"]
+                    },
+                    borderRadius: { "DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px" },
+                },
+            },
+        }
+    </script>
+<style>
+        .hide-scrollbar::-webkit-scrollbar {
+            display: none;
+        }
+        .hide-scrollbar {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background-light dark:bg-background-dark font-display text-slate-900 dark:text-white pb-20">
+<div class="relative flex min-h-screen w-full flex-col overflow-x-hidden">
+<!-- Header Background & User Info -->
+<div class="relative w-full bg-gradient-to-b from-primary to-[#ff4d4d] pb-16 pt-12 px-5 rounded-b-[2rem] shadow-lg">
+<!-- Top Actions -->
+<div class="absolute top-4 right-4 flex gap-4 text-white">
+<span class="material-symbols-outlined cursor-pointer">settings</span>
+<span class="material-symbols-outlined cursor-pointer">notifications</span>
+</div>
+<div class="flex items-center gap-4">
+<div class="relative">
+<div class="bg-center bg-no-repeat aspect-square bg-cover rounded-full h-16 w-16 border-2 border-white shadow-md" data-alt="User profile avatar showing a stylized character" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuDd1FZQdTah6g4nomxU2LpZ3UcdhBNyXMUgKHE9F28BiJFSjwQBb0bt8aT_llD4muK-byOBQWXf8PIetaZPL9xf0I_7TaiEhE-_513FWLEkSp85EBWqJALHrOkwutW243gf26plGwFZD8fyvcrkztSbyMjQ-ifnVo3-lVnquzG1oPY_nZCgtqUBhCbd30kvZYRBJs04NuCznNNstRXNISgAogIGSefVukDxaV3Mv2tJQMD4NP-ylh70ovHtiZG_lKt40969hMZxmYE");'>
+</div>
+</div>
+<div class="flex flex-col justify-center text-white">
+<div class="flex items-center gap-2">
+<p class="text-xl font-bold leading-tight">小红薯_User</p>
+<span class="material-symbols-outlined text-sm cursor-pointer opacity-80">edit_square</span>
+</div>
+<div class="mt-1 flex items-center gap-2">
+<div class="flex items-center gap-1 bg-black/20 px-2 py-0.5 rounded-full text-xs backdrop-blur-sm">
+<span class="material-symbols-outlined text-[14px] text-yellow-300 fill-current">diamond</span>
+<span class="text-yellow-100 font-medium">黄金会员</span>
+<span class="material-symbols-outlined text-[10px] text-white/70">chevron_right</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Floating Stats Card -->
+<div class="px-4 -mt-10 relative z-10">
+<div class="flex justify-between bg-white dark:bg-[#2a1a1a] rounded-xl shadow-sm p-4 text-center">
+<div class="flex flex-1 flex-col items-center gap-1 cursor-pointer">
+<p class="text-slate-900 dark:text-white text-lg font-bold">12</p>
+<p class="text-slate-500 dark:text-slate-400 text-xs font-normal">优惠券</p>
+</div>
+<div class="w-[1px] bg-slate-100 dark:bg-slate-700 h-8 self-center"></div>
+<div class="flex flex-1 flex-col items-center gap-1 cursor-pointer">
+<p class="text-slate-900 dark:text-white text-lg font-bold">500</p>
+<p class="text-slate-500 dark:text-slate-400 text-xs font-normal">积分</p>
+</div>
+<div class="w-[1px] bg-slate-100 dark:bg-slate-700 h-8 self-center"></div>
+<div class="flex flex-1 flex-col items-center gap-1 cursor-pointer">
+<p class="text-slate-900 dark:text-white text-lg font-bold">¥88.50</p>
+<p class="text-slate-500 dark:text-slate-400 text-xs font-normal">余额</p>
+</div>
+<div class="w-[1px] bg-slate-100 dark:bg-slate-700 h-8 self-center"></div>
+<div class="flex flex-1 flex-col items-center gap-1 cursor-pointer">
+<span class="material-symbols-outlined text-slate-700 dark:text-white text-[22px] mb-[-2px]">account_balance_wallet</span>
+<p class="text-slate-500 dark:text-slate-400 text-xs font-normal mt-1">我的钱包</p>
+</div>
+</div>
+</div>
+<!-- Orders Section -->
+<div class="px-4 mt-4">
+<div class="bg-white dark:bg-[#2a1a1a] rounded-xl shadow-sm p-4">
+<div class="flex justify-between items-center mb-4">
+<h4 class="text-slate-900 dark:text-white text-base font-bold tracking-tight">我的订单</h4>
+<div class="flex items-center gap-1 text-slate-400 cursor-pointer group">
+<span class="text-xs group-hover:text-primary transition-colors">全部订单</span>
+<span class="material-symbols-outlined text-sm group-hover:text-primary transition-colors">chevron_right</span>
+</div>
+</div>
+<div class="flex justify-between items-start">
+<!-- Pending Payment -->
+<div class="relative flex flex-col items-center gap-2 cursor-pointer w-1/5">
+<div class="relative">
+<span class="material-symbols-outlined text-slate-700 dark:text-slate-300 text-[28px]">credit_card</span>
+<div class="absolute -top-1.5 -right-1.5 flex h-4 w-4 items-center justify-center rounded-full bg-primary text-[10px] font-bold text-white border-2 border-white dark:border-[#2a1a1a]">2</div>
+</div>
+<p class="text-slate-600 dark:text-slate-400 text-xs">待支付</p>
+</div>
+<!-- Pending Shipment -->
+<div class="relative flex flex-col items-center gap-2 cursor-pointer w-1/5">
+<div class="relative">
+<span class="material-symbols-outlined text-slate-700 dark:text-slate-300 text-[28px]">inventory_2</span>
+<!-- No badge for 0 items -->
+</div>
+<p class="text-slate-600 dark:text-slate-400 text-xs">待发货</p>
+</div>
+<!-- Shipped/Receiving -->
+<div class="relative flex flex-col items-center gap-2 cursor-pointer w-1/5">
+<div class="relative">
+<span class="material-symbols-outlined text-slate-700 dark:text-slate-300 text-[28px]">local_shipping</span>
+<div class="absolute -top-1.5 -right-1.5 flex h-4 w-4 items-center justify-center rounded-full bg-primary text-[10px] font-bold text-white border-2 border-white dark:border-[#2a1a1a]">1</div>
+</div>
+<p class="text-slate-600 dark:text-slate-400 text-xs">待收货</p>
+</div>
+<!-- To Review -->
+<div class="relative flex flex-col items-center gap-2 cursor-pointer w-1/5">
+<div class="relative">
+<span class="material-symbols-outlined text-slate-700 dark:text-slate-300 text-[28px]">rate_review</span>
+<div class="absolute -top-1.5 -right-1.5 flex h-4 w-4 items-center justify-center rounded-full bg-primary text-[10px] font-bold text-white border-2 border-white dark:border-[#2a1a1a]">5</div>
+</div>
+<p class="text-slate-600 dark:text-slate-400 text-xs">待评价</p>
+</div>
+<!-- After Sales -->
+<div class="relative flex flex-col items-center gap-2 cursor-pointer w-1/5">
+<div class="relative">
+<span class="material-symbols-outlined text-slate-700 dark:text-slate-300 text-[28px]">support_agent</span>
+</div>
+<p class="text-slate-600 dark:text-slate-400 text-xs">退换/售后</p>
+</div>
+</div>
+</div>
+</div>
+<!-- Banner Ad -->
+<div class="px-4 mt-4">
+<div class="relative w-full h-20 rounded-xl overflow-hidden shadow-sm">
+<div class="absolute inset-0 bg-gradient-to-r from-orange-100 to-rose-100 flex items-center px-4 justify-between">
+<div>
+<p class="text-[#9c4949] font-bold text-sm">PLUS 会员年卡</p>
+<p class="text-[#9c4949]/80 text-xs mt-0.5">预计每年可省 ¥1200</p>
+</div>
+<button class="bg-[#9c4949] text-white text-xs px-3 py-1.5 rounded-full font-bold">立即开通</button>
+</div>
+</div>
+</div>
+<!-- Essential Tools -->
+<div class="px-4 mt-4">
+<div class="bg-white dark:bg-[#2a1a1a] rounded-xl shadow-sm p-4">
+<h3 class="text-slate-900 dark:text-white text-base font-bold tracking-tight mb-4">常用工具</h3>
+<div class="grid grid-cols-4 gap-y-6">
+<!-- Favorite -->
+<div class="flex flex-col items-center gap-2 cursor-pointer">
+<span class="material-symbols-outlined text-yellow-500 text-[26px]">star</span>
+<p class="text-slate-600 dark:text-slate-400 text-xs">收藏夹</p>
+</div>
+<!-- History -->
+<div class="flex flex-col items-center gap-2 cursor-pointer">
+<span class="material-symbols-outlined text-blue-500 text-[26px]">history</span>
+<p class="text-slate-600 dark:text-slate-400 text-xs">足迹</p>
+</div>
+<!-- Address -->
+<div class="flex flex-col items-center gap-2 cursor-pointer">
+<span class="material-symbols-outlined text-green-500 text-[26px]">location_on</span>
+<p class="text-slate-600 dark:text-slate-400 text-xs">地址管理</p>
+</div>
+<!-- Customer Service -->
+<div class="flex flex-col items-center gap-2 cursor-pointer">
+<span class="material-symbols-outlined text-primary text-[26px]">headset_mic</span>
+<p class="text-slate-600 dark:text-slate-400 text-xs">客服中心</p>
+</div>
+<!-- Gift Cards -->
+<div class="flex flex-col items-center gap-2 cursor-pointer">
+<span class="material-symbols-outlined text-purple-500 text-[26px]">card_giftcard</span>
+<p class="text-slate-600 dark:text-slate-400 text-xs">礼品卡</p>
+</div>
+<!-- Theme/Skin -->
+<div class="flex flex-col items-center gap-2 cursor-pointer">
+<span class="material-symbols-outlined text-pink-500 text-[26px]">palette</span>
+<p class="text-slate-600 dark:text-slate-400 text-xs">主题换肤</p>
+</div>
+<!-- Settings -->
+<div class="flex flex-col items-center gap-2 cursor-pointer">
+<span class="material-symbols-outlined text-slate-500 text-[26px]">settings</span>
+<p class="text-slate-600 dark:text-slate-400 text-xs">设置</p>
+</div>
+</div>
+</div>
+</div>
+<div class="h-24 w-full"></div> <!-- Spacer for bottom nav -->
+</div>
+<!-- Bottom Navigation -->
+<div class="fixed bottom-0 left-0 right-0 z-50 bg-white dark:bg-[#1c0d0d] border-t border-slate-100 dark:border-slate-800 pb-safe">
+<div class="flex items-center justify-around h-16 pb-2">
+<div class="flex flex-1 flex-col items-center justify-center gap-1 text-slate-400 cursor-pointer hover:text-primary transition-colors">
+<span class="material-symbols-outlined text-[24px]">home</span>
+<span class="text-[10px] font-medium">首页</span>
+</div>
+<div class="flex flex-1 flex-col items-center justify-center gap-1 text-slate-400 cursor-pointer hover:text-primary transition-colors">
+<span class="material-symbols-outlined text-[24px]">category</span>
+<span class="text-[10px] font-medium">分类</span>
+</div>
+<div class="flex flex-1 flex-col items-center justify-center gap-1 text-slate-400 cursor-pointer hover:text-primary transition-colors">
+<span class="material-symbols-outlined text-[24px]">shopping_cart</span>
+<span class="text-[10px] font-medium">购物车</span>
+</div>
+<div class="flex flex-1 flex-col items-center justify-center gap-1 text-primary cursor-pointer">
+<span class="material-symbols-outlined text-[24px] fill-current">person</span>
+<span class="text-[10px] font-bold">我的</span>
+</div>
+</div>
+</div>
+</body></html>

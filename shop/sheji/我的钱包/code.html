@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+
+<html class="light" lang="zh-CN"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>我的钱包</title>
+<!-- Fonts -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&amp;family=Noto+Sans+SC:wght@400;500;700&amp;display=swap" rel="stylesheet"/>
+<!-- Material Symbols -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind CSS -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<!-- Theme Configuration -->
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "primary": "#f20d0d",
+              "background-light": "#f8f5f5",
+              "background-dark": "#221010",
+              "surface-light": "#ffffff",
+              "surface-dark": "#2d1b1b",
+            },
+            fontFamily: {
+              "display": ["Plus Jakarta Sans", "Noto Sans SC", "sans-serif"],
+              "body": ["Noto Sans SC", "sans-serif"],
+            },
+            borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "2xl": "1rem", "full": "9999px"},
+            boxShadow: {
+                'soft': '0 4px 20px -2px rgba(0, 0, 0, 0.05)',
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        /* Custom Utilities */
+        .hide-scrollbar::-webkit-scrollbar {
+            display: none;
+        }
+        .hide-scrollbar {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background-light dark:bg-background-dark min-h-screen font-display antialiased text-[#1c0d0d] dark:text-white transition-colors duration-200">
+<div class="relative flex flex-col w-full max-w-md mx-auto min-h-screen pb-6 overflow-x-hidden">
+<!-- Top App Bar -->
+<header class="sticky top-0 z-50 flex items-center justify-between px-4 py-3 bg-background-light/90 dark:bg-background-dark/90 backdrop-blur-md">
+<button class="flex items-center justify-center w-10 h-10 rounded-full hover:bg-black/5 dark:hover:bg-white/10 active:scale-95 transition-all">
+<span class="material-symbols-outlined text-2xl">arrow_back_ios_new</span>
+</button>
+<h2 class="text-lg font-bold leading-tight tracking-tight flex-1 text-center">我的钱包</h2>
+<div class="flex items-center gap-1">
+<button class="flex items-center justify-center w-10 h-10 rounded-full hover:bg-black/5 dark:hover:bg-white/10 active:scale-95 transition-all">
+<span class="material-symbols-outlined text-2xl">help</span>
+</button>
+<button class="flex items-center justify-center w-10 h-10 rounded-full hover:bg-black/5 dark:hover:bg-white/10 active:scale-95 transition-all">
+<span class="material-symbols-outlined text-2xl">settings</span>
+</button>
+</div>
+</header>
+<main class="flex flex-col gap-4 px-4 pt-2">
+<!-- Hero Asset Card -->
+<div class="relative overflow-hidden rounded-2xl bg-gradient-to-br from-primary to-[#ff4d4d] text-white shadow-lg shadow-primary/20 p-6">
+<!-- Background Pattern -->
+<div class="absolute -right-10 -top-10 w-40 h-40 bg-white/10 rounded-full blur-2xl pointer-events-none"></div>
+<div class="absolute -left-10 -bottom-10 w-32 h-32 bg-black/10 rounded-full blur-xl pointer-events-none"></div>
+<div class="relative z-10 flex flex-col gap-1">
+<div class="flex items-center gap-2 opacity-90">
+<p class="text-sm font-medium tracking-wide">总资产(元)</p>
+<button class="hover:bg-white/20 rounded-full p-1 transition-colors">
+<span class="material-symbols-outlined text-[18px]">visibility</span>
+</button>
+</div>
+<h1 class="text-[36px] font-bold tracking-tight leading-tight mt-1 mb-4 font-display">¥ 8,240.50</h1>
+<div class="flex gap-3 mt-2">
+<button class="flex-1 flex items-center justify-center h-11 bg-white text-primary rounded-xl font-bold text-sm shadow-sm hover:bg-gray-50 active:scale-[0.98] transition-all">
+                            充值
+                        </button>
+<button class="flex-1 flex items-center justify-center h-11 bg-primary/30 border border-white/20 text-white rounded-xl font-bold text-sm hover:bg-primary/40 active:scale-[0.98] transition-all backdrop-blur-sm">
+                            提现
+                        </button>
+</div>
+</div>
+</div>
+<!-- Secondary Assets Grid -->
+<div class="grid grid-cols-3 gap-3">
+<!-- Coupons -->
+<button class="flex flex-col items-center justify-center p-4 bg-surface-light dark:bg-surface-dark rounded-xl shadow-soft border border-transparent dark:border-white/5 hover:border-primary/20 active:scale-95 transition-all group">
+<p class="text-2xl font-bold text-[#1c0d0d] dark:text-white group-hover:text-primary transition-colors">12<span class="text-xs font-normal text-gray-400 ml-0.5">张</span></p>
+<p class="text-xs text-gray-500 dark:text-gray-400 mt-1 font-medium">优惠券</p>
+</button>
+<!-- Points -->
+<button class="flex flex-col items-center justify-center p-4 bg-surface-light dark:bg-surface-dark rounded-xl shadow-soft border border-transparent dark:border-white/5 hover:border-primary/20 active:scale-95 transition-all group">
+<p class="text-2xl font-bold text-[#1c0d0d] dark:text-white group-hover:text-primary transition-colors">2,400</p>
+<p class="text-xs text-gray-500 dark:text-gray-400 mt-1 font-medium">积分</p>
+</button>
+<!-- Bank Cards -->
+<button class="flex flex-col items-center justify-center p-4 bg-surface-light dark:bg-surface-dark rounded-xl shadow-soft border border-transparent dark:border-white/5 hover:border-primary/20 active:scale-95 transition-all group">
+<p class="text-2xl font-bold text-[#1c0d0d] dark:text-white group-hover:text-primary transition-colors">3<span class="text-xs font-normal text-gray-400 ml-0.5">张</span></p>
+<p class="text-xs text-gray-500 dark:text-gray-400 mt-1 font-medium">银行卡</p>
+</button>
+</div>
+<!-- Function Matrix -->
+<div class="bg-surface-light dark:bg-surface-dark rounded-2xl p-4 shadow-soft border border-transparent dark:border-white/5">
+<div class="grid grid-cols-4 gap-y-6">
+<!-- Item 1 -->
+<button class="flex flex-col items-center gap-2 group active:opacity-60 transition-opacity">
+<div class="w-12 h-12 rounded-full bg-blue-50 dark:bg-blue-900/20 text-blue-600 dark:text-blue-400 flex items-center justify-center group-hover:bg-blue-100 dark:group-hover:bg-blue-900/30 transition-colors">
+<span class="material-symbols-outlined text-[28px]">receipt_long</span>
+</div>
+<span class="text-xs font-medium text-gray-700 dark:text-gray-300">账单</span>
+</button>
+<!-- Item 2 -->
+<button class="flex flex-col items-center gap-2 group active:opacity-60 transition-opacity">
+<div class="w-12 h-12 rounded-full bg-orange-50 dark:bg-orange-900/20 text-orange-600 dark:text-orange-400 flex items-center justify-center group-hover:bg-orange-100 dark:group-hover:bg-orange-900/30 transition-colors">
+<span class="material-symbols-outlined text-[28px]">qr_code_scanner</span>
+</div>
+<span class="text-xs font-medium text-gray-700 dark:text-gray-300">付款码</span>
+</button>
+<!-- Item 3 -->
+<button class="flex flex-col items-center gap-2 group active:opacity-60 transition-opacity">
+<div class="w-12 h-12 rounded-full bg-red-50 dark:bg-red-900/20 text-red-600 dark:text-red-400 flex items-center justify-center group-hover:bg-red-100 dark:group-hover:bg-red-900/30 transition-colors">
+<span class="material-symbols-outlined text-[28px]">redeem</span>
+</div>
+<span class="text-xs font-medium text-gray-700 dark:text-gray-300">红包</span>
+</button>
+<!-- Item 4 -->
+<button class="flex flex-col items-center gap-2 group active:opacity-60 transition-opacity">
+<div class="w-12 h-12 rounded-full bg-green-50 dark:bg-green-900/20 text-green-600 dark:text-green-400 flex items-center justify-center group-hover:bg-green-100 dark:group-hover:bg-green-900/30 transition-colors">
+<span class="material-symbols-outlined text-[28px]">security</span>
+</div>
+<span class="text-xs font-medium text-gray-700 dark:text-gray-300">安全设置</span>
+</button>
+</div>
+</div>
+<!-- Promo Banner -->
+<div class="w-full h-24 rounded-xl overflow-hidden relative group cursor-pointer">
+<img alt="Promotional banner" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" data-alt="Abstract vibrant red and gold geometric 3D shapes representing financial growth and celebration" src="https://lh3.googleusercontent.com/aida-public/AB6AXuC0v553yiXvphD7ttzdxguqp-kcTQ3X4USJgrhj7-NP56TNxGSQ6ayRAw0TfS62SVrU-jQYJEI_IaxXHg2JLh1ILpfAbLMWPx1grOh7DoSENayllQRf8Ujxv8HUjCnE90VTfcysG4RpNlGJnI7QmkfxQUF5u9_tIh44bbZedSmtgTBmJWdxYl2COQF-oAUemwS2CKC8D0jxgtD3GLvCm-MoSILhxf2zMefhzr6gp5kGUUJjhbzyS54Eb_gcCyxo8icrML3JncvdEkI"/>
+<div class="absolute inset-0 bg-gradient-to-r from-black/60 to-transparent flex flex-col justify-center px-5">
+<span class="bg-amber-400 text-black text-[10px] font-bold px-1.5 py-0.5 rounded w-fit mb-1">推广</span>
+<h3 class="text-white font-bold text-lg">新用户办卡享好礼</h3>
+<p class="text-white/80 text-xs">最高立减 ¥200</p>
+</div>
+</div>
+<!-- Recent Transactions -->
+<div class="bg-surface-light dark:bg-surface-dark rounded-2xl shadow-soft border border-transparent dark:border-white/5 overflow-hidden">
+<div class="px-5 py-4 border-b border-gray-100 dark:border-white/5 flex items-center justify-between">
+<h3 class="font-bold text-base">最近交易</h3>
+<button class="text-xs text-gray-500 hover:text-primary flex items-center gap-0.5">
+                        全部
+                        <span class="material-symbols-outlined text-sm">chevron_right</span>
+</button>
+</div>
+<div class="flex flex-col">
+<!-- Transaction Item 1 -->
+<div class="flex items-center gap-4 p-4 hover:bg-gray-50 dark:hover:bg-white/5 transition-colors cursor-pointer border-b border-gray-50 dark:border-white/5 last:border-0">
+<div class="w-10 h-10 rounded-full bg-[#006241] flex items-center justify-center shrink-0 text-white overflow-hidden">
+<!-- Placeholder for Brand Logo, using Icon here -->
+<span class="material-symbols-outlined text-[20px]">local_cafe</span>
+</div>
+<div class="flex-1 min-w-0">
+<p class="font-bold text-sm truncate">星巴克咖啡 (Starbucks)</p>
+<p class="text-xs text-gray-400 mt-0.5">今天 14:30 · 餐饮美食</p>
+</div>
+<div class="text-right">
+<p class="font-bold text-sm text-[#1c0d0d] dark:text-white">-32.00</p>
+<p class="text-xs text-gray-400 mt-0.5">支付成功</p>
+</div>
+</div>
+<!-- Transaction Item 2 -->
+<div class="flex items-center gap-4 p-4 hover:bg-gray-50 dark:hover:bg-white/5 transition-colors cursor-pointer border-b border-gray-50 dark:border-white/5 last:border-0">
+<div class="w-10 h-10 rounded-full bg-[#ff5000] flex items-center justify-center shrink-0 text-white overflow-hidden">
+<span class="material-symbols-outlined text-[20px]">shopping_bag</span>
+</div>
+<div class="flex-1 min-w-0">
+<p class="font-bold text-sm truncate">淘宝购物 (Taobao)</p>
+<p class="text-xs text-gray-400 mt-0.5">昨天 20:15 · 网上购物</p>
+</div>
+<div class="text-right">
+<p class="font-bold text-sm text-[#1c0d0d] dark:text-white">-128.00</p>
+<p class="text-xs text-gray-400 mt-0.5">支付成功</p>
+</div>
+</div>
+<!-- Transaction Item 3 (Income) -->
+<div class="flex items-center gap-4 p-4 hover:bg-gray-50 dark:hover:bg-white/5 transition-colors cursor-pointer last:border-0">
+<div class="w-10 h-10 rounded-full bg-blue-500 flex items-center justify-center shrink-0 text-white overflow-hidden">
+<span class="material-symbols-outlined text-[20px]">account_balance_wallet</span>
+</div>
+<div class="flex-1 min-w-0">
+<p class="font-bold text-sm truncate">余额宝收益</p>
+<p class="text-xs text-gray-400 mt-0.5">昨天 09:00 · 理财收益</p>
+</div>
+<div class="text-right">
+<p class="font-bold text-sm text-primary">+1.25</p>
+<p class="text-xs text-gray-400 mt-0.5">已到账</p>
+</div>
+</div>
+</div>
+</div>
+<!-- Footer Spacing -->
+<div class="h-6"></div>
+</main>
+</div>
+</body></html>

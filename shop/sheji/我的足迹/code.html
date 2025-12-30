@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+
+<html class="light" lang="zh-CN"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>我的足迹 - My Footprint</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&amp;family=Noto+Sans+SC:wght@400;500;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#f20d0d",
+                        "background-light": "#f8f5f5",
+                        "background-dark": "#1a1a1a",
+                        "card-light": "#ffffff",
+                        "card-dark": "#2a2a2a",
+                        "text-main-light": "#1c0d0d",
+                        "text-main-dark": "#f5f5f5",
+                        "text-sub-light": "#666666",
+                        "text-sub-dark": "#a3a3a3",
+                    },
+                    fontFamily: {
+                        "display": ["Plus Jakarta Sans", "Noto Sans SC", "sans-serif"],
+                        "body": ["Plus Jakarta Sans", "Noto Sans SC", "sans-serif"],
+                    },
+                    borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
+                },
+            },
+        }
+    </script>
+<style>
+        .hide-scrollbar::-webkit-scrollbar {
+            display: none;
+        }
+        .hide-scrollbar {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+        /* Custom checkbox style */
+        .custom-checkbox:checked {
+            background-color: #f20d0d;
+            border-color: #f20d0d;
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background-light dark:bg-background-dark font-display antialiased transition-colors duration-200">
+<div class="relative flex min-h-screen w-full flex-col max-w-md mx-auto bg-background-light dark:bg-background-dark overflow-x-hidden shadow-2xl">
+<!-- Sticky Header -->
+<header class="sticky top-0 z-50 bg-background-light/90 dark:bg-background-dark/90 backdrop-blur-md border-b border-gray-100 dark:border-gray-800">
+<!-- Status Bar Placeholder -->
+<div class="h-10 w-full"></div>
+<div class="flex items-center justify-between px-4 pb-3 pt-1">
+<div class="w-12 flex items-center justify-start">
+<button class="p-1 -ml-1 text-text-main-light dark:text-text-main-dark rounded-full hover:bg-black/5 dark:hover:bg-white/10 transition-colors">
+<span class="material-symbols-outlined text-2xl">arrow_back_ios_new</span>
+</button>
+</div>
+<h2 class="text-text-main-light dark:text-text-main-dark text-lg font-bold leading-tight flex-1 text-center">我的足迹</h2>
+<div class="w-12 flex items-center justify-end">
+<button class="text-text-main-light dark:text-text-main-dark text-sm font-medium hover:text-primary dark:hover:text-primary transition-colors">
+                        编辑
+                    </button>
+</div>
+</div>
+<!-- Tabs -->
+<div class="px-4">
+<div class="flex gap-8 relative">
+<button class="flex flex-col items-center justify-center pb-2 pt-1 relative group">
+<span class="text-text-main-light dark:text-text-main-dark text-base font-bold transition-colors">全部</span>
+<span class="absolute bottom-0 h-[3px] w-5 rounded-full bg-primary"></span>
+</button>
+<button class="flex flex-col items-center justify-center pb-2 pt-1 relative group">
+<span class="text-text-sub-light dark:text-text-sub-dark text-sm font-medium group-hover:text-text-main-light dark:group-hover:text-text-main-dark transition-colors">宝贝</span>
+<span class="absolute bottom-0 h-[3px] w-0 rounded-full bg-primary transition-all duration-300 group-hover:w-5"></span>
+</button>
+<button class="flex flex-col items-center justify-center pb-2 pt-1 relative group">
+<span class="text-text-sub-light dark:text-text-sub-dark text-sm font-medium group-hover:text-text-main-light dark:group-hover:text-text-main-dark transition-colors">店铺</span>
+<span class="absolute bottom-0 h-[3px] w-0 rounded-full bg-primary transition-all duration-300 group-hover:w-5"></span>
+</button>
+</div>
+</div>
+</header>
+<!-- Main Content -->
+<main class="flex-1 pb-24">
+<!-- Section: Today -->
+<div class="mt-2">
+<div class="flex items-end justify-between px-4 pb-3 pt-4">
+<div class="flex items-baseline gap-2">
+<h3 class="text-text-main-light dark:text-text-main-dark text-xl font-bold leading-none">今天</h3>
+<span class="text-xs text-text-sub-light dark:text-text-sub-dark font-medium">10月24日</span>
+</div>
+</div>
+<div class="grid grid-cols-2 gap-3 px-3">
+<!-- Product Card 1 -->
+<div class="group relative flex flex-col bg-card-light dark:bg-card-dark rounded-xl overflow-hidden shadow-sm dark:border dark:border-gray-800">
+<div class="relative w-full aspect-square bg-gray-100 dark:bg-gray-800">
+<div class="w-full h-full bg-center bg-cover transition-transform duration-500 group-hover:scale-105" data-alt="white sneakers on concrete background" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuAZBMLzbZfEYniwbbfIYDLnZbNrWmb9UXCuAs0vcVB7jxrXkAr_amTwxIDidXrBexyq0ERc40RtmPJe6I72VhwkXPp3ZPyjLnOeL5vexQGBrVPTJnYqr5BWG6ThcBKh5RSYvn34T_KbDAIREhBRdL995YRH06Bt_Afm2OnQEGHy__SYGZ5Edeu2lp9-VG6j_nUGCV6jpthPT0pylxZzroQX5DgNhcXw5TVMfqEazLgI3jHb2BGSwwZ59aNt0yMZ0ntWp8lCMJHAXuY");'></div>
+<div class="absolute top-2 right-2 bg-black/40 backdrop-blur-sm rounded-full p-1.5 opacity-0 group-hover:opacity-100 transition-opacity">
+<span class="material-symbols-outlined text-white text-sm block">favorite</span>
+</div>
+<div class="absolute bottom-0 left-0 w-full h-8 bg-gradient-to-t from-black/20 to-transparent"></div>
+<!-- Price Drop Badge -->
+<div class="absolute bottom-2 left-2 bg-primary/90 text-white text-[10px] font-bold px-1.5 py-0.5 rounded-sm">
+                                降价 ¥50
+                            </div>
+</div>
+<div class="p-3 flex flex-col gap-1.5 flex-1 justify-between">
+<div>
+<p class="text-text-main-light dark:text-text-main-dark text-sm font-medium leading-snug line-clamp-2 min-h-[2.5rem]">Nike Air Max 97 Ultra 经典复古运动跑步鞋</p>
+<div class="flex gap-1 mt-1">
+<span class="text-[10px] text-primary bg-primary/10 px-1 py-0.5 rounded border border-primary/20">新品</span>
+<span class="text-[10px] text-orange-600 bg-orange-50 dark:bg-orange-900/20 px-1 py-0.5 rounded border border-orange-200 dark:border-orange-800">包邮</span>
+</div>
+</div>
+<div class="flex items-end justify-between mt-1">
+<div class="flex items-baseline gap-0.5 text-primary">
+<span class="text-xs font-bold">¥</span>
+<span class="text-lg font-bold">899</span>
+<span class="text-xs text-text-sub-light dark:text-text-sub-dark line-through ml-1 decoration-slate-400">¥949</span>
+</div>
+<button class="text-text-sub-light dark:text-text-sub-dark hover:text-primary dark:hover:text-primary transition-colors">
+<span class="material-symbols-outlined text-xl">shopping_cart</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Product Card 2 -->
+<div class="group relative flex flex-col bg-card-light dark:bg-card-dark rounded-xl overflow-hidden shadow-sm dark:border dark:border-gray-800">
+<div class="relative w-full aspect-square bg-gray-100 dark:bg-gray-800">
+<div class="w-full h-full bg-center bg-cover transition-transform duration-500 group-hover:scale-105" data-alt="red lipstick product shot" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuDd6cjoJz8hbcTiIDkUqwQFPJ4t1ivpXktosRQyc4iIC0WAxRjsgZt02t5U9hJpYM2N2fJ3C_9yYzIn9xCbFGquUIkIcJcHzYQ9O1lQJ2Td3xWrBhhoxvsSKueuFqzMoisvJX6ViqmpHNPwnKZutE4gjhUSgyehM7rIyx1ihF2w9OObJS7UuVuId4TyDKmV-RuuXgMTsNWKpbobOc4cOYZniD_wh5qtX4QV2Fux8eUVSfkSMAnKOF7AwTw6E1N7Pdh_LQrFfuuB8ds");'></div>
+<!-- Low Stock Badge -->
+<div class="absolute top-0 left-0 bg-black/60 backdrop-blur-sm text-white text-[10px] px-2 py-1 rounded-br-lg font-medium">
+                                仅剩3件
+                            </div>
+</div>
+<div class="p-3 flex flex-col gap-1.5 flex-1 justify-between">
+<p class="text-text-main-light dark:text-text-main-dark text-sm font-medium leading-snug line-clamp-2 min-h-[2.5rem]">Dior 迪奥999 哑光烈艳蓝金唇膏口红 持久显色</p>
+<div class="flex items-end justify-between mt-1">
+<div class="flex items-baseline gap-0.5 text-primary">
+<span class="text-xs font-bold">¥</span>
+<span class="text-lg font-bold">350</span>
+</div>
+<button class="text-text-sub-light dark:text-text-sub-dark hover:text-primary dark:hover:text-primary transition-colors">
+<span class="material-symbols-outlined text-xl">shopping_cart</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Product Card 3 -->
+<div class="group relative flex flex-col bg-card-light dark:bg-card-dark rounded-xl overflow-hidden shadow-sm dark:border dark:border-gray-800">
+<div class="relative w-full aspect-square bg-gray-100 dark:bg-gray-800">
+<div class="w-full h-full bg-center bg-cover transition-transform duration-500 group-hover:scale-105" data-alt="minimalist white table lamp" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuCcLgZVSGb9TA_owYzen9mntPX8uYID6a8igwvYCNHZEZY3QYaoMRFXk1XeUd1Kmxxhe_99tcb6JaASeOwZoKPB8UjcN-stf79YYhkXm_PMGAp-qgMx93h6R-HoJ_cB2jefkB7T7uT0R6qJ6ORcYyxkv5Z6rBUKhgcmR3jeo4rmdPKICWBLPZL2zPYNqR3GaYPepjsYXHIeVT5sZw-LBPAN8Cmn7BvF6hmkYyhOGsHqznco67cIwJeRK0CdYHufC-U06YydPnUHPRY");'></div>
+</div>
+<div class="p-3 flex flex-col gap-1.5 flex-1 justify-between">
+<p class="text-text-main-light dark:text-text-main-dark text-sm font-medium leading-snug line-clamp-2 min-h-[2.5rem]">北欧简约床头台灯 现代创意卧室温馨护眼灯</p>
+<div class="flex items-end justify-between mt-1">
+<div class="flex items-baseline gap-0.5 text-primary">
+<span class="text-xs font-bold">¥</span>
+<span class="text-lg font-bold">128</span>
+</div>
+<button class="flex items-center gap-0.5 text-xs text-text-sub-light dark:text-text-sub-dark border border-gray-200 dark:border-gray-700 rounded-full px-2 py-0.5 hover:bg-gray-50 dark:hover:bg-gray-800 transition-colors">
+                                    找相似
+                                </button>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Section: Yesterday -->
+<div class="mt-4">
+<div class="flex items-end justify-between px-4 pb-3 pt-2">
+<div class="flex items-baseline gap-2">
+<h3 class="text-text-main-light dark:text-text-main-dark text-xl font-bold leading-none">昨天</h3>
+<span class="text-xs text-text-sub-light dark:text-text-sub-dark font-medium">10月23日</span>
+</div>
+</div>
+<div class="grid grid-cols-2 gap-3 px-3">
+<!-- Product Card 4 -->
+<div class="group relative flex flex-col bg-card-light dark:bg-card-dark rounded-xl overflow-hidden shadow-sm dark:border dark:border-gray-800 opacity-80 hover:opacity-100 transition-opacity">
+<div class="relative w-full aspect-square bg-gray-100 dark:bg-gray-800">
+<div class="w-full h-full bg-center bg-cover" data-alt="silver kitchen blender on counter" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuDmdl8vrde-xiRWqot5BRkGmHY8wO-ZW8eRNj_rFTlkob-8cjrDROp0FMwGGMFb3xBxXjLLTvDS_0Uo-J9GJ6kjPvM4ingPJwYNyQeDYiJcy0gvEJRZYWLgrX7ifhddlgXpFQhpVwBIs-X_EwOmu93oY8wQ8-rH9olI4eDdBEcQler7YDa7uAQKllBohj_rgRUlNcs8_XxVvZeKQImz8UZfMOcQ-H0MZHgLzxJYtP0tjLWzBknlRWms9_nJCH1QBSbFFrJWJp1RBiQ");'></div>
+</div>
+<div class="p-3 flex flex-col gap-1.5 flex-1 justify-between">
+<p class="text-text-main-light dark:text-text-main-dark text-sm font-medium leading-snug line-clamp-2 min-h-[2.5rem]">九阳破壁机家用静音加热全自动多功能料理机</p>
+<div class="flex items-end justify-between mt-1">
+<div class="flex items-baseline gap-0.5 text-primary">
+<span class="text-xs font-bold">¥</span>
+<span class="text-lg font-bold">399</span>
+</div>
+<button class="text-text-sub-light dark:text-text-sub-dark hover:text-primary dark:hover:text-primary transition-colors">
+<span class="material-symbols-outlined text-xl">shopping_cart</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Product Card 5 -->
+<div class="group relative flex flex-col bg-card-light dark:bg-card-dark rounded-xl overflow-hidden shadow-sm dark:border dark:border-gray-800 opacity-80 hover:opacity-100 transition-opacity">
+<div class="relative w-full aspect-square bg-gray-100 dark:bg-gray-800">
+<div class="w-full h-full bg-center bg-cover" data-alt="brown leather wallet on wood" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuDSDeeLYVT9LCl7R5QZ0NnwSrIgxV8UlEH1VV_4CxUW9Sc-slnNKXQxTGXLVhkv-XDV2Uak3EO9QiCEMYtcvEpnKvOj1LC1VwUXysYwOhYn0zIpzGsMJT4JbZw497aOOsghaO53HOiyC5X8-phz9VqDpFfvavVvvovpbSo051biTqlJEclE5XvI5ST8KHXpTD1XNNwfpb1j9uV5AEfwYy8I1f79pKV1XP2uMGwSX-HEWtI64sAKlXbquzubukOQYUHdGY0Qdt0p9sc");'></div>
+<div class="absolute inset-0 bg-white/50 dark:bg-black/50 flex items-center justify-center">
+<span class="bg-black/70 text-white text-xs px-2 py-1 rounded">已失效</span>
+</div>
+</div>
+<div class="p-3 flex flex-col gap-1.5 flex-1 justify-between">
+<p class="text-text-sub-light dark:text-text-sub-dark text-sm font-medium leading-snug line-clamp-2 min-h-[2.5rem]">手工真皮钱包男士短款复古疯马皮钱夹</p>
+<div class="flex items-end justify-between mt-1">
+<div class="flex items-baseline gap-0.5 text-text-sub-light dark:text-text-sub-dark">
+<span class="text-xs font-bold">¥</span>
+<span class="text-lg font-bold">168</span>
+</div>
+<button class="flex items-center gap-0.5 text-xs text-text-sub-light dark:text-text-sub-dark border border-gray-200 dark:border-gray-700 rounded-full px-2 py-0.5 hover:bg-gray-50 dark:hover:bg-gray-800 transition-colors">
+                                    找相似
+                                </button>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- End of list marker -->
+<div class="flex items-center justify-center py-8 gap-2 opacity-50">
+<div class="h-[1px] w-12 bg-gray-300 dark:bg-gray-700"></div>
+<span class="text-xs text-text-sub-light dark:text-text-sub-dark">没有更多了</span>
+<div class="h-[1px] w-12 bg-gray-300 dark:bg-gray-700"></div>
+</div>
+</main>
+<!-- Floating Action Button (Optional, common in shopping apps for 'To Top') -->
+<button class="fixed bottom-20 right-4 w-10 h-10 bg-white dark:bg-gray-800 rounded-full shadow-lg flex items-center justify-center border border-gray-100 dark:border-gray-700 z-40">
+<span class="material-symbols-outlined text-text-sub-light dark:text-text-sub-dark text-xl">vertical_align_top</span>
+</button>
+<!-- Bottom Navigation Bar (Mockup) -->
+<nav class="fixed bottom-0 w-full max-w-md bg-white dark:bg-gray-900 border-t border-gray-200 dark:border-gray-800 pb-safe pt-2 px-6 flex justify-between items-end z-50 h-[80px]">
+<div class="flex flex-col items-center gap-1 group w-12 cursor-pointer">
+<span class="material-symbols-outlined text-gray-400 group-hover:text-primary transition-colors">home</span>
+<span class="text-[10px] text-gray-500 font-medium group-hover:text-primary transition-colors">首页</span>
+</div>
+<div class="flex flex-col items-center gap-1 group w-12 cursor-pointer">
+<span class="material-symbols-outlined text-gray-400 group-hover:text-primary transition-colors">category</span>
+<span class="text-[10px] text-gray-500 font-medium group-hover:text-primary transition-colors">分类</span>
+</div>
+<div class="flex flex-col items-center gap-1 group w-12 cursor-pointer">
+<span class="material-symbols-outlined text-gray-400 group-hover:text-primary transition-colors">shopping_cart</span>
+<span class="text-[10px] text-gray-500 font-medium group-hover:text-primary transition-colors">购物车</span>
+</div>
+<div class="flex flex-col items-center gap-1 group w-12 cursor-pointer">
+<span class="material-symbols-outlined text-primary font-fill">person</span>
+<span class="text-[10px] text-primary font-medium">我的</span>
+</div>
+</nav>
+</div>
+<script>
+        // Simple script to toggle dark mode for demonstration
+        // In a real app, this would be handled by system preference or user settings
+        // document.documentElement.classList.add('dark'); 
+    </script>
+</body></html>

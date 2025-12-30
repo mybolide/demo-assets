@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="zh-CN"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>商品列表页</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,typography"></script>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@400;500;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons+Outlined|Material+Icons+Round" rel="stylesheet"/>
+<script>
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        primary: "#FF2442", // Xiaohongshu Red / JD Red vibe
+                        "background-light": "#F6F7F9",
+                        "background-dark": "#121212",
+                        "surface-light": "#FFFFFF",
+                        "surface-dark": "#1E1E1E",
+                        "text-main-light": "#333333",
+                        "text-main-dark": "#E5E5E5",
+                        "text-sub-light": "#999999",
+                        "text-sub-dark": "#A0A0A0",
+                    },
+                    fontFamily: {
+                        display: ["'Noto Sans SC'", "sans-serif"],
+                    },
+                    borderRadius: {
+                        DEFAULT: "12px",
+                        'xl': "16px",
+                    },
+                    boxShadow: {
+                        'soft': '0 2px 10px rgba(0, 0, 0, 0.03)',
+                    }
+                },
+            },
+        };
+    </script>
+<style>.hide-scroll::-webkit-scrollbar {
+            display: none;
+        }
+        .hide-scroll {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }.sticky-header {
+            position: sticky;
+            top: 0;
+            z-index: 50;
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background-light dark:bg-background-dark font-display text-text-main-light dark:text-text-main-dark antialiased pb-24">
+<header class="sticky-header bg-surface-light/90 dark:bg-surface-dark/90 border-b border-gray-100 dark:border-gray-800 transition-colors duration-300">
+<div class="h-10 w-full"></div>
+<div class="px-4 pb-2 flex items-center gap-3">
+<button class="p-1 rounded-full hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors">
+<span class="material-icons-outlined text-2xl text-text-main-light dark:text-text-main-dark">arrow_back_ios_new</span>
+</button>
+<div class="flex-1 bg-gray-100 dark:bg-gray-800 rounded-full h-9 flex items-center px-3 transition-colors">
+<span class="material-icons-outlined text-gray-400 text-xl mr-2">search</span>
+<input class="bg-transparent border-none outline-none text-sm w-full text-text-main-light dark:text-text-main-dark placeholder-gray-400 focus:ring-0 p-0" placeholder="iPhone 15 Pro Max" type="text"/>
+<button class="text-gray-400">
+<span class="material-icons-outlined text-xl">camera_alt</span>
+</button>
+</div>
+<button class="p-1 relative">
+<span class="material-icons-outlined text-2xl text-text-main-light dark:text-text-main-dark">shopping_cart</span>
+<span class="absolute top-0 right-0 bg-primary text-white text-[10px] font-bold px-1 rounded-full min-w-[14px] h-[14px] flex items-center justify-center">2</span>
+</button>
+</div>
+<div class="flex items-center justify-between px-2 py-2 text-sm font-medium">
+<button class="flex-1 text-primary flex justify-center items-center h-10">
+                综合
+            </button>
+<button class="flex-1 text-text-sub-light dark:text-text-sub-dark flex justify-center items-center h-10 group">
+                销量
+            </button>
+<button class="flex-1 text-text-sub-light dark:text-text-sub-dark flex justify-center items-center h-10 group gap-0.5">
+                价格
+                <div class="flex flex-col text-[10px] scale-75 leading-none text-gray-300">
+<span class="material-icons-round -mb-1">arrow_drop_up</span>
+<span class="material-icons-round">arrow_drop_down</span>
+</div>
+</button>
+<button class="flex-1 text-text-sub-light dark:text-text-sub-dark flex justify-center items-center h-10 gap-1">
+                筛选
+                <span class="material-icons-outlined text-base">filter_alt</span>
+</button>
+<button class="w-10 flex justify-center items-center text-text-main-light dark:text-text-main-dark border-l border-gray-200 dark:border-gray-700 ml-1">
+<span class="material-icons-outlined text-xl">grid_view</span>
+</button>
+</div>
+<div class="px-4 pb-3 flex gap-2 overflow-x-auto hide-scroll text-xs whitespace-nowrap">
+<span class="px-3 py-1.5 bg-primary/10 text-primary rounded-full border border-primary/20 font-medium">京东物流</span>
+<span class="px-3 py-1.5 bg-gray-100 dark:bg-gray-800 text-text-main-light dark:text-text-main-dark rounded-full border border-transparent">新品优先</span>
+<span class="px-3 py-1.5 bg-gray-100 dark:bg-gray-800 text-text-main-light dark:text-text-main-dark rounded-full border border-transparent">品牌旗舰</span>
+<span class="px-3 py-1.5 bg-gray-100 dark:bg-gray-800 text-text-main-light dark:text-text-main-dark rounded-full border border-transparent">24期免息</span>
+<span class="px-3 py-1.5 bg-gray-100 dark:bg-gray-800 text-text-main-light dark:text-text-main-dark rounded-full border border-transparent">有货</span>
+</div>
+</header>
+<main class="p-3">
+<div class="grid grid-cols-2 gap-3">
+<div class="bg-surface-light dark:bg-surface-dark rounded-xl overflow-hidden shadow-soft group hover:shadow-md transition-shadow">
+<div class="relative aspect-square bg-gray-100 dark:bg-gray-800">
+<img alt="Smartphone on table" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDrZZ3oyfCX8dRnCbDUUQynoTDQx8F-V6LDGiCT78xHnfMtkGA0L4EO2P91Nvbs8_xyDCCPLQIad4B1mScUcnaZlWrthwC1QSIvsxmcAdXrV88aWSsUAMDnnm1IMPRQ_hFUGlglLmjaAXVjYOJAEMh5VfA7vvzA4jUXgKssZC9gF6mGDpcpL4ruhnvs91NzUfo9UbngR46-pfHhqObRZJXDf-GfoFc8b39iHGIyQAJozZHNcqdfVnVlvbIQDfKNJ7bLMzEcS3PSces"/>
+<div class="absolute top-2 right-2 bg-black/30 backdrop-blur-sm p-1 rounded-full text-white">
+<span class="material-icons-outlined text-sm block">favorite_border</span>
+</div>
+</div>
+<div class="p-3">
+<div class="flex flex-wrap gap-1 mb-1">
+<span class="px-1 py-0.5 bg-primary text-white text-[10px] rounded font-bold">自营</span>
+<span class="px-1 py-0.5 bg-orange-500 text-white text-[10px] rounded font-bold">特价</span>
+</div>
+<h3 class="text-sm font-medium leading-snug line-clamp-2 mb-2 dark:text-white">Apple iPhone 15 Pro Max (256GB) 钛金属原色 支持移动联通电信5G</h3>
+<div class="flex items-baseline gap-1 mt-2">
+<span class="text-xs text-primary font-bold">¥</span>
+<span class="text-lg text-primary font-bold">8999</span>
+<span class="text-xs text-gray-400 line-through decoration-gray-400 ml-1">¥9999</span>
+</div>
+<div class="flex items-center justify-between mt-2 text-xs text-text-sub-light dark:text-text-sub-dark">
+<span>10万+评价</span>
+<span>99%好评</span>
+</div>
+<div class="mt-2 flex items-center gap-1">
+<span class="text-[10px] px-1 py-0.5 border border-primary text-primary rounded">满2000减100</span>
+</div>
+</div>
+</div>
+<div class="bg-surface-light dark:bg-surface-dark rounded-xl overflow-hidden shadow-soft group hover:shadow-md transition-shadow">
+<div class="relative aspect-square bg-gray-100 dark:bg-gray-800">
+<img alt="White digital watch" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCJQCiwTMcKYzZeR94afamBk--bs8K4I9WwrSj8yrAi7jWYYaTKtk1M6_iyncDzIMisFhKtRgcNyEZJT7W4G12RTF8ShQj0TFA10Ow6IuJglvua8lgHKSfuUlGf3-SnBtmyInSgIajpRWUjS3H0vTSWiUEQKH4pL7jfgXfrLV29YiBWuE03HwbvaQaVHSLn-mne3rWBJcC_-GJ5IC9mii9wUejGHQmliyCngFypFp3_6ZwuCpkIUSBJo7edKSh9OY7Mfygt4h-SsSU"/>
+</div>
+<div class="p-3">
+<div class="flex flex-wrap gap-1 mb-1">
+<span class="px-1 py-0.5 bg-purple-600 text-white text-[10px] rounded font-bold">京东超市</span>
+</div>
+<h3 class="text-sm font-medium leading-snug line-clamp-2 mb-2 dark:text-white">卡西欧(CASIO)手表 G-SHOCK 运动潮流双显男表 GA-110</h3>
+<div class="flex items-baseline gap-1 mt-2">
+<span class="text-xs text-primary font-bold">¥</span>
+<span class="text-lg text-primary font-bold">790</span>
+</div>
+<div class="flex items-center justify-between mt-2 text-xs text-text-sub-light dark:text-text-sub-dark">
+<span>2万+评价</span>
+<span>97%好评</span>
+</div>
+<div class="mt-2 text-xs text-blue-500 flex items-center gap-0.5">
+<span class="material-icons-outlined text-[10px]">verified_user</span> 品牌授权
+                    </div>
+</div>
+</div>
+<div class="bg-surface-light dark:bg-surface-dark rounded-xl overflow-hidden shadow-soft group hover:shadow-md transition-shadow relative">
+<div class="absolute top-2 left-2 z-10 bg-black/60 backdrop-blur-sm rounded-full pl-1 pr-2 py-0.5 flex items-center gap-1 border border-white/20">
+<div class="w-1.5 h-1.5 rounded-full bg-green-400 animate-pulse"></div>
+<span class="text-[10px] text-white font-medium">直播中</span>
+</div>
+<div class="relative aspect-[4/5] bg-gray-100 dark:bg-gray-800">
+<img alt="Modern chair in room" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAOyrbXMX3KBBmye_MEd6_xVJHqBjZL9Z6NEXbAkyxAsNXFhKBvwjFNIFoItPkJK4w5nStU2MMutYP3YnAu6VRr596zR3qtKYUhuy8OD3XRtTA0YFlOpimAXnYI8X1Rw2w5s-jutZ_4zGui_cNZxKtrEsWACsuSG2Hin-rFtl--jiGDlaDFOhMuLdYf8cd-4B_-_QW6ffxomj-uM5X_2uv3szMNhC6ewVSTOXScSAXKMIMM1kUpmx67ocMRkc2Nb0vQCa7DR67HOzg"/>
+<div class="absolute bottom-0 left-0 w-full h-1/2 bg-gradient-to-t from-black/60 to-transparent"></div>
+<div class="absolute bottom-2 left-2 text-white text-xs font-medium flex items-center gap-1">
+<img class="w-4 h-4 rounded-full border border-white" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAZa10dd9LSi7lXzMF0JZNeYYTIwcdziJ4O2ekhaRSF8f1BzcNx0v42pkqSTbo6oufguMJp5Y5QjzQPipodMn3kg9aiWWnSzvx7rh4Zp-L2iNeKW-75yZaxx2M7j9F4JAylyI9-GYYdDNEg5yg2pC4IR7gKI8tgojblWYrUqOM-I-In0yPRgM_qcuOFy7CBCTsWVsvHN2gVU1ERvONONtMdBPXTo0TbqBnU4jJ30hmcu6rL9pkxCEXrWgimxg6pLbwC4fcjC07umHc"/>
+<span>家居优选官方</span>
+</div>
+</div>
+<div class="p-3">
+<h3 class="text-sm font-medium leading-snug line-clamp-1 mb-2 dark:text-white">北欧简约懒人沙发躺椅</h3>
+<div class="flex items-baseline gap-1 mt-1">
+<span class="text-xs text-primary font-bold">¥</span>
+<span class="text-lg text-primary font-bold">359</span>
+</div>
+<div class="mt-1 text-xs text-text-sub-light dark:text-text-sub-dark">
+                        已售 500+
+                    </div>
+</div>
+</div>
+<div class="bg-surface-light dark:bg-surface-dark rounded-xl overflow-hidden shadow-soft group hover:shadow-md transition-shadow">
+<div class="relative aspect-square bg-gray-100 dark:bg-gray-800">
+<img alt="Red sneaker" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuA7x_PScl67rkvgyY_FjXWP0Skcixs1fJgwWt38iH2drQz6Tfmyt6Zdij0LmUht2CM0Qv1V7MD4kcTnSNECA0tBnb-ANb9_ys_Nsut6tdV3Za52H-DCyevwKmEg1txdsKMoHKal4fV8Y6d80BsKufMSqB6hqhzN5u3Gu2_FZ_zsblcrty-I_yl0vr_MJZLWIzxeOaha7cw1lNLXMsNNVaN9qC2hlZ8BzNHa1qosE5SGuNdkG3sdsBUQbXcUvoFVqwg5fZiLJrxrPuU"/>
+</div>
+<div class="p-3">
+<div class="flex flex-wrap gap-1 mb-1">
+<span class="px-1 py-0.5 bg-black text-white text-[10px] rounded font-bold">黑标</span>
+</div>
+<h3 class="text-sm font-medium leading-snug line-clamp-2 mb-2 dark:text-white">Nike Air Max 红色经典运动跑鞋 夏季透气网面</h3>
+<div class="flex items-baseline gap-1 mt-2">
+<span class="text-xs text-primary font-bold">¥</span>
+<span class="text-lg text-primary font-bold">699</span>
+<span class="text-[10px] text-primary border border-primary px-1 rounded ml-1">券后价</span>
+</div>
+<div class="flex items-center justify-between mt-2 text-xs text-text-sub-light dark:text-text-sub-dark">
+<span>5000+评价</span>
+<span>95%好评</span>
+</div>
+</div>
+</div>
+<div class="bg-surface-light dark:bg-surface-dark rounded-xl overflow-hidden shadow-soft group hover:shadow-md transition-shadow">
+<div class="relative aspect-square bg-gray-100 dark:bg-gray-800">
+<img alt="Camera lens" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAJFzlVhjP6lM00z_TR4ZNIZGPZZglG2UR0whfAftoF7MByKH85m6r9l6rXuOr2XjV-lM7RJxV5YyiDjSzl0Mv8jCNs5WV7prRGlNAFaY5d_NcFnf9tadWxsMTW0T_-_lWPTR68a7FOYd1_KG2YFGSZ5vYGxd07japioIAbP-ivImryZPPfhN4m09Hk5cnu3X_CFwVbTHP7gXOanbFQtw19D2gJNN0FAB0T_XT6jomJpywtoW3BppwD2cPykEoWHVCkeiTQ48UnvBA"/>
+</div>
+<div class="p-3">
+<h3 class="text-sm font-medium leading-snug line-clamp-2 mb-2 dark:text-white">Polaroid OneStep 2 Viewfinder i-Type 相机 - 珊瑚红</h3>
+<div class="flex items-baseline gap-1 mt-2">
+<span class="text-xs text-primary font-bold">¥</span>
+<span class="text-lg text-primary font-bold">1299</span>
+</div>
+<div class="flex items-center justify-between mt-2 text-xs text-text-sub-light dark:text-text-sub-dark">
+<span>200+评价</span>
+<span>100%好评</span>
+</div>
+<div class="mt-2 flex gap-1">
+<span class="text-[10px] text-gray-500 bg-gray-100 dark:bg-gray-700 dark:text-gray-300 px-1 rounded">极速发货</span>
+<span class="text-[10px] text-gray-500 bg-gray-100 dark:bg-gray-700 dark:text-gray-300 px-1 rounded">运费险</span>
+</div>
+</div>
+</div>
+<div class="bg-surface-light dark:bg-surface-dark rounded-xl overflow-hidden shadow-soft group hover:shadow-md transition-shadow">
+<div class="relative aspect-square bg-gray-100 dark:bg-gray-800">
+<img alt="Headphones" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAnKFlxgmqtusdJMJtKkuXFgfQqOz9tmdOWpyNfg4MwIXuAf-j_Kg_IiqPoUT-3TJKGASpHXKR2tnVqrYlqFjR_eAInkhnkYbAsvyhICaEGPaNFgeOI9OBHUOB_OJZPnzjierkE82ec09BBJImooKHzcBgQ5w5EM8TKxrDk6A5dTBRzT6ivBBQl3t3AzaTFM5RHGLRXlID11GcDrod7Ydbgthio4Obd1n8Y3ugMRj5kjpUlEhKObJ34BAdf1hQe53ahyyNeM4Y1w18"/>
+</div>
+<div class="p-3">
+<div class="flex flex-wrap gap-1 mb-1">
+<span class="px-1 py-0.5 bg-blue-600 text-white text-[10px] rounded font-bold">新品</span>
+</div>
+<h3 class="text-sm font-medium leading-snug line-clamp-2 mb-2 dark:text-white">Sony WH-1000XM5 无线降噪耳机 蓝牙头戴式</h3>
+<div class="flex items-baseline gap-1 mt-2">
+<span class="text-xs text-primary font-bold">¥</span>
+<span class="text-lg text-primary font-bold">2499</span>
+</div>
+<div class="flex items-center justify-between mt-2 text-xs text-text-sub-light dark:text-text-sub-dark">
+<span>1万+评价</span>
+<span>98%好评</span>
+</div>
+</div>
+</div>
+</div>
+<div class="flex justify-center items-center py-6 text-gray-400 text-sm gap-2">
+<span class="material-icons-outlined animate-spin text-base">sync</span>
+            正在加载更多...
+        </div>
+</main>
+<nav class="fixed bottom-0 left-0 w-full bg-surface-light dark:bg-surface-dark border-t border-gray-200 dark:border-gray-800 pb-safe pt-2 px-6 flex justify-between z-50">
+<a class="flex flex-col items-center gap-1 text-text-sub-light dark:text-text-sub-dark hover:text-primary transition-colors" href="#">
+<span class="material-icons-outlined text-2xl">home</span>
+<span class="text-[10px]">首页</span>
+</a>
+<a class="flex flex-col items-center gap-1 text-primary" href="#">
+<span class="material-icons-outlined text-2xl">grid_view</span>
+<span class="text-[10px] font-medium">分类</span>
+</a>
+<a class="flex flex-col items-center gap-1 text-text-sub-light dark:text-text-sub-dark hover:text-primary transition-colors" href="#">
+<span class="material-icons-outlined text-2xl">explore</span>
+<span class="text-[10px]">逛逛</span>
+</a>
+<a class="flex flex-col items-center gap-1 text-text-sub-light dark:text-text-sub-dark hover:text-primary transition-colors" href="#">
+<span class="material-icons-outlined text-2xl">shopping_cart</span>
+<span class="text-[10px]">购物车</span>
+</a>
+<a class="flex flex-col items-center gap-1 text-text-sub-light dark:text-text-sub-dark hover:text-primary transition-colors" href="#">
+<span class="material-icons-outlined text-2xl">person</span>
+<span class="text-[10px]">我的</span>
+</a>
+</nav>
+<div class="h-8 w-full bg-surface-light dark:bg-surface-dark fixed bottom-0 z-40"></div> 
+
+</body></html>

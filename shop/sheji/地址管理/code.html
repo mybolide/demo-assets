@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Address Management</title>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#f20d0d",
+                        "background-light": "#f8f5f5",
+                        "background-dark": "#221010",
+                    },
+                    fontFamily: {
+                        "display": ["Plus Jakarta Sans", "sans-serif"]
+                    },
+                    borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
+                },
+            },
+        }
+    </script>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background-light dark:bg-background-dark font-display text-gray-900 dark:text-gray-100 antialiased selection:bg-primary selection:text-white">
+<div class="relative flex h-full min-h-screen w-full flex-col overflow-x-hidden max-w-md mx-auto bg-background-light dark:bg-background-dark shadow-xl">
+<!-- Header -->
+<header class="sticky top-0 z-50 flex items-center justify-between bg-background-light/95 dark:bg-background-dark/95 backdrop-blur-sm px-4 py-3 border-b border-gray-100 dark:border-gray-800">
+<button class="flex size-10 items-center justify-center rounded-full hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors text-gray-900 dark:text-white">
+<span class="material-symbols-outlined text-[20px]">arrow_back_ios_new</span>
+</button>
+<h1 class="text-lg font-bold leading-tight tracking-tight text-gray-900 dark:text-white">地址管理</h1>
+<div class="size-10"></div> <!-- Spacer for balance -->
+</header>
+<!-- Main Content List -->
+<main class="flex-1 px-4 py-4 flex flex-col gap-4 pb-24">
+<!-- Address Card 1 (Default) -->
+<div class="group relative flex flex-col rounded-xl bg-white dark:bg-[#2c1818] p-4 shadow-sm border border-transparent hover:border-primary/10 transition-all">
+<!-- User Info -->
+<div class="flex items-baseline gap-3 mb-2">
+<h3 class="text-lg font-bold text-gray-900 dark:text-white">张三</h3>
+<span class="text-base font-medium text-gray-500 dark:text-gray-400">138****8888</span>
+<span class="ml-auto rounded bg-primary/10 px-2 py-0.5 text-xs font-bold text-primary dark:bg-primary/20">默认</span>
+</div>
+<!-- Address Details -->
+<div class="mb-4">
+<p class="text-sm leading-relaxed text-gray-600 dark:text-gray-300">
+                        北京市 朝阳区 建国路88号 <br/>
+                        SOHO现代城 A座 1202
+                    </p>
+</div>
+<!-- Divider -->
+<div class="h-px w-full bg-gray-100 dark:bg-gray-700 mb-3"></div>
+<!-- Actions -->
+<div class="flex items-center justify-between">
+<label class="flex items-center gap-2 cursor-pointer">
+<span class="material-symbols-outlined text-[20px] text-primary fill-1">check_circle</span>
+<span class="text-sm font-medium text-primary">默认地址</span>
+</label>
+<div class="flex items-center gap-4">
+<button class="flex items-center gap-1 text-gray-500 hover:text-gray-900 dark:text-gray-400 dark:hover:text-white transition-colors">
+<span class="material-symbols-outlined text-[18px]">edit_square</span>
+<span class="text-sm">编辑</span>
+</button>
+<button class="flex items-center gap-1 text-gray-500 hover:text-primary dark:text-gray-400 dark:hover:text-primary transition-colors">
+<span class="material-symbols-outlined text-[18px]">delete</span>
+<span class="text-sm">删除</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Address Card 2 -->
+<div class="group relative flex flex-col rounded-xl bg-white dark:bg-[#2c1818] p-4 shadow-sm border border-transparent hover:border-primary/10 transition-all">
+<!-- User Info -->
+<div class="flex items-baseline gap-3 mb-2">
+<h3 class="text-lg font-bold text-gray-900 dark:text-white">李四</h3>
+<span class="text-base font-medium text-gray-500 dark:text-gray-400">150****1234</span>
+<span class="ml-auto rounded bg-gray-100 px-2 py-0.5 text-xs font-medium text-gray-500 dark:bg-gray-700 dark:text-gray-300">家</span>
+</div>
+<!-- Address Details -->
+<div class="mb-4">
+<p class="text-sm leading-relaxed text-gray-600 dark:text-gray-300">
+                        上海市 浦东新区 世纪大道1号 <br/>
+                        陆家嘴中心大厦 25层
+                    </p>
+</div>
+<!-- Divider -->
+<div class="h-px w-full bg-gray-100 dark:bg-gray-700 mb-3"></div>
+<!-- Actions -->
+<div class="flex items-center justify-between">
+<label class="flex items-center gap-2 cursor-pointer group/radio">
+<span class="material-symbols-outlined text-[20px] text-gray-300 group-hover/radio:text-gray-400 dark:text-gray-600 dark:group-hover/radio:text-gray-500">radio_button_unchecked</span>
+<span class="text-sm font-medium text-gray-500 group-hover/radio:text-gray-700 dark:text-gray-400">设为默认</span>
+</label>
+<div class="flex items-center gap-4">
+<button class="flex items-center gap-1 text-gray-500 hover:text-gray-900 dark:text-gray-400 dark:hover:text-white transition-colors">
+<span class="material-symbols-outlined text-[18px]">edit_square</span>
+<span class="text-sm">编辑</span>
+</button>
+<button class="flex items-center gap-1 text-gray-500 hover:text-primary dark:text-gray-400 dark:hover:text-primary transition-colors">
+<span class="material-symbols-outlined text-[18px]">delete</span>
+<span class="text-sm">删除</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Address Card 3 -->
+<div class="group relative flex flex-col rounded-xl bg-white dark:bg-[#2c1818] p-4 shadow-sm border border-transparent hover:border-primary/10 transition-all">
+<!-- User Info -->
+<div class="flex items-baseline gap-3 mb-2">
+<h3 class="text-lg font-bold text-gray-900 dark:text-white">王五</h3>
+<span class="text-base font-medium text-gray-500 dark:text-gray-400">186****5678</span>
+<span class="ml-auto rounded bg-gray-100 px-2 py-0.5 text-xs font-medium text-gray-500 dark:bg-gray-700 dark:text-gray-300">公司</span>
+</div>
+<!-- Address Details -->
+<div class="mb-4">
+<p class="text-sm leading-relaxed text-gray-600 dark:text-gray-300">
+                        广东省 深圳市 南山区 粤海街道 <br/>
+                        科技园南区 虚拟大学园 R3-B栋
+                    </p>
+</div>
+<!-- Divider -->
+<div class="h-px w-full bg-gray-100 dark:bg-gray-700 mb-3"></div>
+<!-- Actions -->
+<div class="flex items-center justify-between">
+<label class="flex items-center gap-2 cursor-pointer group/radio">
+<span class="material-symbols-outlined text-[20px] text-gray-300 group-hover/radio:text-gray-400 dark:text-gray-600 dark:group-hover/radio:text-gray-500">radio_button_unchecked</span>
+<span class="text-sm font-medium text-gray-500 group-hover/radio:text-gray-700 dark:text-gray-400">设为默认</span>
+</label>
+<div class="flex items-center gap-4">
+<button class="flex items-center gap-1 text-gray-500 hover:text-gray-900 dark:text-gray-400 dark:hover:text-white transition-colors">
+<span class="material-symbols-outlined text-[18px]">edit_square</span>
+<span class="text-sm">编辑</span>
+</button>
+<button class="flex items-center gap-1 text-gray-500 hover:text-primary dark:text-gray-400 dark:hover:text-primary transition-colors">
+<span class="material-symbols-outlined text-[18px]">delete</span>
+<span class="text-sm">删除</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Empty state visual placeholder (optional, hidden if list has items) -->
+<!-- 
+            <div class="flex flex-col items-center justify-center py-12 text-center hidden">
+                <div class="bg-gray-100 dark:bg-gray-800 rounded-full p-6 mb-4">
+                    <span class="material-symbols-outlined text-4xl text-gray-400">location_off</span>
+                </div>
+                <p class="text-gray-500 dark:text-gray-400 text-sm">暂无收货地址</p>
+            </div> 
+            -->
+</main>
+<!-- Fixed Footer Action -->
+<div class="fixed bottom-0 w-full max-w-md bg-white dark:bg-[#2c1818] border-t border-gray-100 dark:border-gray-800 p-4 pb-8 z-40 shadow-[0_-4px_6px_-1px_rgba(0,0,0,0.05)]">
+<button class="flex w-full cursor-pointer items-center justify-center gap-2 overflow-hidden rounded-full h-12 px-5 bg-primary hover:bg-red-700 active:scale-[0.98] transition-all text-white text-base font-bold leading-normal tracking-[0.015em] shadow-lg shadow-primary/20">
+<span class="material-symbols-outlined text-[20px]">add</span>
+<span class="truncate">添加新地址</span>
+</button>
+</div>
+</div>
+</body></html>

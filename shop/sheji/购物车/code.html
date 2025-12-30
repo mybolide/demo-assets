@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+
+<html class="light"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Shopping Cart</title>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&amp;family=Noto+Sans+SC:wght@400;500;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#f20d0d",
+                        "background-light": "#f8f5f5",
+                        "background-dark": "#221010",
+                    },
+                    fontFamily: {
+                        "display": ["Plus Jakarta Sans", "Noto Sans SC", "sans-serif"],
+                        "sans": ["Plus Jakarta Sans", "Noto Sans SC", "sans-serif"],
+                    },
+                    borderRadius: {"DEFAULT": "0.5rem", "lg": "0.75rem", "xl": "1rem", "full": "9999px"},
+                },
+            },
+        }
+    </script>
+<style>
+        /* Custom checkbox style to match design */
+        .custom-checkbox {
+            appearance: none;
+            background-color: transparent;
+            margin: 0;
+            font: inherit;
+            color: currentColor;
+            width: 1.25em;
+            height: 1.25em;
+            border: 2px solid #ccc; /* Default border */
+            border-radius: 50%;
+            display: grid;
+            place-content: center;
+            transition: all 0.2s ease-in-out;
+        }
+
+        .custom-checkbox::before {
+            content: "";
+            width: 0.65em;
+            height: 0.65em;
+            transform: scale(0);
+            transition: 120ms transform ease-in-out;
+            box-shadow: inset 1em 1em white;
+            transform-origin: center;
+            clip-path: polygon(14% 44%, 0 65%, 50% 100%, 100% 16%, 80% 0%, 43% 62%);
+        }
+
+        .custom-checkbox:checked {
+            background-color: #f20d0d;
+            border-color: #f20d0d;
+        }
+
+        .custom-checkbox:checked::before {
+            transform: scale(1);
+        }
+        
+        .dark .custom-checkbox {
+            border-color: #555;
+        }
+        .dark .custom-checkbox:checked {
+            border-color: #f20d0d;
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background-light dark:bg-background-dark font-display antialiased text-slate-900 dark:text-white pb-32">
+<!-- Top App Bar -->
+<header class="sticky top-0 z-50 bg-background-light/90 dark:bg-background-dark/90 backdrop-blur-md px-4 py-3 flex items-center justify-between border-b border-slate-200 dark:border-slate-800 transition-colors">
+<div class="flex-1">
+<h1 class="text-xl font-bold tracking-tight">购物车 <span class="text-sm font-normal text-slate-500 ml-1">(8)</span></h1>
+</div>
+<button class="text-slate-800 dark:text-slate-200 font-medium text-sm hover:text-primary transition-colors">管理</button>
+</header>
+<!-- Main Content -->
+<main class="p-4 space-y-4">
+<!-- Store Group 1: Nike -->
+<section class="bg-white dark:bg-slate-900 rounded-xl overflow-hidden shadow-sm border border-slate-100 dark:border-slate-800">
+<!-- Store Header -->
+<div class="flex items-center gap-3 px-4 py-3 border-b border-slate-50 dark:border-slate-800">
+<input checked="" class="custom-checkbox shrink-0" type="checkbox"/>
+<div class="flex items-center gap-1.5 flex-1 min-w-0">
+<span class="material-symbols-outlined text-slate-500 text-lg">storefront</span>
+<h2 class="font-bold text-sm truncate">Nike 官方旗舰店</h2>
+<span class="material-symbols-outlined text-slate-400 text-sm">chevron_right</span>
+</div>
+<button class="text-xs text-primary bg-primary/10 px-2 py-0.5 rounded-full font-medium">领券</button>
+</div>
+<!-- Item 1 -->
+<div class="flex gap-3 px-4 py-4 bg-white dark:bg-slate-900 relative group">
+<div class="flex items-center shrink-0 pt-1">
+<input checked="" class="custom-checkbox" type="checkbox"/>
+</div>
+<div class="h-24 w-24 shrink-0 rounded-lg bg-slate-100 overflow-hidden relative">
+<img alt="Red Nike running shoe side view" class="h-full w-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCJaWWIGewDh0qXHtEmRBqpyQsUht3q8clBgtQP-FLdMxx7JVMDWWcJWQleL4DD55YIpLEyEek_MMSnj6ns2Y3LyiSgssks0Ekfeicf7ng3NJEbtUNAkycO0KSWpJSDTXm8vHUohKIueEKPHdJORIFhdqHIufQ85vs_FwgXlIELiUc9iEjqjwcnCizs1VWQFLI6yo0iMxEtG0LT-yleXkuZ9E7Ln_OtGn9w8bIPanMfRgErw4i4WsQdcFu05obXrKD2gnvLGbPXXNI"/>
+</div>
+<div class="flex flex-1 flex-col justify-between min-w-0">
+<div>
+<h3 class="text-sm font-medium leading-snug line-clamp-2 text-slate-800 dark:text-slate-100">Nike Air Zoom Pegasus 39 男子公路跑步鞋耐克飞马运动鞋</h3>
+<div class="mt-1.5 inline-flex items-center bg-slate-100 dark:bg-slate-800 rounded px-1.5 py-0.5 max-w-full">
+<span class="text-xs text-slate-500 dark:text-slate-400 truncate">红色, 42码</span>
+<span class="material-symbols-outlined text-slate-400 text-sm ml-1">expand_more</span>
+</div>
+</div>
+<div class="flex items-end justify-between mt-2">
+<div class="flex items-baseline gap-1">
+<span class="text-xs text-primary font-bold">¥</span>
+<span class="text-lg text-primary font-bold leading-none">899.00</span>
+</div>
+<div class="flex items-center border border-slate-200 dark:border-slate-700 rounded-full h-7">
+<button class="w-7 h-full flex items-center justify-center text-slate-500 hover:text-slate-800 dark:hover:text-white transition-colors">
+<span class="material-symbols-outlined text-base">remove</span>
+</button>
+<input class="w-8 h-full text-center text-sm bg-transparent border-none p-0 focus:ring-0 text-slate-800 dark:text-slate-200 font-medium appearance-none [-moz-appearance:_textfield] [&amp;::-webkit-inner-spin-button]:m-0 [&amp;::-webkit-inner-spin-button]:appearance-none" type="number" value="1"/>
+<button class="w-7 h-full flex items-center justify-center text-slate-500 hover:text-slate-800 dark:hover:text-white transition-colors">
+<span class="material-symbols-outlined text-base">add</span>
+</button>
+</div>
+</div>
+</div>
+</div>
+<!-- Item 2 -->
+<div class="flex gap-3 px-4 py-4 bg-white dark:bg-slate-900 border-t border-slate-50 dark:border-slate-800 relative">
+<div class="flex items-center shrink-0 pt-1">
+<input class="custom-checkbox" type="checkbox"/>
+</div>
+<div class="h-24 w-24 shrink-0 rounded-lg bg-slate-100 overflow-hidden">
+<img alt="White Nike tshirt flat lay" class="h-full w-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBeAVoKyC9viCRalkrzCmN2PhVq9u-ZV7fDOX5IHYpuzZKvQr6CFq5k9YN6LwJfBZt2v0Dr4hVh2YD9pzNgzh_5nhNAuqXvq2AzjSChXrn_Mq_3YasZLL_OOUy6Z36IV_qaJEwZUgcW-NfD7xBlLJUtJ9V0nYTjkFBkjqZ31E-rnVWOIMyQOz_yHTq2uNq5WC7N2MSh7B0RZYBm3gC3pAUy5ecRM-8mYEupWdJVFUaI1B9VA-rIteWGyzuMnk3AHfX14v2CeGGFHOU"/>
+</div>
+<div class="flex flex-1 flex-col justify-between min-w-0">
+<div>
+<h3 class="text-sm font-medium leading-snug line-clamp-2 text-slate-800 dark:text-slate-100">Nike Sportswear Club T-Shirt 纯棉休闲圆领短袖</h3>
+<div class="mt-1.5 inline-flex items-center bg-slate-100 dark:bg-slate-800 rounded px-1.5 py-0.5 max-w-full">
+<span class="text-xs text-slate-500 dark:text-slate-400 truncate">白色, L码</span>
+<span class="material-symbols-outlined text-slate-400 text-sm ml-1">expand_more</span>
+</div>
+</div>
+<div class="flex items-end justify-between mt-2">
+<div class="flex items-baseline gap-1">
+<span class="text-xs text-primary font-bold">¥</span>
+<span class="text-lg text-primary font-bold leading-none">249.00</span>
+</div>
+<div class="flex items-center border border-slate-200 dark:border-slate-700 rounded-full h-7">
+<button class="w-7 h-full flex items-center justify-center text-slate-500 hover:text-slate-800 dark:hover:text-white transition-colors">
+<span class="material-symbols-outlined text-base">remove</span>
+</button>
+<input class="w-8 h-full text-center text-sm bg-transparent border-none p-0 focus:ring-0 text-slate-800 dark:text-slate-200 font-medium appearance-none [-moz-appearance:_textfield] [&amp;::-webkit-inner-spin-button]:m-0 [&amp;::-webkit-inner-spin-button]:appearance-none" type="number" value="2"/>
+<button class="w-7 h-full flex items-center justify-center text-slate-500 hover:text-slate-800 dark:hover:text-white transition-colors">
+<span class="material-symbols-outlined text-base">add</span>
+</button>
+</div>
+</div>
+</div>
+</div>
+<!-- Store Footer Promo -->
+<div class="px-4 py-3 bg-slate-50 dark:bg-slate-800/50 flex items-center justify-between">
+<span class="text-xs text-slate-600 dark:text-slate-400">满 ¥300 减 ¥30</span>
+<a class="text-xs text-primary font-medium flex items-center" href="#">
+                    去凑单 <span class="material-symbols-outlined text-sm">chevron_right</span>
+</a>
+</div>
+</section>
+<!-- Store Group 2: Apple -->
+<section class="bg-white dark:bg-slate-900 rounded-xl overflow-hidden shadow-sm border border-slate-100 dark:border-slate-800">
+<!-- Store Header -->
+<div class="flex items-center gap-3 px-4 py-3 border-b border-slate-50 dark:border-slate-800">
+<input class="custom-checkbox shrink-0" type="checkbox"/>
+<div class="flex items-center gap-1.5 flex-1 min-w-0">
+<span class="material-symbols-outlined text-slate-500 text-lg">verified</span>
+<h2 class="font-bold text-sm truncate">Apple 产品京东自营旗舰店</h2>
+<span class="material-symbols-outlined text-slate-400 text-sm">chevron_right</span>
+</div>
+</div>
+<!-- Item 1 -->
+<div class="flex gap-3 px-4 py-4 bg-white dark:bg-slate-900 relative">
+<div class="flex items-center shrink-0 pt-1">
+<input class="custom-checkbox" type="checkbox"/>
+</div>
+<div class="h-24 w-24 shrink-0 rounded-lg bg-slate-100 overflow-hidden">
+<img alt="iPhone 13 screen front view gradient" class="h-full w-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBoZiMfxN4-eYOy3omuHxlxcLuxU9g_Un_yPha_qB90csAgFZDbnwLeOHjtcuqU0wq6YS3-nS-bpGk0CfUlkEAvqQvPSuBzksm8Jq8MvDECVqajTqNpNmJw0escMT8WKmy2iNErrEGkBlQ4cPjeJ9jYyDZXR0ZbDdSN_el2V703jy0a9LMUz2XlRLas7yaWLLSonUNbRUzp8DPCeHimk8MUXGtR0HPBnzbBHIzH1vyqxodSJUGHao79WSP9hToXPnd_3Rwi2w0gbbc"/>
+</div>
+<div class="flex flex-1 flex-col justify-between min-w-0">
+<div>
+<div class="flex gap-2 items-start">
+<span class="bg-primary text-white text-[10px] px-1 py-0.5 rounded leading-none mt-0.5 self-start shrink-0">京东秒杀</span>
+<h3 class="text-sm font-medium leading-snug line-clamp-2 text-slate-800 dark:text-slate-100">Apple iPhone 15 Pro Max (256GB) 蓝色钛金属</h3>
+</div>
+<div class="mt-1.5 inline-flex items-center bg-slate-100 dark:bg-slate-800 rounded px-1.5 py-0.5 max-w-full">
+<span class="text-xs text-slate-500 dark:text-slate-400 truncate">蓝色钛金属, 256GB</span>
+<span class="material-symbols-outlined text-slate-400 text-sm ml-1">expand_more</span>
+</div>
+</div>
+<div class="flex items-end justify-between mt-2">
+<div class="flex items-baseline gap-1">
+<span class="text-xs text-primary font-bold">¥</span>
+<span class="text-lg text-primary font-bold leading-none">9999.00</span>
+</div>
+<div class="flex items-center border border-slate-200 dark:border-slate-700 rounded-full h-7">
+<button class="w-7 h-full flex items-center justify-center text-slate-500 hover:text-slate-800 dark:hover:text-white transition-colors">
+<span class="material-symbols-outlined text-base">remove</span>
+</button>
+<input class="w-8 h-full text-center text-sm bg-transparent border-none p-0 focus:ring-0 text-slate-800 dark:text-slate-200 font-medium appearance-none [-moz-appearance:_textfield] [&amp;::-webkit-inner-spin-button]:m-0 [&amp;::-webkit-inner-spin-button]:appearance-none" type="number" value="1"/>
+<button class="w-7 h-full flex items-center justify-center text-slate-500 hover:text-slate-800 dark:hover:text-white transition-colors">
+<span class="material-symbols-outlined text-base">add</span>
+</button>
+</div>
+</div>
+<!-- Low Stock Alert -->
+<div class="mt-2 text-xs text-primary/80">
+                        库存紧张，剩 3 件
+                    </div>
+</div>
+</div>
+</section>
+<!-- Invalid Items (Optional usually, but good for completeness) -->
+<section class="mt-6">
+<div class="flex justify-between items-center mb-2 px-1">
+<h3 class="text-sm font-medium text-slate-500">失效商品 (2)</h3>
+<button class="text-xs text-primary font-medium">清空失效</button>
+</div>
+<div class="bg-white dark:bg-slate-900 rounded-xl overflow-hidden p-4 opacity-70 grayscale">
+<div class="flex gap-3">
+<span class="bg-slate-200 dark:bg-slate-700 text-slate-500 text-[10px] px-1 py-0.5 rounded h-fit">失效</span>
+<div class="h-16 w-16 shrink-0 rounded-lg bg-slate-100 overflow-hidden">
+<img alt="White sneakers on concrete floor" class="h-full w-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCBDtNEgWLa_Amv1NoyvroJPutNhjCzCLl69oWza2BiIUF97To9ik4cNh0GpySvWbMP1utS5m0e46GdZ_IHlS7fTQVeQEqmVixpqZDdTFkDvLfx5kKcB28DJKFzeD27YKb4FOi5ZpJfqLgRxpFV5tl5rKk6H4wzfwP3Sqx6wpSwFfnZ1lnkz2DbKviYkQM8U1iIkhdaFdjRj2oDHiwKoIPhvoZAE76G9yVxFGcmhnDsoan7lDMRnViO_reNDcYtvOML8oZddhXXKMU"/>
+</div>
+<div class="flex-1">
+<h3 class="text-sm font-medium text-slate-500 line-clamp-1">Nike Air Force 1 '07</h3>
+<p class="text-xs text-slate-400 mt-1">商品已下架</p>
+</div>
+</div>
+</div>
+</section>
+<!-- Suggested/Recommendations Header -->
+<div class="flex items-center justify-center gap-2 py-6">
+<div class="h-px bg-slate-200 dark:bg-slate-700 w-12"></div>
+<span class="text-sm text-slate-500 font-medium flex items-center gap-1">
+<span class="material-symbols-outlined text-base">favorite</span> 你可能还喜欢
+            </span>
+<div class="h-px bg-slate-200 dark:bg-slate-700 w-12"></div>
+</div>
+<!-- Recommendations Grid -->
+<div class="grid grid-cols-2 gap-3 pb-4">
+<div class="bg-white dark:bg-slate-900 rounded-lg overflow-hidden p-3 shadow-sm">
+<div class="aspect-square bg-slate-100 rounded mb-2 overflow-hidden relative">
+<img alt="Minimalist running shoes on solid background" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuB98Z52OLuLVn6HQyEg8msxuVuogV4eiHB99EjVzMV68_z1FDDEEqaS9j4sfM3_yNIcC3x046vqZyMF6zrso28izT9equfsPy4xdahbYszuU_gbo-M-jnLbvUCnAWLW1BA26bXyH18dyuKfPkbt9zi3fiHrqqUV4F71MEqONwtwuzn_npfWDOQQF2Kj-sPyma_4z5KfO85rwgXSTlOrzGNqNG8zYICdfdnN6gezIQr-C1WIJLWHXnQgbxIeiF_wKUnrN_jEKG4iHgg"/>
+</div>
+<h4 class="text-sm font-medium line-clamp-2 mb-2 text-slate-800 dark:text-slate-200">New Balance 530 复古老爹鞋</h4>
+<div class="flex items-center justify-between">
+<span class="text-primary font-bold">¥699</span>
+<button class="bg-slate-100 dark:bg-slate-800 p-1 rounded-full text-slate-600 dark:text-slate-300">
+<span class="material-symbols-outlined text-lg block">add_shopping_cart</span>
+</button>
+</div>
+</div>
+<div class="bg-white dark:bg-slate-900 rounded-lg overflow-hidden p-3 shadow-sm">
+<div class="aspect-square bg-slate-100 rounded mb-2 overflow-hidden relative">
+<img alt="Green sport running shoes" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDM2zSCeRQZmObI8_Ah2McxIGCWaLGzMpocj3bqToW8f7OMukSjC1IKrC12vfWyzZP0hqzkuY0PKVC8aFQziPN9fn8nv0jF2Ph5P3Su_RxZj-yGMr7d7tq8MHVRYIXSO39wwCUNNQcHI7ylZZIGq0Gqa1wzj7f9rBGZtz87oiX1a8g6gVW-qLmTQetp2rtxTFGfReJME6DqvLk0pI6c0LRWimOUYajXcGVnrA4CP5v7cg4dr2zzBDyHdYVwtwwSCISkwbsuHzccHjs"/>
+</div>
+<h4 class="text-sm font-medium line-clamp-2 mb-2 text-slate-800 dark:text-slate-200">Nike Zoom Fly 5 竞速跑鞋</h4>
+<div class="flex items-center justify-between">
+<span class="text-primary font-bold">¥1099</span>
+<button class="bg-slate-100 dark:bg-slate-800 p-1 rounded-full text-slate-600 dark:text-slate-300">
+<span class="material-symbols-outlined text-lg block">add_shopping_cart</span>
+</button>
+</div>
+</div>
+</div>
+</main>
+<!-- Sticky Bottom Bar -->
+<div class="fixed bottom-0 left-0 w-full bg-white dark:bg-slate-900 border-t border-slate-200 dark:border-slate-800 pb-safe pt-2 px-4 shadow-[0_-4px_6px_-1px_rgba(0,0,0,0.05)] z-40">
+<!-- Safe area for iOS home indicator -->
+<div class="flex items-center justify-between h-14 pb-2">
+<!-- Select All -->
+<div class="flex items-center gap-2">
+<input class="custom-checkbox" id="selectAll" type="checkbox"/>
+<label class="text-sm text-slate-600 dark:text-slate-300 font-medium" for="selectAll">全选</label>
+</div>
+<!-- Totals & Actions -->
+<div class="flex items-center gap-3">
+<div class="text-right">
+<div class="flex items-baseline justify-end gap-1">
+<span class="text-xs text-slate-800 dark:text-slate-200 font-medium">合计:</span>
+<span class="text-primary text-sm font-bold">¥</span>
+<span class="text-primary text-xl font-bold">1,148.00</span>
+</div>
+<div class="text-[10px] text-slate-500">
+                        已减 ¥30.00 | 不含运费
+                    </div>
+</div>
+<button class="bg-gradient-to-r from-orange-500 to-primary hover:from-orange-600 hover:to-red-700 text-white px-6 h-10 rounded-full font-bold shadow-lg shadow-primary/20 transition-all active:scale-95 flex items-center justify-center min-w-[100px]">
+                    去结算 (3)
+                </button>
+</div>
+</div>
+<!-- Extra padding for iOS home indicator area handled by body padding in reality, but this div acts as spacer if needed -->
+<div class="h-4 w-full"></div>
+</div>
+</body></html>

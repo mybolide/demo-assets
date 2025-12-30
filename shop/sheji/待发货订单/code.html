@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+
+<html class="light" lang="zh-CN"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>待发货订单</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+            extend: {
+                colors: {
+                "primary": "#f20d0d",
+                "background-light": "#f8f5f5",
+                "background-dark": "#221010",
+                "surface-light": "#ffffff",
+                "surface-dark": "#2d1b1b",
+                "text-primary-light": "#1c0d0d",
+                "text-primary-dark": "#fcf8f8",
+                "text-secondary-light": "#9c4949",
+                "text-secondary-dark": "#d4a6a6",
+                },
+                fontFamily: {
+                "display": ["Plus Jakarta Sans", "Noto Sans SC", "sans-serif"]
+                },
+                borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
+            },
+            },
+        }
+    </script>
+<style>
+        /* Custom scrollbar hide for horizontal tabs */
+        .hide-scrollbar::-webkit-scrollbar {
+            display: none;
+        }
+        .hide-scrollbar {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background-light dark:bg-background-dark font-display text-text-primary-light dark:text-text-primary-dark antialiased transition-colors duration-200">
+<div class="relative mx-auto flex h-full min-h-screen w-full max-w-md flex-col overflow-hidden bg-background-light dark:bg-background-dark shadow-2xl">
+<!-- TopAppBar -->
+<header class="sticky top-0 z-20 bg-background-light/95 dark:bg-background-dark/95 backdrop-blur-sm border-b border-black/5 dark:border-white/5">
+<div class="flex items-center px-4 py-3 justify-between">
+<button class="flex size-10 shrink-0 items-center justify-center rounded-full hover:bg-black/5 dark:hover:bg-white/5 active:scale-95 transition-all text-text-primary-light dark:text-text-primary-dark">
+<span class="material-symbols-outlined text-[24px]">arrow_back_ios_new</span>
+</button>
+<h2 class="text-lg font-bold leading-tight tracking-[-0.015em] flex-1 text-center">我的订单</h2>
+<div class="flex w-10 items-center justify-end">
+<button class="flex size-10 items-center justify-center rounded-full hover:bg-black/5 dark:hover:bg-white/5 text-text-primary-light dark:text-text-primary-dark">
+<span class="material-symbols-outlined text-[24px]">search</span>
+</button>
+</div>
+</div>
+<!-- Tabs -->
+<div class="flex w-full overflow-x-auto hide-scrollbar border-b border-black/5 dark:border-white/10 px-2">
+<a class="flex flex-1 min-w-[70px] flex-col items-center justify-center pb-3 pt-2 group relative" href="#">
+<p class="text-text-secondary-light dark:text-text-secondary-dark text-sm font-medium whitespace-nowrap group-hover:text-primary transition-colors">全部</p>
+<div class="absolute bottom-0 h-[3px] w-4 rounded-t-full bg-transparent group-hover:bg-primary/20 transition-colors"></div>
+</a>
+<a class="flex flex-1 min-w-[70px] flex-col items-center justify-center pb-3 pt-2 group relative" href="#">
+<p class="text-text-secondary-light dark:text-text-secondary-dark text-sm font-medium whitespace-nowrap group-hover:text-primary transition-colors">待付款</p>
+<div class="absolute bottom-0 h-[3px] w-4 rounded-t-full bg-transparent group-hover:bg-primary/20 transition-colors"></div>
+</a>
+<a class="flex flex-1 min-w-[70px] flex-col items-center justify-center pb-3 pt-2 relative" href="#">
+<p class="text-primary text-[15px] font-bold whitespace-nowrap">待发货</p>
+<div class="absolute bottom-0 h-[3px] w-5 rounded-t-full bg-primary shadow-[0_-2px_6px_rgba(242,13,13,0.4)]"></div>
+</a>
+<a class="flex flex-1 min-w-[70px] flex-col items-center justify-center pb-3 pt-2 group relative" href="#">
+<p class="text-text-secondary-light dark:text-text-secondary-dark text-sm font-medium whitespace-nowrap group-hover:text-primary transition-colors">待收货</p>
+<div class="absolute bottom-0 h-[3px] w-4 rounded-t-full bg-transparent group-hover:bg-primary/20 transition-colors"></div>
+</a>
+<a class="flex flex-1 min-w-[70px] flex-col items-center justify-center pb-3 pt-2 group relative" href="#">
+<p class="text-text-secondary-light dark:text-text-secondary-dark text-sm font-medium whitespace-nowrap group-hover:text-primary transition-colors">待评价</p>
+<div class="absolute bottom-0 h-[3px] w-4 rounded-t-full bg-transparent group-hover:bg-primary/20 transition-colors"></div>
+</a>
+</div>
+</header>
+<!-- Main Content List -->
+<main class="flex-1 overflow-y-auto p-4 space-y-4 pb-24">
+<!-- Alert Banner -->
+<div class="flex items-center gap-2 rounded-lg bg-primary/10 px-3 py-2 text-primary border border-primary/20">
+<span class="material-symbols-outlined text-[18px]">campaign</span>
+<p class="text-xs font-medium">双11大促期间物流可能延迟，请耐心等待。</p>
+</div>
+<!-- Card 1: Single Item -->
+<div class="group flex flex-col rounded-xl bg-surface-light dark:bg-surface-dark shadow-sm hover:shadow-md transition-shadow duration-200 overflow-hidden">
+<!-- Shop Header -->
+<div class="flex items-center justify-between p-3 border-b border-black/5 dark:border-white/5">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-[18px] text-text-secondary-light dark:text-text-secondary-dark">storefront</span>
+<h3 class="text-sm font-bold text-text-primary-light dark:text-text-primary-dark">Nike Official Flagship</h3>
+<span class="material-symbols-outlined text-[14px] text-text-secondary-light dark:text-text-secondary-dark">arrow_forward_ios</span>
+</div>
+<span class="text-primary text-sm font-bold">买家已付款</span>
+</div>
+<!-- Product Content -->
+<div class="flex gap-3 p-3 bg-black/[0.02] dark:bg-white/[0.02]">
+<div class="h-24 w-24 shrink-0 overflow-hidden rounded-lg bg-gray-100 border border-black/5 dark:border-white/5">
+<div class="h-full w-full bg-cover bg-center" data-alt="Red Nike running shoe on white background" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuCSW3R8POIgQSqsBwdvEFgMgcs90FhRHiygDrcFsTbvoyzwdCuGsYFjZMxO6n1GSW8rLyBlJ5ZMQI0thhtM-rz9_MhlN1RqRZSynR8yWrVA3NedIYxZf1txkd5VU5_p0aVbU61wdIfrdl5nVPvvBjSTiByg7YcVveSSf3hxEkdRdWHHaWpnt8Qb31_dr6pkldljLaa7zDpOTVAkF4wrfiSccXmYUXWe9aKvEI-v3heJtjlK4FsqHsa_dz9LY7ngsuVFDAZtahqHUgU');"></div>
+</div>
+<div class="flex flex-1 flex-col justify-between">
+<div>
+<p class="line-clamp-2 text-sm font-medium leading-tight text-text-primary-light dark:text-text-primary-dark mb-1">Nike Air Max 2024 Spring Limited Edition Running Shoes Red/White</p>
+<div class="flex items-center gap-2 rounded bg-black/5 dark:bg-white/5 px-1.5 py-0.5 w-fit">
+<p class="text-xs text-text-secondary-light dark:text-text-secondary-dark">Size: 42, Color: Comet Red</p>
+<span class="material-symbols-outlined text-[12px] text-text-secondary-light dark:text-text-secondary-dark">expand_more</span>
+</div>
+</div>
+<div class="flex items-end justify-between">
+<div class="flex items-baseline gap-0.5">
+<span class="text-xs font-bold text-primary">¥</span>
+<span class="text-lg font-bold text-primary font-display">1,299</span>
+<span class="text-xs font-bold text-primary">.00</span>
+</div>
+<span class="text-sm text-text-secondary-light dark:text-text-secondary-dark">x1</span>
+</div>
+</div>
+</div>
+<!-- Meta/Delivery Status -->
+<div class="px-3 pt-2">
+<div class="flex items-center gap-1.5 rounded-md bg-orange-50 dark:bg-orange-900/20 p-2 border border-orange-100 dark:border-orange-900/30">
+<span class="material-symbols-outlined text-[16px] text-orange-600 dark:text-orange-400">local_shipping</span>
+<p class="text-xs font-medium text-orange-700 dark:text-orange-300">预计10月24日前发货</p>
+</div>
+</div>
+<!-- Footer Actions -->
+<div class="flex items-center justify-between p-3 gap-3">
+<button class="text-xs text-text-secondary-light dark:text-text-secondary-dark font-medium px-2 py-1">更多</button>
+<div class="flex gap-2">
+<button class="flex h-8 items-center justify-center rounded-full border border-black/10 dark:border-white/10 px-3 text-xs font-bold text-text-primary-light dark:text-text-primary-dark active:bg-black/5 dark:active:bg-white/5 transition-colors">
+                            联系卖家
+                        </button>
+<button class="flex h-8 items-center justify-center rounded-full border border-primary text-primary px-3 text-xs font-bold active:bg-primary/5 transition-colors">
+                            催发货
+                        </button>
+</div>
+</div>
+</div>
+<!-- Card 2: Grouped Items -->
+<div class="group flex flex-col rounded-xl bg-surface-light dark:bg-surface-dark shadow-sm hover:shadow-md transition-shadow duration-200 overflow-hidden">
+<!-- Shop Header -->
+<div class="flex items-center justify-between p-3 border-b border-black/5 dark:border-white/5">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-[18px] text-text-secondary-light dark:text-text-secondary-dark">storefront</span>
+<h3 class="text-sm font-bold text-text-primary-light dark:text-text-primary-dark">Zara Home Decor</h3>
+<span class="material-symbols-outlined text-[14px] text-text-secondary-light dark:text-text-secondary-dark">arrow_forward_ios</span>
+</div>
+<span class="text-primary text-sm font-bold">待发货</span>
+</div>
+<!-- Product 1 -->
+<div class="flex gap-3 p-3 pb-0 bg-black/[0.02] dark:bg-white/[0.02]">
+<div class="h-24 w-24 shrink-0 overflow-hidden rounded-lg bg-gray-100 border border-black/5 dark:border-white/5">
+<div class="h-full w-full bg-cover bg-center" data-alt="Minimalist ceramic vase on wooden table" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuCGtFYNjbNJygf_6RVuNhNjukTmfZqwHUSMnLzHzdjimf7-ohy2N99oR5WuVfPvyhLSAKrqEWoeYPjH1sanJ27mercQV9pTKfx-nHem4Y9TOZi_BceHLJlZIVEkL36S4IcvNOMqaIpdmR5-bjFNbmQ8JjuCPUPYZU0d9H7dCwJXnNLj3y0B6RqSwTqxTF8dC-Xqr5Mtb9Js6kK4rmAnYBgmvQgezDNHc_Xepkp35d3-_O8ElZYltNlt0Uwhd2U_NuuBpYBSx4PyZRU');"></div>
+</div>
+<div class="flex flex-1 flex-col justify-between py-1">
+<div>
+<p class="line-clamp-2 text-sm font-medium leading-tight text-text-primary-light dark:text-text-primary-dark mb-1">Modern Ceramic Vase Minimalist Style White</p>
+<p class="text-xs text-text-secondary-light dark:text-text-secondary-dark bg-black/5 dark:bg-white/5 px-1.5 py-0.5 rounded w-fit">Size: L, Style: Matte</p>
+</div>
+<div class="flex items-end justify-between">
+<div class="flex items-baseline gap-0.5">
+<span class="text-xs font-bold text-primary">¥</span>
+<span class="text-lg font-bold text-primary font-display">299</span>
+<span class="text-xs font-bold text-primary">.00</span>
+</div>
+<span class="text-sm text-text-secondary-light dark:text-text-secondary-dark">x1</span>
+</div>
+</div>
+</div>
+<!-- Product 2 -->
+<div class="flex gap-3 p-3 bg-black/[0.02] dark:bg-white/[0.02]">
+<div class="h-24 w-24 shrink-0 overflow-hidden rounded-lg bg-gray-100 border border-black/5 dark:border-white/5">
+<div class="h-full w-full bg-cover bg-center" data-alt="Soft woven throw blanket texture" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuAiOzI-uwdnA_-OGtPhBDho6elcEz-RMVI53iDp_RyfL6bxiZ3MXgWPY9pLd8BYNmJjN3CsQijKPAHbcBPYoKuk7rU6htDtzn1-887M9eA8D5GMO1NdrkveLEF4WQu3L8hfUgMgn8raYBNWv8_jrGzBeiz1GRzej5LQo35PqEgqSoyvoCm8pqwALPzubo82SZWhQGbt9rvUS4bzTj1-AQg43OEeuagMqCNdyp_6Uld5lEsIAXzg7AJCtiybDFH-HAHMRpN9NZ_GeYo');"></div>
+</div>
+<div class="flex flex-1 flex-col justify-between py-1">
+<div>
+<p class="line-clamp-2 text-sm font-medium leading-tight text-text-primary-light dark:text-text-primary-dark mb-1">Soft Cotton Woven Throw Blanket Beige</p>
+<p class="text-xs text-text-secondary-light dark:text-text-secondary-dark bg-black/5 dark:bg-white/5 px-1.5 py-0.5 rounded w-fit">Size: 150x200cm</p>
+</div>
+<div class="flex items-end justify-between">
+<div class="flex items-baseline gap-0.5">
+<span class="text-xs font-bold text-primary">¥</span>
+<span class="text-lg font-bold text-primary font-display">159</span>
+<span class="text-xs font-bold text-primary">.00</span>
+</div>
+<span class="text-sm text-text-secondary-light dark:text-text-secondary-dark">x2</span>
+</div>
+</div>
+</div>
+<!-- Footer Summary & Actions -->
+<div class="p-3">
+<div class="flex justify-end items-baseline gap-2 mb-3">
+<span class="text-xs text-text-secondary-light dark:text-text-secondary-dark">共3件商品</span>
+<span class="text-xs text-text-primary-light dark:text-text-primary-dark">实付款</span>
+<span class="text-sm font-bold text-primary">¥617.00</span>
+</div>
+<div class="flex items-center justify-between gap-3 pt-2 border-t border-dashed border-black/10 dark:border-white/10">
+<div class="flex items-center gap-1">
+<span class="material-symbols-outlined text-[16px] text-blue-600 dark:text-blue-400">package_2</span>
+<p class="text-xs text-blue-600 dark:text-blue-400">商家正在打包中</p>
+</div>
+<div class="flex gap-2">
+<button class="flex h-8 items-center justify-center rounded-full border border-black/10 dark:border-white/10 px-3 text-xs font-bold text-text-primary-light dark:text-text-primary-dark active:bg-black/5 dark:active:bg-white/5 transition-colors">
+                                修改地址
+                            </button>
+<button class="flex h-8 items-center justify-center rounded-full border border-primary text-primary px-3 text-xs font-bold active:bg-primary/5 transition-colors">
+                                催发货
+                            </button>
+</div>
+</div>
+</div>
+</div>
+<!-- Card 3: Late Shipment Warning -->
+<div class="group flex flex-col rounded-xl bg-surface-light dark:bg-surface-dark shadow-sm hover:shadow-md transition-shadow duration-200 overflow-hidden">
+<!-- Shop Header -->
+<div class="flex items-center justify-between p-3 border-b border-black/5 dark:border-white/5">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-[18px] text-text-secondary-light dark:text-text-secondary-dark">storefront</span>
+<h3 class="text-sm font-bold text-text-primary-light dark:text-text-primary-dark">Tech Gadget Store</h3>
+<span class="material-symbols-outlined text-[14px] text-text-secondary-light dark:text-text-secondary-dark">arrow_forward_ios</span>
+</div>
+<span class="text-primary text-sm font-bold">延迟发货</span>
+</div>
+<!-- Product Content -->
+<div class="flex gap-3 p-3 bg-black/[0.02] dark:bg-white/[0.02]">
+<div class="h-24 w-24 shrink-0 overflow-hidden rounded-lg bg-gray-100 border border-black/5 dark:border-white/5 relative">
+<div class="h-full w-full bg-cover bg-center" data-alt="Black mechanical keyboard with RGB lighting" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuCVLu69LM1m4DRDt7L-sorViDsN1VMUqFbS0qoM-2r3uXlJT5sIPiwLEpQmaYJMAN1klNEJSCzQlKPibSBIN8xYebi5zLHQt57KXOtEUe_pEZV_msbKmuSeoXMOI-3q-UHMnFJpK5E796OnpaX6BSkOhMHiAG7v5UiNf4-vptRmqW3GpK9tw37ASYB0VO0Nne5Pme3Gt9K8g_81YCEaPKr8OainCAGXcjDdu9zNmt5-vT7yyUxOjpUuJknzMr0Y67uGvkkdAcbhyaM');"></div>
+<div class="absolute inset-0 bg-black/10"></div>
+<div class="absolute bottom-0 w-full bg-black/60 py-0.5 text-center text-[10px] text-white backdrop-blur-sm">预售</div>
+</div>
+<div class="flex flex-1 flex-col justify-between">
+<div>
+<p class="line-clamp-2 text-sm font-medium leading-tight text-text-primary-light dark:text-text-primary-dark mb-1">Mechanical Keyboard Wireless RGB Backlight</p>
+<p class="text-xs text-text-secondary-light dark:text-text-secondary-dark bg-black/5 dark:bg-white/5 px-1.5 py-0.5 rounded w-fit">Switch: Blue, Color: Black</p>
+</div>
+<div class="flex items-end justify-between">
+<div class="flex items-baseline gap-0.5">
+<span class="text-xs font-bold text-primary">¥</span>
+<span class="text-lg font-bold text-primary font-display">459</span>
+<span class="text-xs font-bold text-primary">.00</span>
+</div>
+<span class="text-sm text-text-secondary-light dark:text-text-secondary-dark">x1</span>
+</div>
+</div>
+</div>
+<!-- Meta/Delivery Status -->
+<div class="px-3 pt-2">
+<!-- Red Warning Background for Delayed -->
+<div class="flex items-center justify-between gap-1.5 rounded-md bg-red-50 dark:bg-red-900/20 p-2 border border-red-100 dark:border-red-900/30">
+<div class="flex items-center gap-1.5">
+<span class="material-symbols-outlined text-[16px] text-red-600 dark:text-red-400">warning</span>
+<p class="text-xs font-medium text-red-700 dark:text-red-300">发货延迟：商家缺货，预计11月1日发出</p>
+</div>
+<button class="text-xs text-red-600 dark:text-red-400 underline">详情</button>
+</div>
+</div>
+<!-- Footer Actions -->
+<div class="flex items-center justify-end p-3 gap-2">
+<button class="flex h-8 items-center justify-center rounded-full border border-black/10 dark:border-white/10 px-3 text-xs font-bold text-text-primary-light dark:text-text-primary-dark active:bg-black/5 dark:active:bg-white/5 transition-colors">
+                        申请退款
+                    </button>
+<button class="flex h-8 items-center justify-center rounded-full border border-primary text-primary px-3 text-xs font-bold active:bg-primary/5 transition-colors">
+                        催发货
+                    </button>
+</div>
+</div>
+<!-- End of List Indicator -->
+<div class="flex items-center justify-center py-6 gap-2 opacity-50">
+<div class="h-px w-12 bg-black/10 dark:bg-white/10"></div>
+<p class="text-xs text-text-secondary-light dark:text-text-secondary-dark">没有更多了</p>
+<div class="h-px w-12 bg-black/10 dark:bg-white/10"></div>
+</div>
+</main>
+</div>
+</body></html>

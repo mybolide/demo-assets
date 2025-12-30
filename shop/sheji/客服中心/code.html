@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+
+<html class="light" lang="zh-CN"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>客服中心</title>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#f20d0d",
+                        "background-light": "#f8f5f5",
+                        "background-dark": "#221010",
+                        "surface-light": "#ffffff",
+                        "surface-dark": "#2c1c1c",
+                    },
+                    fontFamily: {
+                        "display": ["Plus Jakarta Sans", "PingFang SC", "Heiti SC", "sans-serif"]
+                    },
+                    borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "2xl": "1rem", "full": "9999px"},
+                },
+            },
+        }
+    </script>
+<style>
+        /* Custom scrollbar hiding for clean UI */
+        .no-scrollbar::-webkit-scrollbar {
+            display: none;
+        }
+        .no-scrollbar {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background-light dark:bg-background-dark font-display text-[#1c0d0d] dark:text-gray-100 flex flex-col h-screen overflow-hidden">
+<!-- Top Navigation Bar -->
+<div class="flex items-center bg-surface-light dark:bg-surface-dark px-4 py-3 justify-between sticky top-0 z-50 shadow-sm">
+<div class="flex size-10 shrink-0 items-center justify-center rounded-full active:bg-gray-100 dark:active:bg-gray-800 cursor-pointer">
+<span class="material-symbols-outlined text-[#1c0d0d] dark:text-white" style="font-size: 24px;">arrow_back_ios_new</span>
+</div>
+<h2 class="text-[#1c0d0d] dark:text-white text-lg font-bold leading-tight tracking-[-0.015em] flex-1 text-center pr-10">客服中心</h2>
+</div>
+<!-- Main Scrollable Content -->
+<div class="flex-1 overflow-y-auto no-scrollbar pb-24">
+<!-- Greeting & Search Section -->
+<div class="bg-surface-light dark:bg-surface-dark px-4 pt-2 pb-6 rounded-b-2xl shadow-sm mb-4">
+<h2 class="text-[#1c0d0d] dark:text-white tracking-tight text-[26px] font-bold leading-tight text-left pb-4 pt-2">您好，<br/>有什么可以帮您？</h2>
+<label class="flex flex-col h-12 w-full">
+<div class="flex w-full flex-1 items-stretch rounded-full h-full bg-[#f4e7e7] dark:bg-[#3d2e2e] overflow-hidden">
+<div class="text-primary dark:text-red-400 flex items-center justify-center pl-4 pr-2">
+<span class="material-symbols-outlined" style="font-size: 22px;">search</span>
+</div>
+<input class="flex w-full min-w-0 flex-1 resize-none bg-transparent border-none text-[#1c0d0d] dark:text-white focus:outline-0 focus:ring-0 placeholder:text-[#9c4949] dark:placeholder:text-red-300/60 px-0 pl-1 text-base font-normal leading-normal h-full" placeholder="搜索问题，如“发货时间”" value=""/>
+</div>
+</label>
+</div>
+<!-- Quick Actions Grid (Self Service) -->
+<div class="px-4 mb-2">
+<div class="bg-surface-light dark:bg-surface-dark rounded-xl p-5 shadow-[0_2px_8px_rgba(0,0,0,0.04)]">
+<div class="flex justify-between items-center mb-4">
+<h3 class="text-base font-bold text-[#1c0d0d] dark:text-white">自助服务</h3>
+<span class="text-xs text-gray-500 dark:text-gray-400 flex items-center">更多 <span class="material-symbols-outlined text-sm">chevron_right</span></span>
+</div>
+<div class="grid grid-cols-4 gap-2">
+<div class="flex flex-col items-center gap-2 group cursor-pointer">
+<div class="size-12 rounded-full bg-red-50 dark:bg-red-900/20 flex items-center justify-center text-primary group-active:scale-95 transition-transform">
+<span class="material-symbols-outlined">local_shipping</span>
+</div>
+<span class="text-xs font-medium text-gray-700 dark:text-gray-300">查看物流</span>
+</div>
+<div class="flex flex-col items-center gap-2 group cursor-pointer">
+<div class="size-12 rounded-full bg-red-50 dark:bg-red-900/20 flex items-center justify-center text-primary group-active:scale-95 transition-transform">
+<span class="material-symbols-outlined">assignment_return</span>
+</div>
+<span class="text-xs font-medium text-gray-700 dark:text-gray-300">退换/售后</span>
+</div>
+<div class="flex flex-col items-center gap-2 group cursor-pointer">
+<div class="size-12 rounded-full bg-red-50 dark:bg-red-900/20 flex items-center justify-center text-primary group-active:scale-95 transition-transform">
+<span class="material-symbols-outlined">edit_location</span>
+</div>
+<span class="text-xs font-medium text-gray-700 dark:text-gray-300">修改地址</span>
+</div>
+<div class="flex flex-col items-center gap-2 group cursor-pointer">
+<div class="size-12 rounded-full bg-red-50 dark:bg-red-900/20 flex items-center justify-center text-primary group-active:scale-95 transition-transform">
+<span class="material-symbols-outlined">confirmation_number</span>
+</div>
+<span class="text-xs font-medium text-gray-700 dark:text-gray-300">我的优惠券</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Recent Orders Carousel -->
+<div class="mt-4">
+<h2 class="text-[#1c0d0d] dark:text-white text-lg font-bold leading-tight px-4 text-left pb-3">咨询近期订单</h2>
+<div class="flex overflow-x-auto no-scrollbar pb-2 px-4 gap-3 snap-x">
+<!-- Order Card 1 -->
+<div class="snap-center shrink-0 flex flex-row gap-3 p-3 rounded-xl bg-surface-light dark:bg-surface-dark shadow-[0_2px_8px_rgba(0,0,0,0.04)] w-[280px] border border-transparent dark:border-gray-800">
+<div class="w-20 h-20 shrink-0 bg-center bg-no-repeat bg-cover rounded-lg bg-gray-100 dark:bg-gray-800" data-alt="Close up of a modern smartphone with sleek design" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuBzc6HaX8m1BfDXCEGoxYyMyRQbcrMH076bM-jKz4Vv0opea9984X1jZVdIXhyK5nHnt5jZiaIOAt6wiP9RCeFYpGlKVzLsVohtKT5TfOpwc4u0Gm5vDYN70CixCK6PiM425pvbj1LUG67hPEb_1wbk8yS_TZpjzmNbryQBztOHY0zVF9hTbACw757TSBYOz2CK29ABMCiiJhh9IGoH5Ph-FX1_y3LP9DDXvkrS5vQv7HGiEi1VSC3Xl6WcJKQizOJdTuZ8QFs9tVc");'></div>
+<div class="flex flex-col flex-1 justify-between py-0.5">
+<div>
+<div class="flex justify-between items-start">
+<span class="text-xs font-bold text-primary bg-red-50 dark:bg-red-900/30 px-1.5 py-0.5 rounded">已签收</span>
+<span class="text-[10px] text-gray-400">2023-10-24</span>
+</div>
+<p class="text-[#1c0d0d] dark:text-gray-200 text-sm font-medium leading-tight mt-1 line-clamp-1">iPhone 15 Pro Max 256GB 黑色钛金属</p>
+</div>
+<button class="self-end flex items-center justify-center rounded-full h-8 px-3 bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 text-[#1c0d0d] dark:text-white text-xs font-bold shadow-sm active:bg-gray-50">
+                            咨询此单
+                        </button>
+</div>
+</div>
+<!-- Order Card 2 -->
+<div class="snap-center shrink-0 flex flex-row gap-3 p-3 rounded-xl bg-surface-light dark:bg-surface-dark shadow-[0_2px_8px_rgba(0,0,0,0.04)] w-[280px] border border-transparent dark:border-gray-800">
+<div class="w-20 h-20 shrink-0 bg-center bg-no-repeat bg-cover rounded-lg bg-gray-100 dark:bg-gray-800" data-alt="White athletic shoes on a neutral background" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuCZzDAL7JXin-3cNySwS43Ix6Rb2rstmE1lWRUo30GCmBd3MpiCCykaSr8O303J-DqculbseFV9B8TSx8Q0jdV2Mz4kkuRYii175dY4BMRXF0trXuJq7eveYW0yqKK9w1e-c2lJfh3l-KYm6kMfJlXk3Cu08xug9ezDMSKo-AnifxrXGfCo0mxvt2JfnB85hL_tyIVBT9ZTZbJtaQlaZMBgYYDzHMUH3Dk6YMJu4zAs7kxOnBpTXlo3IxIuVwwwBekPOxxzQByuiXc");'></div>
+<div class="flex flex-col flex-1 justify-between py-0.5">
+<div>
+<div class="flex justify-between items-start">
+<span class="text-xs font-bold text-orange-500 bg-orange-50 dark:bg-orange-900/30 px-1.5 py-0.5 rounded">运输中</span>
+<span class="text-[10px] text-gray-400">2023-10-22</span>
+</div>
+<p class="text-[#1c0d0d] dark:text-gray-200 text-sm font-medium leading-tight mt-1 line-clamp-1">Nike Air Force 1 '07 白色</p>
+</div>
+<button class="self-end flex items-center justify-center rounded-full h-8 px-3 bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 text-[#1c0d0d] dark:text-white text-xs font-bold shadow-sm active:bg-gray-50">
+                            咨询此单
+                        </button>
+</div>
+</div>
+<!-- Order Card 3 -->
+<div class="snap-center shrink-0 flex flex-row gap-3 p-3 rounded-xl bg-surface-light dark:bg-surface-dark shadow-[0_2px_8px_rgba(0,0,0,0.04)] w-[280px] border border-transparent dark:border-gray-800">
+<div class="w-20 h-20 shrink-0 bg-center bg-no-repeat bg-cover rounded-lg bg-gray-100 dark:bg-gray-800" data-alt="Modern noise cancelling headphones" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuA9JmBuSNCEBztqCX5ZslnFShKRkySrp0GfGcY_ag879UdugMUw7OLwhDrsfE5BM9hU5jAcmcql4U7VnTonF-VC1ROrGGoy5R0In78yKt_Vy0b2kgWpdM0kbB9kVCEZrsIiHgo3YREPy8wR4yxmH38z15xxAKjrZM2dcs3Bz3MJMms22tYSAgm5IQ8mPkBD0nhjl5viBiQP1TvW_Y_WnXPgxkqzAp09LWItx9HALDM3kGqP_SclEphKMKXtpPCba61naVH9RtXTWBU");'></div>
+<div class="flex flex-col flex-1 justify-between py-0.5">
+<div>
+<div class="flex justify-between items-start">
+<span class="text-xs font-bold text-gray-500 bg-gray-100 dark:bg-gray-700/50 px-1.5 py-0.5 rounded">待发货</span>
+<span class="text-[10px] text-gray-400">2023-10-21</span>
+</div>
+<p class="text-[#1c0d0d] dark:text-gray-200 text-sm font-medium leading-tight mt-1 line-clamp-1">Sony WH-1000XM5 降噪耳机</p>
+</div>
+<button class="self-end flex items-center justify-center rounded-full h-8 px-3 bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 text-[#1c0d0d] dark:text-white text-xs font-bold shadow-sm active:bg-gray-50">
+                            咨询此单
+                        </button>
+</div>
+</div>
+</div>
+</div>
+<!-- Smart FAQ Section -->
+<div class="px-4 mt-5">
+<div class="bg-surface-light dark:bg-surface-dark rounded-xl p-5 shadow-[0_2px_8px_rgba(0,0,0,0.04)]">
+<div class="flex justify-between items-center mb-2">
+<h3 class="text-base font-bold text-[#1c0d0d] dark:text-white">猜你想问</h3>
+<button class="text-primary text-xs font-medium flex items-center gap-0.5">
+<span class="material-symbols-outlined" style="font-size: 16px;">refresh</span> 换一换
+                    </button>
+</div>
+<div class="divide-y divide-gray-100 dark:divide-gray-800">
+<a class="flex items-center justify-between py-3.5 group" href="#">
+<span class="text-sm text-gray-700 dark:text-gray-300 group-active:text-primary">订单什么时候发货？</span>
+<span class="material-symbols-outlined text-gray-300 text-lg">chevron_right</span>
+</a>
+<a class="flex items-center justify-between py-3.5 group" href="#">
+<span class="text-sm text-gray-700 dark:text-gray-300 group-active:text-primary">如何修改收货地址？</span>
+<span class="material-symbols-outlined text-gray-300 text-lg">chevron_right</span>
+</a>
+<a class="flex items-center justify-between py-3.5 group" href="#">
+<span class="text-sm text-gray-700 dark:text-gray-300 group-active:text-primary">收到商品有破损怎么办？</span>
+<span class="material-symbols-outlined text-gray-300 text-lg">chevron_right</span>
+</a>
+<a class="flex items-center justify-between py-3.5 group" href="#">
+<span class="text-sm text-gray-700 dark:text-gray-300 group-active:text-primary">退款多久到账？</span>
+<span class="material-symbols-outlined text-gray-300 text-lg">chevron_right</span>
+</a>
+<a class="flex items-center justify-between py-3.5 group" href="#">
+<span class="text-sm text-gray-700 dark:text-gray-300 group-active:text-primary">优惠券使用规则说明</span>
+<span class="material-symbols-outlined text-gray-300 text-lg">chevron_right</span>
+</a>
+</div>
+</div>
+</div>
+<!-- Bottom Spacer -->
+<div class="h-6"></div>
+</div>
+<!-- Fixed Bottom Action Bar -->
+<div class="flex-none bg-surface-light dark:bg-surface-dark border-t border-gray-100 dark:border-gray-800 p-4 pb-8 shadow-[0_-4px_10px_rgba(0,0,0,0.03)] z-50">
+<div class="flex gap-3">
+<!-- Secondary Button: Phone -->
+<button class="flex-1 flex items-center justify-center gap-2 h-12 rounded-full border border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-800 text-[#1c0d0d] dark:text-white active:bg-gray-50 dark:active:bg-gray-700 transition-colors">
+<span class="material-symbols-outlined" style="font-size: 20px;">call</span>
+<span class="text-sm font-bold">电话客服</span>
+</button>
+<!-- Primary Button: Online Chat -->
+<button class="flex-[2] flex items-center justify-center gap-2 h-12 rounded-full bg-primary text-white shadow-lg shadow-red-200 dark:shadow-none active:bg-red-700 transition-colors">
+<span class="material-symbols-outlined" style="font-size: 20px;">support_agent</span>
+<span class="text-sm font-bold">联系在线客服</span>
+</button>
+</div>
+</div>
+</body></html>

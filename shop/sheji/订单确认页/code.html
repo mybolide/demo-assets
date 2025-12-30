@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+
+<html class="light" lang="zh-CN"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>确认订单</title>
+<!-- Material Symbols -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Fonts -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@400;500;700&amp;family=Plus+Jakarta+Sans:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind CSS -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<!-- Tailwind Config -->
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#f20d0d",
+                        "background-light": "#f8f5f5",
+                        "background-dark": "#1a1a1a",
+                        "surface-light": "#ffffff",
+                        "surface-dark": "#2a2a2a",
+                        "text-main": "#1c0d0d",
+                        "text-sub": "#666666",
+                    },
+                    fontFamily: {
+                        "display": ["Plus Jakarta Sans", "Noto Sans SC", "sans-serif"],
+                        "body": ["Noto Sans SC", "sans-serif"], // Better for Chinese text
+                    },
+                    borderRadius: {"DEFAULT": "0.5rem", "lg": "0.75rem", "xl": "1rem", "full": "9999px"},
+                },
+            },
+        }
+    </script>
+<style>
+        body {
+            font-family: "Noto Sans SC", "Plus Jakarta Sans", sans-serif;
+            -webkit-tap-highlight-color: transparent;
+        }
+        .price-symbol {
+            font-size: 0.75em;
+            vertical-align: 1px;
+        }
+        /* Custom scrollbar hiding for cleaner mobile look */
+        .no-scrollbar::-webkit-scrollbar {
+            display: none;
+        }
+        .no-scrollbar {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+        /* Candy cane border for address */
+        .address-border {
+            background: repeating-linear-gradient(
+                -45deg,
+                #f20d0d,
+                #f20d0d 12px,
+                #fff 12px,
+                #fff 24px,
+                #3b82f6 24px,
+                #3b82f6 36px,
+                #fff 36px,
+                #fff 48px
+            );
+            height: 4px;
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background-light dark:bg-background-dark min-h-screen flex flex-col antialiased selection:bg-primary/20">
+<!-- Sticky Header -->
+<header class="sticky top-0 z-40 bg-background-light/95 dark:bg-background-dark/95 backdrop-blur-md border-b border-black/5 dark:border-white/5">
+<div class="flex items-center p-4 h-14 justify-between max-w-lg mx-auto w-full">
+<button class="text-text-main dark:text-white flex size-10 shrink-0 items-center justify-center rounded-full hover:bg-black/5 dark:hover:bg-white/10 transition-colors">
+<span class="material-symbols-outlined text-[24px]">arrow_back</span>
+</button>
+<h2 class="text-text-main dark:text-white text-lg font-bold leading-tight tracking-tight flex-1 text-center pr-10">确认订单</h2>
+</div>
+</header>
+<!-- Main Content -->
+<main class="flex-1 w-full max-w-lg mx-auto pb-28 px-4 flex flex-col gap-4 pt-2">
+<!-- Address Section -->
+<div class="relative bg-surface-light dark:bg-surface-dark rounded-xl overflow-hidden shadow-sm group active:scale-[0.99] transition-transform cursor-pointer">
+<div class="flex gap-3 px-4 py-4 items-center">
+<div class="flex items-center justify-center rounded-full bg-primary/10 text-primary shrink-0 size-10">
+<span class="material-symbols-outlined text-[20px]">location_on</span>
+</div>
+<div class="flex flex-1 flex-col gap-1">
+<div class="flex items-baseline gap-3">
+<span class="text-text-main dark:text-white text-lg font-bold">李四</span>
+<span class="text-text-sub dark:text-gray-400 text-sm font-medium font-display">186****5678</span>
+<span class="bg-primary/10 text-primary text-[10px] px-1.5 py-0.5 rounded font-medium">默认</span>
+</div>
+<p class="text-text-main dark:text-gray-300 text-sm leading-snug line-clamp-2">广东省 深圳市 南山区 粤海街道 科技南十二路 大冲商务中心C座 1201室</p>
+</div>
+<div class="shrink-0 text-gray-400">
+<span class="material-symbols-outlined text-[20px]">chevron_right</span>
+</div>
+</div>
+<!-- Decorative colored bottom strip -->
+<div class="address-border w-full opacity-60"></div>
+</div>
+<!-- Product Group -->
+<div class="bg-surface-light dark:bg-surface-dark rounded-xl shadow-sm overflow-hidden flex flex-col">
+<!-- Shop Header -->
+<div class="px-4 py-3 border-b border-dashed border-gray-100 dark:border-white/5 flex items-center gap-2">
+<span class="material-symbols-outlined text-[18px] text-gray-500">storefront</span>
+<h3 class="text-text-main dark:text-white text-sm font-bold flex-1">Nike 官方旗舰店</h3>
+</div>
+<!-- Product Item 1 -->
+<div class="p-4 flex gap-3">
+<div class="shrink-0 w-24 h-24 bg-gray-100 dark:bg-white/5 rounded-lg overflow-hidden relative">
+<img alt="Red Nike sports sneaker side view" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBWeGTu0XObpOZU71LK3ExT2UCJvbB9HyOIEN9XfyVA4npDtJ0ol77XTkYku-qHk4UQfe29zAxcQDhKtGhPAEVQnL3muPbzJrta2lKdYqQcLxeLFRGp3XRNeOlHmQTyL03GL3nmL7xhc0Djh6YrHpX5d_Rj-VYU05wfmzr8Dql_z2Z6g2eAe-yin_5Ub8Qdr25weQwMAZpJYGx7oRPZdm46tdGqakg7pHtu_tnp2qoQs8yQ_OxkGTIIj7s2YL7NNsElASxAxmfR4d8"/>
+</div>
+<div class="flex flex-col flex-1 justify-between py-0.5">
+<div>
+<p class="text-text-main dark:text-white text-sm font-medium leading-snug line-clamp-2 mb-1">Nike Air Max 90 复古运动鞋 跑步鞋 男女同款</p>
+<div class="bg-gray-50 dark:bg-white/5 inline-flex items-center px-2 py-0.5 rounded text-xs text-text-sub dark:text-gray-400">
+<span>红白配色; 42码</span>
+<span class="material-symbols-outlined text-[12px] ml-1">expand_more</span>
+</div>
+</div>
+<div class="flex justify-between items-end">
+<div class="text-primary font-bold font-display text-lg">
+<span class="price-symbol">¥</span>899.00
+                        </div>
+<div class="text-text-sub dark:text-gray-500 text-sm font-display">x 1</div>
+</div>
+</div>
+</div>
+<!-- Product Item 2 (Optional/Smaller) -->
+<div class="px-4 pb-4 flex gap-3">
+<div class="shrink-0 w-24 h-24 bg-gray-100 dark:bg-white/5 rounded-lg overflow-hidden relative">
+<img alt="White folded athletic socks pair" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDFIP0RBcj8w1TR2xJec3WPQsqF5WI54162E13qQTEuQnwQadGLbA3G-yLpNIUGEQkVqnBi0nRrMHgxsmXanpim4mo1N-b8RRvfvfjcxQGQ3JbCwU_gBgm5L5v6R_-pua8kPaCORksE-Z4l34IknubDVBJW35tR4ARxNm_1HuznHYpwZpjBRqF-HlEQ0Jdnx73J_8_EA-u58URUolXI0EWavYrp5IOnLIZk5xVSgTbSZJFLwNdN0VaNvnB8uHaZntXhvcjzOf63aQg"/>
+</div>
+<div class="flex flex-col flex-1 justify-between py-0.5">
+<div>
+<p class="text-text-main dark:text-white text-sm font-medium leading-snug line-clamp-2 mb-1">Nike 精英中筒袜 运动袜 (3双装)</p>
+<div class="bg-gray-50 dark:bg-white/5 inline-flex items-center px-2 py-0.5 rounded text-xs text-text-sub dark:text-gray-400">
+<span>白色; L码</span>
+</div>
+</div>
+<div class="flex justify-between items-end">
+<div class="text-primary font-bold font-display text-lg">
+<span class="price-symbol">¥</span>79.00
+                        </div>
+<div class="text-text-sub dark:text-gray-500 text-sm font-display">x 1</div>
+</div>
+</div>
+</div>
+<!-- Order Details within Shop Card -->
+<div class="px-4 pb-2 flex flex-col gap-4">
+<div class="flex items-center justify-between">
+<span class="text-text-main dark:text-gray-300 text-sm">配送方式</span>
+<div class="flex items-center gap-1 text-text-main dark:text-white text-sm font-medium">
+<span>顺丰速运</span>
+<span class="text-primary text-xs ml-1">免邮</span>
+<span class="material-symbols-outlined text-[16px] text-gray-400">chevron_right</span>
+</div>
+</div>
+<div class="flex items-center justify-between">
+<span class="text-text-main dark:text-gray-300 text-sm">运费险</span>
+<div class="flex items-center gap-1 text-text-main dark:text-white text-sm">
+<span>卖家赠送</span>
+<span class="bg-green-100 text-green-700 dark:bg-green-900/30 dark:text-green-400 text-[10px] px-1 rounded">已投保</span>
+<span class="material-symbols-outlined text-[16px] text-gray-400">chevron_right</span>
+</div>
+</div>
+<div class="flex items-start justify-between gap-4 pt-1">
+<span class="text-text-main dark:text-gray-300 text-sm shrink-0 pt-1">订单备注</span>
+<input class="flex-1 bg-transparent border-none text-right text-sm text-text-main dark:text-white placeholder:text-gray-400 focus:ring-0 p-0 h-7" dir="rtl" placeholder="选填，请先和商家协商一致" type="text"/>
+</div>
+</div>
+<div class="h-4"></div>
+</div>
+<!-- Generic Options Group -->
+<div class="bg-surface-light dark:bg-surface-dark rounded-xl shadow-sm overflow-hidden px-4 py-2 flex flex-col gap-1">
+<div class="flex items-center justify-between py-3 border-b border-gray-50 dark:border-white/5">
+<span class="text-text-main dark:text-gray-300 text-sm">优惠券</span>
+<div class="flex items-center gap-1">
+<span class="bg-primary text-white text-[10px] px-1.5 py-0.5 rounded">-¥20</span>
+<span class="text-primary text-sm font-medium">省 20 元</span>
+<span class="material-symbols-outlined text-[16px] text-gray-400">chevron_right</span>
+</div>
+</div>
+<div class="flex items-center justify-between py-3">
+<span class="text-text-main dark:text-gray-300 text-sm">支付方式</span>
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-green-500 text-[20px]">chat_bubble</span>
+<span class="text-text-main dark:text-white text-sm">微信支付</span>
+<span class="material-symbols-outlined text-[16px] text-gray-400">chevron_right</span>
+</div>
+</div>
+</div>
+<!-- Cost Breakdown -->
+<div class="bg-surface-light dark:bg-surface-dark rounded-xl shadow-sm overflow-hidden p-4 flex flex-col gap-2">
+<div class="flex justify-between items-center text-sm">
+<span class="text-text-sub dark:text-gray-400">商品总额</span>
+<span class="text-text-main dark:text-white font-display">¥978.00</span>
+</div>
+<div class="flex justify-between items-center text-sm">
+<span class="text-text-sub dark:text-gray-400">运费</span>
+<span class="text-text-main dark:text-white font-display">+ ¥0.00</span>
+</div>
+<div class="flex justify-between items-center text-sm">
+<span class="text-text-sub dark:text-gray-400">活动优惠</span>
+<span class="text-primary font-display">- ¥20.00</span>
+</div>
+<div class="h-px bg-gray-100 dark:bg-white/10 my-1"></div>
+<div class="flex justify-end items-baseline gap-2">
+<span class="text-sm text-text-main dark:text-white font-medium">实付款</span>
+<span class="text-primary text-xl font-bold font-display"><span class="price-symbol">¥</span>958.00</span>
+</div>
+</div>
+<!-- Trust/Info Footer -->
+<div class="flex justify-center gap-4 py-2 opacity-50">
+<div class="flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px]">verified_user</span>
+<span class="text-xs">平台保障</span>
+</div>
+<div class="flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px]">lock</span>
+<span class="text-xs">安全支付</span>
+</div>
+</div>
+</main>
+<!-- Fixed Bottom Action Bar -->
+<div class="fixed bottom-0 left-0 right-0 z-50 bg-surface-light dark:bg-surface-dark border-t border-gray-100 dark:border-white/5 pb-[env(safe-area-inset-bottom)] shadow-[0_-4px_6px_-1px_rgba(0,0,0,0.05)]">
+<div class="flex items-center justify-between px-4 py-3 max-w-lg mx-auto w-full h-full">
+<div class="flex flex-col">
+<div class="flex items-baseline gap-1">
+<span class="text-text-main dark:text-gray-300 text-sm">合计:</span>
+<span class="text-primary font-bold text-2xl font-display leading-none"><span class="price-symbol">¥</span>958<span class="text-lg">.00</span></span>
+</div>
+<span class="text-primary/80 text-xs font-medium">已优惠 ¥20.00</span>
+</div>
+<button class="bg-gradient-to-r from-orange-500 to-primary hover:from-orange-600 hover:to-red-700 text-white font-bold text-base px-8 py-3 rounded-full shadow-lg shadow-orange-500/20 active:shadow-none active:scale-95 transition-all">
+                提交订单
+            </button>
+</div>
+</div>
+</body></html>

@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Product Detail Page</title>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&amp;family=Noto+Sans+SC:wght@400;500;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#f20d0d",
+                        "primary-light": "#fff0f0",
+                        "background-light": "#f5f5f5",
+                        "background-dark": "#1a1a1a",
+                        "surface-light": "#ffffff",
+                        "surface-dark": "#262626",
+                        "text-main": "#1c0d0d",
+                        "text-sub": "#999999",
+                        "text-orange": "#ff5000"
+                    },
+                    fontFamily: {
+                        "display": ["Plus Jakarta Sans", "Noto Sans SC", "sans-serif"],
+                        "body": ["Plus Jakarta Sans", "Noto Sans SC", "sans-serif"]
+                    },
+                    borderRadius: {
+                        "DEFAULT": "0.5rem",
+                        "lg": "0.75rem",
+                        "xl": "1rem",
+                        "2xl": "1.5rem",
+                        "full": "9999px"
+                    },
+                    boxShadow: {
+                        'bottom-bar': '0 -4px 20px rgba(0,0,0,0.05)',
+                    }
+                },
+            },
+        }
+    </script>
+<style>
+        /* Hide scrollbar for horizontal scroll containers */
+        .no-scrollbar::-webkit-scrollbar {
+            display: none;
+        }
+        .no-scrollbar {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+        body {
+            font-family: 'Plus Jakarta Sans', 'Noto Sans SC', sans-serif;
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background-light dark:bg-background-dark text-text-main dark:text-white transition-colors duration-200">
+<div class="relative mx-auto w-full max-w-md bg-background-light dark:bg-background-dark min-h-screen pb-[100px]">
+<!-- Sticky Header (Transparent to solid simulation) -->
+<header class="fixed top-0 left-0 right-0 z-50 flex items-center justify-between p-4 max-w-md mx-auto">
+<button class="flex items-center justify-center w-8 h-8 rounded-full bg-black/30 backdrop-blur-sm text-white">
+<span class="material-symbols-outlined" style="font-size: 20px;">arrow_back</span>
+</button>
+<!-- Simulated Navigation Tabs (Normally appears on scroll) -->
+<!-- <div class="hidden md:flex gap-4 text-sm font-bold opacity-0">
+                <span class="text-primary border-b-2 border-primary pb-1">Product</span>
+                <span>Reviews</span>
+                <span>Details</span>
+            </div> -->
+<div class="flex items-center gap-3">
+<button class="flex items-center justify-center w-8 h-8 rounded-full bg-black/30 backdrop-blur-sm text-white">
+<span class="material-symbols-outlined" style="font-size: 20px;">share</span>
+</button>
+<button class="flex items-center justify-center w-8 h-8 rounded-full bg-black/30 backdrop-blur-sm text-white">
+<span class="material-symbols-outlined" style="font-size: 20px;">more_horiz</span>
+</button>
+</div>
+</header>
+<!-- Main Product Image Carousel -->
+<div class="relative w-full aspect-[1/1] bg-gray-200">
+<div class="absolute inset-0 bg-cover bg-center" data-alt="High quality studio shot of a modern winter down jacket in light beige" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuDe2AB2Gwha-Qo5Q2efAr0t2IdpgjLKhbjGRqLJJ1W4mVTVK1TjRAEaFqt1oOJ493vwzo-62MhJkKWDkIOlv1pznGCCWpgvMu_cA06YON_KAL2vhXUglC-Mi1v0E4ANNUOX1R7hElKvmKpRxz_6J4OIayXnMbdFTWqpEsEM4nqXAfnG4Wj68R_kxQRD0OOChEITlFTE22HhNDh7sK8qoRI1UV5DiNR8tvyLHcwSgBIqiXmWPj7u0An6yf5PzB3L5T2ebFGmId54x-A");'></div>
+<!-- Image Counter Badge -->
+<div class="absolute bottom-4 right-4 bg-black/40 text-white text-xs font-medium px-3 py-1 rounded-full backdrop-blur-sm">
+                1/6
+            </div>
+<!-- Video Preview Thumbnail (Floating) -->
+<div class="absolute bottom-4 left-4 w-12 h-12 rounded-lg overflow-hidden border-2 border-white shadow-lg relative">
+<div class="absolute inset-0 bg-cover bg-center" data-alt="Video thumbnail of model wearing jacket" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuDbt5Cfev21AiE1h0itMesr3u-6DyUhn0MIjSUwShtdttnKoK_zCsPif5ly13Mp4cGxyQBIwA11C9CJtNKv-PPIrFSFMfZ0c9cErbdx3uF97JXcurKZd_XhGlsDkPXlmKJjYETEaXZO76Ce4EnxoHc91oTdNFquAqSnnj3A0CGI6xrqVDsRJvK7RYFAHho8gQs_7Lso_A7-4Ywk5qIPTF1cWpxp2ylB_T9khcnooUWh3OdHVfOrnp4uhIOG4ioHwc91N4xm6XISZIQ");'></div>
+<div class="absolute inset-0 flex items-center justify-center bg-black/20">
+<span class="material-symbols-outlined text-white" style="font-size: 20px;">play_arrow</span>
+</div>
+</div>
+</div>
+<!-- Flash Sale / Pricing Bar -->
+<div class="bg-gradient-to-r from-primary to-[#ff5000] text-white px-4 py-3 flex items-center justify-between">
+<div class="flex flex-col">
+<div class="flex items-baseline gap-2">
+<span class="text-xs font-bold opacity-90">Flash Sale</span>
+<span class="text-2xl font-black tracking-tight">¥299</span>
+<span class="text-xs line-through opacity-70">¥599</span>
+</div>
+<div class="flex items-center gap-1 text-[10px] bg-white/20 w-fit px-1.5 rounded mt-0.5">
+<span class="material-symbols-outlined text-[10px]">local_fire_department</span>
+<span>1.2k sold in 1h</span>
+</div>
+</div>
+<div class="flex flex-col items-end">
+<span class="text-[10px] opacity-90 mb-1">Ends in</span>
+<div class="flex gap-1 text-primary text-xs font-bold">
+<span class="bg-white rounded px-1 min-w-[20px] text-center">02</span>
+<span class="text-white">:</span>
+<span class="bg-white rounded px-1 min-w-[20px] text-center">14</span>
+<span class="text-white">:</span>
+<span class="bg-white rounded px-1 min-w-[20px] text-center">55</span>
+</div>
+</div>
+</div>
+<!-- Product Info Section -->
+<div class="bg-surface-light dark:bg-surface-dark p-4 rounded-b-xl mb-3 shadow-sm">
+<h1 class="text-lg font-bold leading-snug text-text-main dark:text-white mb-2 line-clamp-2">
+                2024 New Winter Down Jacket - Ultra Warm, Waterproof, Unisex Style, 90% White Duck Down
+            </h1>
+<div class="flex flex-wrap gap-2 mb-3">
+<span class="text-[10px] font-medium text-primary bg-primary-light px-1.5 py-0.5 rounded">Free Shipping</span>
+<span class="text-[10px] font-medium text-primary bg-primary-light px-1.5 py-0.5 rounded">7-Day Returns</span>
+<span class="text-[10px] font-medium text-primary bg-primary-light px-1.5 py-0.5 rounded">Authenticity Guarantee</span>
+</div>
+<div class="flex items-center justify-between text-xs text-text-sub">
+<span>Shipping: Free</span>
+<span>Monthly Sales: 5000+</span>
+<span>Guangzhou, China</span>
+</div>
+</div>
+<!-- Selection / Specs Cell -->
+<div class="bg-surface-light dark:bg-surface-dark rounded-xl mb-3 p-4 shadow-sm flex flex-col gap-4">
+<!-- Selector -->
+<div class="flex items-center justify-between cursor-pointer group">
+<div class="flex items-center gap-3">
+<span class="text-sm font-bold text-text-sub w-10">Select</span>
+<div class="flex items-center gap-2">
+<span class="text-sm text-text-main dark:text-white font-medium">Beige, Size M</span>
+<div class="flex -space-x-1">
+<div class="w-6 h-6 rounded-full border border-white bg-cover bg-center" data-alt="Small thumbnail of beige jacket" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuBfI4XdiIucAoFJD6jT923SvsisymwWkgnzB3y3zo1vzi8EQqP0n7IrOYwT2ltq-Sa3kSd_jlvdJSqr7fh6K7LLWmVjNnoTUUUkUx7Y1TIMkGwBPL39ZmsnTvaiggJMTytPLs0KmuCgDoGhJC0QTpGNVYZDEm6TB9iUqz-KJJ1UVb6HOXdSOEl5UuNA77xxVlYBUPh995BZuqxGdN7nvJFZp3FcBsK_r0RFMalxO0kWuT6G-gVIGZASfOoLT96fvjUcxidYil_JAcM");'></div>
+<div class="w-6 h-6 rounded-full border border-white bg-cover bg-center" data-alt="Small thumbnail of black jacket" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuAK36r0oa8HlzSQ5jZlAWaIolzxO_1lEHuWxWxE-4n42x2kQDX81e1dlTideG5mDG58cvOJDpQ4rcf_RCwLZQ7yKZ3NRahHNSH41eAkXQSoALnAyt9pe8n1rMnd7huWH0M84Oa35dtbuo0YYPiKeJJKLZFeS5DThAUPpeFJQ2Ui2wd6Dc2YCjrzuKa6Q8XEyf8Iz3cuwA_M3sWTjfrdEYXqzccm98P9t-t61Z3QfGUpKOrDvh6kzwuEPOBWt0CcNQtLO2Y5Pg6ANmg");'></div>
+<div class="w-6 h-6 rounded-full border border-white bg-gray-100 flex items-center justify-center text-[8px] text-text-sub">+3</div>
+</div>
+</div>
+</div>
+<span class="material-symbols-outlined text-gray-400" style="font-size: 20px;">chevron_right</span>
+</div>
+<div class="h-px bg-gray-100 dark:bg-gray-700 w-full"></div>
+<!-- Service -->
+<div class="flex items-center justify-between cursor-pointer group">
+<div class="flex items-center gap-3">
+<span class="text-sm font-bold text-text-sub w-10">Service</span>
+<div class="flex flex-wrap gap-x-3 gap-y-1">
+<div class="flex items-center gap-1">
+<span class="material-symbols-outlined text-primary text-[14px]">check_circle</span>
+<span class="text-xs text-text-main dark:text-white">Delivery Guarantee</span>
+</div>
+<div class="flex items-center gap-1">
+<span class="material-symbols-outlined text-primary text-[14px]">check_circle</span>
+<span class="text-xs text-text-main dark:text-white">Shipping Insurance</span>
+</div>
+</div>
+</div>
+<span class="material-symbols-outlined text-gray-400" style="font-size: 20px;">chevron_right</span>
+</div>
+</div>
+<!-- Reviews Section -->
+<div class="bg-surface-light dark:bg-surface-dark rounded-xl mb-3 p-4 shadow-sm">
+<div class="flex items-center justify-between mb-3">
+<div class="flex items-baseline gap-2">
+<h3 class="text-base font-bold text-text-main dark:text-white">Reviews</h3>
+<span class="text-xs text-text-main dark:text-white font-medium">(999+)</span>
+</div>
+<div class="flex items-center gap-1 text-primary text-xs font-medium cursor-pointer">
+<span>98% Positive</span>
+<span class="material-symbols-outlined" style="font-size: 16px;">chevron_right</span>
+</div>
+</div>
+<!-- Review Tags -->
+<div class="flex gap-2 overflow-x-auto no-scrollbar mb-4 pb-1">
+<span class="shrink-0 text-xs bg-[#fff0f0] text-text-main dark:bg-gray-700 dark:text-white px-3 py-1.5 rounded-full">High Quality (245)</span>
+<span class="shrink-0 text-xs bg-[#fff0f0] text-text-main dark:bg-gray-700 dark:text-white px-3 py-1.5 rounded-full">Warm (180)</span>
+<span class="shrink-0 text-xs bg-[#fff0f0] text-text-main dark:bg-gray-700 dark:text-white px-3 py-1.5 rounded-full">Fast Shipping (120)</span>
+</div>
+<!-- Featured Review Item -->
+<div class="flex flex-col gap-2">
+<div class="flex items-center gap-2">
+<div class="w-6 h-6 rounded-full bg-gray-300 bg-cover bg-center" data-alt="User avatar" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuCNVF010Jf9uqC3HQc9ktuZ6Rwg8u4csuh0_x0Eyt-DdsJvRsnlHuWkfy9GY-66Z7ZDWq9zNVIyoai3kkaFX_9axiqTznQ2ZhTd1x3UeDr7wv0sHXzqDbwG396Kr9jAhE8wWEYHIBx_oL2uWlOlna5LgpnzVaZFncEYdLWfN-ZJH4ljIyGQ1SjX_jooWT7ZHsGYrNFsT5se2Gx3SKa2Of0RwF5PMV1tP4bN4egcnxLjKzpwKL3Ru8xk9gjXjm7WhJEl6sJmu9swyFI");'></div>
+<span class="text-xs text-text-sub">User1234</span>
+<div class="flex text-orange-400 text-[10px]">
+<span class="material-symbols-outlined fill-current" style="font-size: 12px;">star</span>
+<span class="material-symbols-outlined fill-current" style="font-size: 12px;">star</span>
+<span class="material-symbols-outlined fill-current" style="font-size: 12px;">star</span>
+<span class="material-symbols-outlined fill-current" style="font-size: 12px;">star</span>
+<span class="material-symbols-outlined fill-current" style="font-size: 12px;">star</span>
+</div>
+</div>
+<p class="text-sm text-text-main dark:text-white leading-relaxed line-clamp-2">The jacket is amazing! Very warm for the winter and the material feels premium. Shipping was super fast too, arrived in 2 days.</p>
+<div class="flex gap-2 mt-1 overflow-hidden">
+<div class="w-24 aspect-[4/3] rounded-lg bg-gray-100 bg-cover bg-center" data-alt="Review image 1: Close up of jacket fabric" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuBmRA4WgImUG5RL0kPCLKwYsI052tIcK-y4uA6xUdR_uSfDZO2g198rZh0Pne27e4CIOTptd-GfItG0IaVDR1XnL15VdRp8Jsf-rwh7I5-NWJQEOpotCaCS60Tzc18wACyy7LqLuftKA8VZZTh5pcQIr4QZz51AdAgo0yHqedOM2P0foZndralfHHxi9uTd4pN_T5ZRHuH42zhugfKblsoVK2LxasiYHAj0G3uSQDwL5_5pVuc3cH08MDMLQA0-PMoyewS0qQWrM3k");'></div>
+<div class="w-24 aspect-[4/3] rounded-lg bg-gray-100 bg-cover bg-center" data-alt="Review image 2: Person wearing jacket outdoors" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuCOThPZlP8VaaEIhmIfKCX30uc_gByK1Xu5IvdCl5O40qXJxdmHTZe4GODtmOn7UZmZwBOchQKbIWeDijwoQ5pztVawcktC-qYVioIVlGmxpkRe5Mlq83bL5Hg8g9CeY5fXRnGirYrwYAbPEiP6Nj3Vv5Kjw1BKIV-gCgf81ma26VSd-hKDysluRWjwm1KIeWTPZRw8m1U6EXL3VABhzvVwbheo5oXurD1t94OdGad183OLID55gZj2ij_NSu-fZcetGAbd0mp0gJw");'></div>
+</div>
+</div>
+</div>
+<!-- Merchant Info -->
+<div class="bg-surface-light dark:bg-surface-dark rounded-xl mb-3 p-4 shadow-sm">
+<div class="flex items-center gap-3">
+<div class="w-12 h-12 border border-gray-100 rounded-lg bg-white flex items-center justify-center p-1">
+<div class="w-full h-full bg-contain bg-no-repeat bg-center" data-alt="Official Store Logo" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuC3Lu4xsGYlrtsRUZADB0vOKv0W4xAzBwUNilJbhNQz9WN65qo5ywyU4Oc2W2ucIfd3G1Beuyj2ibt92WO8-RQJM-Qjh8Rn-91rgEozJu-aEc7l5X8ImijxHsnWIH37TGZsybF684BTSZXbNEBo3qdtrtTQQXMLgFZJgF3OFaL2T6ibtsrrWorvv9zAElcJjC4r0AiaJhvqntefzt4HVCjKg-iblw-SlbmaPXvLRzwdRpEwF79dTFdToU7s-vFth0xtiEVH5WrIR2I");'></div>
+</div>
+<div class="flex-1">
+<h3 class="text-base font-bold text-text-main dark:text-white">Official Brand Store</h3>
+<div class="flex items-center gap-2 mt-1">
+<span class="text-[10px] bg-black text-white px-1.5 py-0.5 rounded">Official</span>
+<div class="flex items-center gap-0.5">
+<span class="material-symbols-outlined text-orange-400" style="font-size: 12px;">star</span>
+<span class="text-xs text-text-sub">4.9</span>
+</div>
+<span class="text-xs text-text-sub">| 120k Followers</span>
+</div>
+</div>
+<button class="border border-primary text-primary px-3 py-1.5 rounded-full text-xs font-bold">Visit Store</button>
+</div>
+<div class="flex justify-between mt-4 px-2">
+<div class="text-center">
+<p class="text-xs text-text-sub mb-1">Description</p>
+<p class="text-sm font-bold text-primary">High</p>
+</div>
+<div class="text-center">
+<p class="text-xs text-text-sub mb-1">Service</p>
+<p class="text-sm font-bold text-primary">High</p>
+</div>
+<div class="text-center">
+<p class="text-xs text-text-sub mb-1">Logistics</p>
+<p class="text-sm font-bold text-primary">High</p>
+</div>
+</div>
+</div>
+<!-- Product Details (Long Scroll Images) -->
+<div class="bg-surface-light dark:bg-surface-dark pt-4 pb-8 mb-3">
+<div class="flex items-center justify-center gap-2 mb-4">
+<div class="h-px bg-gray-200 w-12"></div>
+<span class="text-xs text-text-sub font-medium uppercase tracking-wider">Product Details</span>
+<div class="h-px bg-gray-200 w-12"></div>
+</div>
+<div class="flex flex-col w-full">
+<div class="w-full aspect-[3/4] bg-gray-100 bg-cover bg-center" data-alt="Detail shot: Close up of the zipper and stitching quality" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuBdNc2agD22oT8s5FUgfJUlL78IvIv_NGH4aApLEk5wxHecEnPji4FWuFOiC9coeeHYhBdQ4IqRWooiPgQSNee1-Kb_D16nk7XwC3HBb4vj27WloVlkvZxfHqwq8etzVoJMb4QsL_c0X3Dt7M4VuhuqibJz6W0_2NLgIiGSZs8ZZa3vzo4LPxHG88gB9KHCzSxHJQa1_ju8SQetuoeYo34SzONGJ607kYz6I9K4O8D6t2gk5bRyFl3zjMH2KRzhqhiTZCbzL4vDcuc");'></div>
+<div class="w-full aspect-[3/4] bg-gray-100 bg-cover bg-center" data-alt="Detail shot: Model showing the waterproof capability" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuC1YkecyOh7Rhrrhpg64AuGJSXEka1QBOO95TGz2F3VjLNttJQHj-8GOxG-tGM53waf-Nw572EAGeGorAjPcXmCYRgegFCHRZwUwMS1BECw2hzZoYMyCix3X8EA5Jm6SNrqo0DEX6hD7arh5z-9UrF0-FPyvFQ6D3s-berY9VbEkMRPdwF-GE9lVsz6ggccAznHagS6DQQiWfzgwpYjMd1_lRyKqBxHL7XmCPqg27mIbfh4LVfhOsSG2Fugyip-IRnoFKWJWB3PAfU");'></div>
+<div class="w-full aspect-[3/2] bg-gray-100 bg-cover bg-center" data-alt="Detail shot: Fabric layers diagram showing insulation" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuADMg3Ae5tiFrT_utNCvm8Tn03xuS-t4E6W6kyloj3hkS4Lv0HX7Ct0rA7BK62DURJK7B7ElEEDH1lT8aAo8Mqek7yrxsYnPd86YKMCTbHKTU4jtaEyjwmgTxJyTUHgC-vbuF-M--q6VKSay2-DXAttbInBc35LoNzbs5Z8_6zzh3WQenJ_JmBIgWfqudrX5r8PujYpoR-0clmFiIZ1F_gNDgHLHU4Nb892Y2MUQ4XdSHCo-oNilXC1kavp5upUU2NXn0nJUJICe9I");'></div>
+</div>
+</div>
+<!-- Sticky Bottom Action Bar -->
+<div class="fixed bottom-0 left-0 right-0 bg-surface-light dark:bg-surface-dark border-t border-gray-100 dark:border-gray-800 px-4 py-2 pb-safe shadow-bottom-bar z-40 max-w-md mx-auto">
+<div class="flex items-center gap-4 h-14">
+<!-- Left Icons -->
+<div class="flex gap-5 shrink-0 px-1">
+<div class="flex flex-col items-center justify-center gap-1 cursor-pointer">
+<span class="material-symbols-outlined text-text-sub" style="font-size: 22px;">storefront</span>
+<span class="text-[10px] text-text-sub">Store</span>
+</div>
+<div class="flex flex-col items-center justify-center gap-1 cursor-pointer">
+<span class="material-symbols-outlined text-text-sub" style="font-size: 22px;">headset_mic</span>
+<span class="text-[10px] text-text-sub">Service</span>
+</div>
+<div class="flex flex-col items-center justify-center gap-1 cursor-pointer relative">
+<span class="material-symbols-outlined text-text-sub" style="font-size: 22px;">shopping_cart</span>
+<span class="text-[10px] text-text-sub">Cart</span>
+<!-- Badge -->
+<span class="absolute -top-0.5 -right-1 bg-primary text-white text-[9px] font-bold h-3.5 min-w-[14px] px-1 rounded-full flex items-center justify-center">2</span>
+</div>
+</div>
+<!-- Right Buttons -->
+<div class="flex flex-1 gap-2 h-10">
+<button class="flex-1 bg-orange-400 hover:bg-orange-500 text-white text-sm font-bold rounded-full flex flex-col items-center justify-center leading-none transition-colors">
+<span>Add to Cart</span>
+</button>
+<button class="flex-1 bg-primary hover:bg-red-700 text-white text-sm font-bold rounded-full flex flex-col items-center justify-center leading-none transition-colors shadow-lg shadow-primary/30">
+<span>Buy Now</span>
+</button>
+</div>
+</div>
+<!-- Safe area spacer for newer iPhones -->
+<div class="h-[env(safe-area-inset-bottom)] w-full"></div>
+</div>
+</div>
+</body></html>

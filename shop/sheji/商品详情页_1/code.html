@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="zh-CN"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>商品详情页</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,typography"></script>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@400;500;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons|Material+Icons+Outlined" rel="stylesheet"/>
+<script>
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        primary: "#FF4500", // Vibrant orange-red typical for Chinese e-commerce
+                        "background-light": "#F7F8FA",
+                        "background-dark": "#121212",
+                        "card-light": "#FFFFFF",
+                        "card-dark": "#1E1E1E",
+                        "text-main-light": "#1A1A1A",
+                        "text-main-dark": "#EEEEEE",
+                        "text-sub-light": "#888888",
+                        "text-sub-dark": "#AAAAAA",
+                    },
+                    fontFamily: {
+                        sans: ['"Noto Sans SC"', 'sans-serif'],
+                        display: ['"Noto Sans SC"', 'sans-serif'],
+                    },
+                    borderRadius: {
+                        DEFAULT: "12px",
+                        'lg': "16px",
+                        'xl': "24px",
+                    },
+                    spacing: {
+                        'safe-bottom': 'env(safe-area-inset-bottom)',
+                    }
+                },
+            },
+        };
+    </script>
+<style>.no-scrollbar::-webkit-scrollbar {
+            display: none;
+        }
+        .no-scrollbar {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+        .gradient-bg {
+            background: linear-gradient(135deg, #FF6B3D 0%, #FF2E00 100%);
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background-light dark:bg-background-dark text-text-main-light dark:text-text-main-dark font-sans antialiased pb-24">
+<header class="fixed top-0 w-full z-50 transition-all duration-300 flex justify-between items-center px-4 py-3 bg-transparent backdrop-blur-sm">
+<button class="w-9 h-9 bg-black/30 dark:bg-white/10 backdrop-blur-md rounded-full flex items-center justify-center text-white">
+<span class="material-icons text-xl">arrow_back_ios_new</span>
+</button>
+<div class="flex space-x-3">
+<button class="w-9 h-9 bg-black/30 dark:bg-white/10 backdrop-blur-md rounded-full flex items-center justify-center text-white">
+<span class="material-icons text-xl">share</span>
+</button>
+<button class="w-9 h-9 bg-black/30 dark:bg-white/10 backdrop-blur-md rounded-full flex items-center justify-center text-white">
+<span class="material-icons-outlined text-xl">more_horiz</span>
+</button>
+</div>
+</header>
+<div class="relative w-full h-[375px] bg-gray-200 dark:bg-gray-800">
+<img alt="红色运动鞋" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCTSfJqBQwLTGxh3KDiJAkMJRIX9tZriCKXHlhmZN2W4QjE8b-rIOhvg-o4SMJxZyOWmO4uWytMqTDA5nzaHhcQin5DFL1dPbZ0sQyGbN_N8cAfpXGvN-tIMqnno6JV3yfnaYXF9WbnIQFw7VEctmi2c8JA4gylEa6dmqM7K44nXn7v7ICllSWaB7ZPuSZ1OJbf2_Vi-LQd0QHHnd30xx4HLbvbarlA1f8g_G_QaL0xrlNiWGtHwVwldPxE2Nipp22GdNoVQjpuFFo"/>
+<div class="absolute bottom-4 right-4 bg-black/40 px-3 py-1 rounded-full text-white text-xs font-medium">
+            1/5
+        </div>
+<div class="absolute -bottom-1 left-0 right-0 h-14 bg-gradient-to-r from-[#FF0055] to-[#FF4500] flex items-center justify-between px-4 text-white rounded-t-xl z-10">
+<div class="flex items-end gap-2">
+<span class="text-sm mb-1">秒杀价</span>
+<div class="flex items-baseline">
+<span class="text-xs font-bold">¥</span>
+<span class="text-2xl font-bold leading-none">299</span>
+<span class="text-lg font-bold">.00</span>
+</div>
+<span class="text-xs line-through opacity-80 mb-1 ml-1">¥599.00</span>
+</div>
+<div class="flex flex-col items-end justify-center">
+<span class="text-[10px] bg-white/20 px-1.5 rounded mb-0.5">距结束还剩</span>
+<div class="text-xs font-mono font-bold flex gap-1">
+<span class="bg-white text-primary px-1 rounded-sm">08</span>:
+                    <span class="bg-white text-primary px-1 rounded-sm">15</span>:
+                    <span class="bg-white text-primary px-1 rounded-sm">30</span>
+</div>
+</div>
+</div>
+</div>
+<div class="bg-card-light dark:bg-card-dark rounded-b-xl p-4 shadow-sm mb-3">
+<div class="flex justify-between items-start mb-2">
+<h1 class="text-lg font-bold text-text-main-light dark:text-text-main-dark leading-snug line-clamp-2 w-10/12">
+<span class="bg-primary text-white text-[10px] px-1 py-0.5 rounded mr-1 align-middle">自营</span>
+                耐克 Nike Air Max 红色限量款 运动跑鞋 轻便透气 减震回弹 2024夏季新款
+            </h1>
+<div class="flex flex-col items-center justify-center w-2/12 border-l border-gray-100 dark:border-gray-700 pl-2 mt-1">
+<span class="material-icons-outlined text-gray-400 text-xl">favorite_border</span>
+<span class="text-[10px] text-gray-400 mt-0.5">收藏</span>
+</div>
+</div>
+<div class="flex flex-wrap gap-2 mb-3">
+<span class="text-[10px] text-primary bg-primary/10 px-1.5 py-0.5 rounded">每满300减30</span>
+<span class="text-[10px] text-primary bg-primary/10 px-1.5 py-0.5 rounded">包邮</span>
+<span class="text-[10px] text-gray-500 border border-gray-200 dark:border-gray-600 px-1.5 py-0.5 rounded">七天无理由退货</span>
+</div>
+<div class="flex justify-between items-center text-xs text-text-sub-light dark:text-text-sub-dark mt-2 border-t border-gray-100 dark:border-gray-800 pt-3">
+<span>月销 5000+</span>
+<span>广东广州</span>
+</div>
+</div>
+<div class="bg-card-light dark:bg-card-dark rounded-xl p-4 shadow-sm mb-3 space-y-4">
+<div class="flex items-center justify-between">
+<div class="flex items-center overflow-hidden">
+<span class="text-sm font-bold text-text-main-light dark:text-text-main-dark mr-3 whitespace-nowrap">选择</span>
+<div class="flex-1 truncate text-xs text-text-sub-light dark:text-text-sub-dark">
+                    已选: "红色", "42码", 1件
+                </div>
+</div>
+<span class="material-icons text-gray-400 text-sm">arrow_forward_ios</span>
+</div>
+<div class="flex items-center justify-between">
+<div class="flex items-start">
+<span class="text-sm font-bold text-text-main-light dark:text-text-main-dark mr-3 mt-0.5 whitespace-nowrap">发货</span>
+<div class="flex flex-col">
+<div class="text-xs text-text-main-light dark:text-text-main-dark mb-1">
+<span class="font-medium">现货</span>，23:00前付款，预计明天送达
+                    </div>
+<div class="text-[10px] text-text-sub-light dark:text-text-sub-dark flex items-center gap-1">
+<span class="material-icons text-[12px] text-green-500">check_circle</span> 运费险
+                        <span class="material-icons text-[12px] text-green-500 ml-1">check_circle</span> 极速退款
+                    </div>
+</div>
+</div>
+<span class="material-icons text-gray-400 text-sm">arrow_forward_ios</span>
+</div>
+</div>
+<div class="bg-card-light dark:bg-card-dark rounded-xl p-4 shadow-sm mb-3">
+<div class="flex justify-between items-center mb-3">
+<h2 class="text-sm font-bold text-text-main-light dark:text-text-main-dark">评价 (1.2w+)</h2>
+<div class="flex items-center text-xs text-text-sub-light dark:text-text-sub-dark">
+<span>好评率 99%</span>
+<span class="material-icons text-sm ml-1">arrow_forward_ios</span>
+</div>
+</div>
+<div class="flex gap-2 overflow-x-auto no-scrollbar mb-4">
+<span class="flex-shrink-0 text-xs bg-[#FFF1EB] dark:bg-primary/20 text-text-main-light dark:text-white px-3 py-1.5 rounded-full">鞋子很舒服 (582)</span>
+<span class="flex-shrink-0 text-xs bg-[#FFF1EB] dark:bg-primary/20 text-text-main-light dark:text-white px-3 py-1.5 rounded-full">尺码标准 (320)</span>
+<span class="flex-shrink-0 text-xs bg-[#FFF1EB] dark:bg-primary/20 text-text-main-light dark:text-white px-3 py-1.5 rounded-full">外观漂亮 (150)</span>
+</div>
+<div class="mb-2">
+<div class="flex items-center mb-2">
+<img alt="Avatar" class="w-6 h-6 rounded-full mr-2" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBn1qWrM5iRk1RelXGVJmezztSLwI-NWji6ZOmPyrFQA2icxyW06YP6HBh9PC0Ra7YtYE7B2nnCa18-YZO0ErAVit4BDXr1zJwFFyEl_OZLUfOGBXqPGSeisNVuP2lvWLqwsZJ4kJ9C1XOgZ_xVOrvoGp9XHxegOQl1i27-Aen8pg2E3xg6GbtUp5KWcMo44zeqYELC_YOQAxHXpnH1T7X9ChvGsCbyvMdzX8ltX0J2L7n0JHmaZxI8jg_oCVP5VXzMfomHntbzPQs"/>
+<span class="text-xs text-gray-500 dark:text-gray-400">小红薯_User</span>
+<div class="flex ml-auto">
+<span class="material-icons text-[10px] text-yellow-400">star</span>
+<span class="material-icons text-[10px] text-yellow-400">star</span>
+<span class="material-icons text-[10px] text-yellow-400">star</span>
+<span class="material-icons text-[10px] text-yellow-400">star</span>
+<span class="material-icons text-[10px] text-yellow-400">star</span>
+</div>
+</div>
+<p class="text-sm text-text-main-light dark:text-text-main-dark mb-2 line-clamp-2">
+                鞋子收到了，质量非常好，颜色很正，穿着很舒服，物流也很快，非常满意的一次购物！还会回购的。
+            </p>
+<div class="flex gap-2 overflow-hidden">
+<img alt="Review Image 1" class="w-20 h-20 object-cover rounded-lg" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCLF2DelJX-qSX5JkWje-LftgI6ykDDB1EidqV7ZNZaHTXux2tnpsElK4B-HHLkwEnffpOe6GhxyjAcktAAXB6_Du54z3ecxYhRh8nKlhHAF70gDtRT0MPSdQGPayP65U40PbyAPEAlaEoRZYD9UtU2pZGFeDVq1_HqVxHIAjyGuvv-rTofuix0GCh8pvEt_HA2AsYd01SYw_DndeCTWd0FvINqJyGomOVkGrUol8GAfEv4yipCpLJbs-ldu56M1bJKLr6u4W6eolw"/>
+<img alt="Review Image 2" class="w-20 h-20 object-cover rounded-lg" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAPSWfL6mQJi7QraNBeWCPczXrZVapoUB0QJPUrFIXgZkWlp0YTBZ3CQnANEsWMl32DSwjbm-yJv8KQvs3ftgrYRhMvHwj9r8rouHzHfFHaci4IxOp5A6Bd-X7i_kOuIXdNShYhcgbCOXqUPLapiLBMFwlRNVmMn5YTSvcCHLYjCQqpTOiMVxhdManlkUqePPrnjUbgtQHHdnginJQfsLNYq9ME5kLvb4rhvjC54Qh4ZEHvl6fSNizHSZMLSNW2krBy1ttklc8KeUQ"/>
+<div class="relative w-20 h-20 rounded-lg overflow-hidden">
+<img alt="Review Video" class="w-full h-full object-cover opacity-80" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDReQ9T5HyJ0liBBbSB0U0MkwwMIZZ24M3xidNypKnXvy3q6ju9c29Z9lOaPrIDmXSgrn90dHmSKhdXL8_EIrYxxS0ecoGGIBk8OF8lLekbe7Dff7oOC7fgYvfk4MBygD2pZGy9K1-nLCt-jcMLAh5Tn6Fam9RHwWJ_aK70whNffb_Eku3d7VwwEt0UpJ1CAeO9wi3foC6XOV2jG2Pcdk-ihOuWdtVyUG62kfcIWBU3M-lgfbYTHDgbujmh5EVr4cYBF411dDLBgpY"/>
+<div class="absolute inset-0 flex items-center justify-center">
+<span class="material-icons text-white text-2xl drop-shadow-md">play_circle</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="bg-card-light dark:bg-card-dark rounded-xl p-4 shadow-sm mb-3">
+<div class="flex justify-between items-center mb-3">
+<div class="flex items-center gap-3">
+<img alt="Shop Logo" class="w-10 h-10 object-contain p-1 border border-gray-100 dark:border-gray-700 rounded-lg bg-white" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAfKKM2AINZQWomJ4ueBbt7bf4qSgG1qXNMCuswqUp6SzFFt1SUDSg79N0Pj4BEdRo1LnnS_K-u9nOUDN9iCcznOrSGWp_fCvdVVi3qF32_5knXAoAA1IhTXu095zlZly6O7YvuO5G2v8ecQWOqwYiIgULBcUp92lSn_VGATOzGeDReBEqQMlG-bFgHOzK1zegNnFKdfNOaTUI7riJ2op6X8B07B7U00aVWRe7bDBbQW23HoXq8eYIQM-4tmAVFF3qxLfrqI2RvPug"/>
+<div>
+<h3 class="text-sm font-bold text-text-main-light dark:text-text-main-dark">Nike官方旗舰店</h3>
+<div class="flex items-center gap-2 mt-0.5">
+<span class="text-[10px] bg-red-100 dark:bg-red-900/40 text-red-600 dark:text-red-400 px-1 rounded">天猫5年店</span>
+<div class="flex text-[10px] text-gray-500">
+                             综合体验 <span class="text-primary ml-1">★★★★★</span>
+</div>
+</div>
+</div>
+</div>
+<button class="text-xs text-primary border border-primary px-3 py-1 rounded-full font-medium">进店逛逛</button>
+</div>
+<div class="flex justify-around text-center pt-2">
+<div>
+<div class="text-sm font-bold text-text-main-light dark:text-text-main-dark">231</div>
+<div class="text-[10px] text-gray-500">全部商品</div>
+</div>
+<div>
+<div class="text-sm font-bold text-text-main-light dark:text-text-main-dark">12.5w</div>
+<div class="text-[10px] text-gray-500">关注人数</div>
+</div>
+<div>
+<div class="text-sm font-bold text-text-main-light dark:text-text-main-dark">4.9</div>
+<div class="text-[10px] text-gray-500">店铺评分</div>
+</div>
+</div>
+</div>
+<div class="bg-card-light dark:bg-card-dark rounded-xl p-4 shadow-sm mb-24 pb-10">
+<h3 class="text-center text-sm font-medium text-text-sub-light dark:text-text-sub-dark mb-4 flex items-center justify-center">
+<span class="h-[1px] w-8 bg-gray-200 dark:bg-gray-700 mx-2"></span>
+            商品详情
+            <span class="h-[1px] w-8 bg-gray-200 dark:bg-gray-700 mx-2"></span>
+</h3>
+<div class="space-y-0">
+<img alt="Detail 1" class="w-full block rounded-t-lg" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCniKmPVDOBPxBzXyYjPOw3-b__k--EnQPUhdF7nbqOnI0N3GRUbJRBOZ6oeDNfFTLqLQFYgTrsoK3BAmlTYbsOB-5vdJ8VgaRuXOsXlD66EBkNK2myLgwsVg8oxMgHnyp_ygENWL98VWHVGlPTHZXUzEeVBTg-mMHeoI1S-Q-_PGdtdkoIE-Shz7LojPZLfIIWeMFECqpbXGLheVAhustm-AA5l7GL-yyR6lDxIb1s1-fqcsXKHnPpqBP0y0uz59ea0nIuiSDAltU"/>
+<img alt="Detail 2" class="w-full block" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBI40zg3Y0pL3Ia42icr88XkZzwgp97-9o5ljVTbJetgW32fSL01FXb7N9qM6J7-1XrqCFaUzsf9z66TtVLRy_F78Mrh5O1HBaSQNWievq8VKy3j4d8D6o1cj3_K325zs9kznln_TotEnVQ5_fFIOBPs-Y5cO63jHwEwF8YOMCvzj9N3wwArL7PUAEWsOo4xLrR2_Ng0b5VgkUcrg0Y9NSyuD-XwZJ1sJH6t7bhO09F4HFZJ6Qi08PeLQ026t78VbuyyP3KOUN3hEw"/>
+<img alt="Detail 3" class="w-full block rounded-b-lg" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAhlnr9IhF8W_WfzZiOFHjtaBCvz9PifwnjuuJnfKr6gPIS5X4zzPJQXMPflnhwdiG9LDg0dsX5AMucfvjumXcCxw3jy05Yz6Yojsm71mme5jIwhagXZ7hpHul-PUqIudl0af48rWQVanyY_XKhcRI2i1saI6LbzUIRD5B-O8IiJXWLt4pCjmUN3rQPJeW0Js2-851fSH981OOm4wGZ31VkFSxfTIqPaFPJnm2HlypJJO9hcHF_V9SQHkBm6q9K8MerVAczBH6wlVs"/>
+</div>
+</div>
+<div class="fixed bottom-0 left-0 right-0 bg-card-light dark:bg-card-dark border-t border-gray-100 dark:border-gray-800 px-4 py-2 pb-safe-bottom z-50 shadow-[0_-4px_6px_-1px_rgba(0,0,0,0.05)]">
+<div class="flex items-center gap-3 h-12">
+<div class="flex gap-5 px-1">
+<div class="flex flex-col items-center justify-center cursor-pointer">
+<span class="material-icons-outlined text-xl text-text-main-light dark:text-text-main-dark">storefront</span>
+<span class="text-[10px] text-text-sub-light dark:text-text-sub-dark scale-90">店铺</span>
+</div>
+<div class="flex flex-col items-center justify-center cursor-pointer">
+<span class="material-icons-outlined text-xl text-text-main-light dark:text-text-main-dark">headset_mic</span>
+<span class="text-[10px] text-text-sub-light dark:text-text-sub-dark scale-90">客服</span>
+</div>
+<div class="flex flex-col items-center justify-center cursor-pointer relative">
+<span class="material-icons-outlined text-xl text-text-main-light dark:text-text-main-dark">shopping_cart</span>
+<span class="text-[10px] text-text-sub-light dark:text-text-sub-dark scale-90">购物车</span>
+<span class="absolute -top-1 -right-1 bg-primary text-white text-[8px] px-1 rounded-full border border-white dark:border-card-dark">2</span>
+</div>
+</div>
+<div class="flex-1 flex text-white text-sm font-bold h-10 rounded-full overflow-hidden shadow-lg">
+<button class="flex-1 bg-gradient-to-r from-yellow-400 to-yellow-500 flex flex-col items-center justify-center">
+<span>加入购物车</span>
+</button>
+<button class="flex-1 gradient-bg flex flex-col items-center justify-center">
+<span>立即购买</span>
+</button>
+</div>
+</div>
+<div class="h-[env(safe-area-inset-bottom)] w-full"></div>
+</div>
+<div class="fixed top-24 left-3 z-40 bg-black/70 backdrop-blur-sm text-white rounded-full pl-1 pr-3 py-1 flex items-center gap-2 animate-pulse shadow-lg">
+<img alt="User" class="w-6 h-6 rounded-full border border-white" src="https://lh3.googleusercontent.com/aida-public/AB6AXuARsEnmqbUuxO5pmXSQJ25GR-aKwKcwx6OIAS2PKi7o5mS6GxSqR3Y_u29MrkCEtjKd7CwSR1dEJFmXHnwp4s8S8XbCab34On3Wt2H5nmuB5H8KpkFw1nNMk4j_nhcLOCw4DCKLjYMIYq_ismV7GlvN-JbtrOWiyu9xMefm_A_TjtyubcXgQmVUhwMOy14_J0ZwO-5YGkRMGMJnG0fQxmgBOdrF0db-TTPRukuVSiZp-H57LqQOQAELNn4plkytTVQELxlFFxt57Js"/>
+<span class="text-xs">Amy 刚刚拼单成功</span>
+</div>
+
+</body></html>
