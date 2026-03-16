@@ -1,0 +1,377 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Privacy Policy - Offline PDF Tools</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: #f5f5f5;
+        }
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        header {
+            background: linear-gradient(135deg, #2196F3, #1976D2);
+            color: white;
+            padding: 40px 20px;
+            text-align: center;
+        }
+        header h1 {
+            font-size: 2em;
+            margin-bottom: 10px;
+        }
+        .lang-switch {
+            margin-top: 15px;
+        }
+        .lang-switch button {
+            background: rgba(255,255,255,0.2);
+            border: 1px solid rgba(255,255,255,0.5);
+            color: white;
+            padding: 8px 16px;
+            margin: 0 5px;
+            border-radius: 20px;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+        .lang-switch button:hover,
+        .lang-switch button.active {
+            background: white;
+            color: #2196F3;
+        }
+        main {
+            background: white;
+            padding: 40px;
+            margin-top: -20px;
+            border-radius: 10px 10px 0 0;
+        }
+        section {
+            margin-bottom: 30px;
+        }
+        h2 {
+            color: #2196F3;
+            font-size: 1.4em;
+            margin-bottom: 15px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid #e0e0e0;
+        }
+        p {
+            margin-bottom: 15px;
+            color: #555;
+        }
+        ul {
+            margin-left: 20px;
+            margin-bottom: 15px;
+        }
+        li {
+            margin-bottom: 8px;
+            color: #555;
+        }
+        .highlight {
+            background: #e3f2fd;
+            padding: 15px;
+            border-radius: 8px;
+            border-left: 4px solid #2196F3;
+        }
+        footer {
+            text-align: center;
+            padding: 20px;
+            color: #888;
+            font-size: 0.9em;
+        }
+        @media (max-width: 600px) {
+            main {
+                padding: 20px;
+            }
+            header h1 {
+                font-size: 1.5em;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1 data-i18n="title">Privacy Policy</h1>
+        <p data-i18n="subtitle">Offline PDF Tools</p>
+        <div class="lang-switch">
+            <button onclick="setLang('en')" id="btn-en">English</button>
+            <button onclick="setLang('zh')" id="btn-zh">简体中文</button>
+            <button onclick="setLang('zh-TW')" id="btn-zh-TW">繁體中文</button>
+            <button onclick="setLang('ja')" id="btn-ja">日本語</button>
+            <button onclick="setLang('ko')" id="btn-ko">한국어</button>
+        </div>
+    </header>
+    
+    <div class="container">
+        <main>
+            <section>
+                <h2 data-i18n="intro_title">Introduction</h2>
+                <p data-i18n="intro_content">Thank you for using Offline PDF Tools. This privacy policy explains how our application handles your data.</p>
+            </section>
+
+            <section class="highlight">
+                <h2 data-i18n="offline_title">100% Offline Processing</h2>
+                <p data-i18n="offline_content">All PDF operations (merge, compress, split, reorder, convert to image) are performed entirely on your device. Your files never leave your device and are never uploaded to any server.</p>
+            </section>
+
+            <section>
+                <h2 data-i18n="data_title">Data Collection</h2>
+                <p data-i18n="data_content">Our application does not collect, store, or transmit any personal data. We do not have access to your files or any information about you.</p>
+                <ul>
+                    <li data-i18n="data_item1">No user accounts or registration required</li>
+                    <li data-i18n="data_item2">No analytics or tracking</li>
+                    <li data-i18n="data_item3">No advertising or third-party SDKs</li>
+                    <li data-i18n="data_item4">No internet connection required</li>
+                </ul>
+            </section>
+
+            <section>
+                <h2 data-i18n="permissions_title">Permissions</h2>
+                <p data-i18n="permissions_content">We only request the following permissions to enable core functionality:</p>
+                <ul>
+                    <li><strong data-i18n="perm_storage">Storage Access</strong>: <span data-i18n="perm_storage_desc">To read and save PDF files on your device</span></li>
+                </ul>
+            </section>
+
+            <section>
+                <h2 data-i18n="thirdparty_title">Third-Party Services</h2>
+                <p data-i18n="thirdparty_content">Our application does not integrate any third-party services, including:</p>
+                <ul>
+                    <li data-i18n="tp_item1">No analytics services (Google Analytics, Firebase, etc.)</li>
+                    <li data-i18n="tp_item2">No advertising networks</li>
+                    <li data-i18n="tp_item3">No social media integrations</li>
+                    <li data-i18n="tp_item4">No crash reporting services</li>
+                </ul>
+            </section>
+
+            <section>
+                <h2 data-i18n="children_title">Children's Privacy</h2>
+                <p data-i18n="children_content">Our application is safe for users of all ages, including children. Since we do not collect any data, our app is compliant with children's privacy regulations including COPPA.</p>
+            </section>
+
+            <section>
+                <h2 data-i18n="security_title">Security</h2>
+                <p data-i18n="security_content">Since all processing happens locally on your device, your files remain under your complete control. We recommend keeping your device secure and up-to-date.</p>
+            </section>
+
+            <section>
+                <h2 data-i18n="changes_title">Changes to This Policy</h2>
+                <p data-i18n="changes_content">We may update this privacy policy from time to time. Any changes will be posted on this page with an updated revision date.</p>
+            </section>
+
+            <section>
+                <h2 data-i18n="contact_title">Contact Us</h2>
+                <p data-i18n="contact_content">If you have any questions about this privacy policy, please contact us at:</p>
+                <p><strong>Email:</strong> support@offlinepdftools.com</p>
+            </section>
+        </main>
+        
+        <footer>
+            <p data-i18n="last_updated">Last updated: March 2026</p>
+            <p>&copy; 2026 Offline PDF Tools. All rights reserved.</p>
+        </footer>
+    </div>
+
+    <script>
+        const translations = {
+            en: {
+                title: "Privacy Policy",
+                subtitle: "Offline PDF Tools",
+                intro_title: "Introduction",
+                intro_content: "Thank you for using Offline PDF Tools. This privacy policy explains how our application handles your data.",
+                offline_title: "100% Offline Processing",
+                offline_content: "All PDF operations (merge, compress, split, reorder, convert to image) are performed entirely on your device. Your files never leave your device and are never uploaded to any server.",
+                data_title: "Data Collection",
+                data_content: "Our application does not collect, store, or transmit any personal data. We do not have access to your files or any information about you.",
+                data_item1: "No user accounts or registration required",
+                data_item2: "No analytics or tracking",
+                data_item3: "No advertising or third-party SDKs",
+                data_item4: "No internet connection required",
+                permissions_title: "Permissions",
+                permissions_content: "We only request the following permissions to enable core functionality:",
+                perm_storage: "Storage Access",
+                perm_storage_desc: "To read and save PDF files on your device",
+                thirdparty_title: "Third-Party Services",
+                thirdparty_content: "Our application does not integrate any third-party services, including:",
+                tp_item1: "No analytics services (Google Analytics, Firebase, etc.)",
+                tp_item2: "No advertising networks",
+                tp_item3: "No social media integrations",
+                tp_item4: "No crash reporting services",
+                children_title: "Children's Privacy",
+                children_content: "Our application is safe for users of all ages, including children. Since we do not collect any data, our app is compliant with children's privacy regulations including COPPA.",
+                security_title: "Security",
+                security_content: "Since all processing happens locally on your device, your files remain under your complete control. We recommend keeping your device secure and up-to-date.",
+                changes_title: "Changes to This Policy",
+                changes_content: "We may update this privacy policy from time to time. Any changes will be posted on this page with an updated revision date.",
+                contact_title: "Contact Us",
+                contact_content: "If you have any questions about this privacy policy, please contact us at:",
+                last_updated: "Last updated: March 2026"
+            },
+            zh: {
+                title: "隐私政策",
+                subtitle: "离线 PDF 工具箱",
+                intro_title: "简介",
+                intro_content: "感谢您使用离线 PDF 工具箱。本隐私政策说明我们的应用如何处理您的数据。",
+                offline_title: "100% 离线处理",
+                offline_content: "所有 PDF 操作（合并、压缩、拆分、重排序、转换为图片）完全在您的设备上进行。您的文件永远不会离开您的设备，也不会上传到任何服务器。",
+                data_title: "数据收集",
+                data_content: "我们的应用不收集、存储或传输任何个人数据。我们无法访问您的文件或任何关于您的信息。",
+                data_item1: "无需用户账户或注册",
+                data_item2: "无分析或跟踪",
+                data_item3: "无广告或第三方 SDK",
+                data_item4: "无需网络连接",
+                permissions_title: "权限",
+                permissions_content: "我们仅请求以下权限以启用核心功能：",
+                perm_storage: "存储访问",
+                perm_storage_desc: "用于在您的设备上读取和保存 PDF 文件",
+                thirdparty_title: "第三方服务",
+                thirdparty_content: "我们的应用不集成任何第三方服务，包括：",
+                tp_item1: "无分析服务（Google Analytics、Firebase 等）",
+                tp_item2: "无广告网络",
+                tp_item3: "无社交媒体集成",
+                tp_item4: "无崩溃报告服务",
+                children_title: "儿童隐私",
+                children_content: "我们的应用对所有年龄段的用户都是安全的，包括儿童。由于我们不收集任何数据，我们的应用符合儿童隐私法规，包括 COPPA。",
+                security_title: "安全",
+                security_content: "由于所有处理都在您的设备本地进行，您的文件完全由您控制。我们建议保持您的设备安全并及时更新。",
+                changes_title: "政策变更",
+                changes_content: "我们可能会不时更新本隐私政策。任何变更将在本页面发布，并附上更新日期。",
+                contact_title: "联系我们",
+                contact_content: "如果您对本隐私政策有任何疑问，请通过以下方式联系我们：",
+                last_updated: "最后更新：2026年3月"
+            },
+            "zh-TW": {
+                title: "隱私政策",
+                subtitle: "離線 PDF 工具箱",
+                intro_title: "簡介",
+                intro_content: "感謝您使用離線 PDF 工具箱。本隱私政策說明我們的應用程式如何處理您的資料。",
+                offline_title: "100% 離線處理",
+                offline_content: "所有 PDF 操作（合併、壓縮、分割、重新排序、轉換為圖片）完全在您的裝置上進行。您的檔案永遠不會離開您的裝置，也不會上傳到任何伺服器。",
+                data_title: "資料收集",
+                data_content: "我們的應用程式不收集、儲存或傳輸任何個人資料。我們無法存取您的檔案或任何關於您的資訊。",
+                data_item1: "無需使用者帳戶或註冊",
+                data_item2: "無分析或追蹤",
+                data_item3: "無廣告或第三方 SDK",
+                data_item4: "無需網路連線",
+                permissions_title: "權限",
+                permissions_content: "我們僅請求以下權限以啟用核心功能：",
+                perm_storage: "儲存存取",
+                perm_storage_desc: "用於在您的裝置上讀取和儲存 PDF 檔案",
+                thirdparty_title: "第三方服務",
+                thirdparty_content: "我們的應用程式不整合任何第三方服務，包括：",
+                tp_item1: "無分析服務（Google Analytics、Firebase 等）",
+                tp_item2: "無廣告網路",
+                tp_item3: "無社交媒體整合",
+                tp_item4: "無當機報告服務",
+                children_title: "兒童隱私",
+                children_content: "我們的應用程式對所有年齡層的使用者都是安全的，包括兒童。由於我們不收集任何資料，我們的應用程式符合兒童隱私法規，包括 COPPA。",
+                security_title: "安全",
+                security_content: "由於所有處理都在您的裝置本機進行，您的檔案完全由您控制。我們建議保持您的裝置安全並及時更新。",
+                changes_title: "政策變更",
+                changes_content: "我們可能會不時更新本隱私政策。任何變更將在本頁面發布，並附上更新日期。",
+                contact_title: "聯絡我們",
+                contact_content: "如果您對本隱私政策有任何疑問，請透過以下方式聯絡我們：",
+                last_updated: "最後更新：2026年3月"
+            },
+            ja: {
+                title: "プライバシーポリシー",
+                subtitle: "オフラインPDFツール",
+                intro_title: "はじめに",
+                intro_content: "オフラインPDFツールをご利用いただきありがとうございます。このプライバシーポリシーは、当アプリがデータをどのように処理するかを説明します。",
+                offline_title: "100%オフライン処理",
+                offline_content: "すべてのPDF操作（結合、圧縮、分割、並べ替え、画像変換）は、お使いのデバイス上で完全に実行されます。ファイルがデバイスから離れることや、サーバーにアップロードされることはありません。",
+                data_title: "データ収集",
+                data_content: "当アプリは、個人データを収集、保存、または送信しません。お客様のファイルやお客様に関する情報にアクセスすることはできません。",
+                data_item1: "ユーザーアカウントや登録は不要",
+                data_item2: "分析や追跡なし",
+                data_item3: "広告やサードパーティSDKなし",
+                data_item4: "インターネット接続不要",
+                permissions_title: "権限",
+                permissions_content: "コア機能を有効にするために、以下の権限のみを要求します：",
+                perm_storage: "ストレージアクセス",
+                perm_storage_desc: "デバイス上のPDFファイルの読み取りと保存のため",
+                thirdparty_title: "サードパーティサービス",
+                thirdparty_content: "当アプリは以下を含むサードパーティサービスを統合していません：",
+                tp_item1: "分析サービスなし（Google Analytics、Firebaseなど）",
+                tp_item2: "広告ネットワークなし",
+                tp_item3: "ソーシャルメディア統合なし",
+                tp_item4: "クラッシュ報告サービスなし",
+                children_title: "子供のプライバシー",
+                children_content: "当アプリは子供を含むすべての年齢層のユーザーに安全です。データを収集しないため、COPPAを含む子供のプライバシー規制に準拠しています。",
+                security_title: "セキュリティ",
+                security_content: "すべての処理がデバイス上でローカルに行われるため、ファイルは完全にあなたの管理下にあります。デバイスを安全に保ち、最新の状態に保つことをお勧めします。",
+                changes_title: "ポリシーの変更",
+                changes_content: "このプライバシーポリシーを随時更新する場合があります。変更は更新日とともにこのページに掲載されます。",
+                contact_title: "お問い合わせ",
+                contact_content: "このプライバシーポリシーについてご質問がある場合は、以下までご連絡ください：",
+                last_updated: "最終更新：2026年3月"
+            },
+            ko: {
+                title: "개인정보 보호정책",
+                subtitle: "오프라인 PDF 도구",
+                intro_title: "소개",
+                intro_content: "오프라인 PDF 도구를 사용해 주셔서 감사합니다. 이 개인정보 보호정책은 당사 애플리케이션이 데이터를 처리하는 방법을 설명합니다.",
+                offline_title: "100% 오프라인 처리",
+                offline_content: "모든 PDF 작업(병합, 압축, 분할, 재정렬, 이미지 변환)은 기기에서 완전히 수행됩니다. 파일이 기기를 떠나거나 서버에 업로드되지 않습니다.",
+                data_title: "데이터 수집",
+                data_content: "당사 애플리케이션은 개인 데이터를 수집, 저장 또는 전송하지 않습니다. 귀하의 파일이나 귀하에 대한 정보에 액세스할 수 없습니다.",
+                data_item1: "사용자 계정 또는 등록 불필요",
+                data_item2: "분석 또는 추적 없음",
+                data_item3: "광고 또는 타사 SDK 없음",
+                data_item4: "인터넷 연결 불필요",
+                permissions_title: "권한",
+                permissions_content: "핵심 기능을 활성화하기 위해 다음 권한만 요청합니다:",
+                perm_storage: "저장소 액세스",
+                perm_storage_desc: "기기에서 PDF 파일을 읽고 저장하기 위해",
+                thirdparty_title: "타사 서비스",
+                thirdparty_content: "당사 애플리케이션은 다음을 포함한 타사 서비스를 통합하지 않습니다:",
+                tp_item1: "분석 서비스 없음 (Google Analytics, Firebase 등)",
+                tp_item2: "광고 네트워크 없음",
+                tp_item3: "소셜 미디어 통합 없음",
+                tp_item4: "충돌 보고 서비스 없음",
+                children_title: "아동 개인정보 보호",
+                children_content: "당사 애플리케이션은 아동을 포함한 모든 연령대의 사용자에게 안전합니다. 데이터를 수집하지 않으므로 COPPA를 포함한 아동 개인정보 보호 규정을 준수합니다.",
+                security_title: "보안",
+                security_content: "모든 처리가 기기에서 로컬로 수행되므로 파일은 완전히 귀하의 통제하에 있습니다. 기기를 안전하게 유지하고 최신 상태로 유지하는 것이 좋습니다.",
+                changes_title: "정책 변경",
+                changes_content: "이 개인정보 보호정책은 수시로 업데이트될 수 있습니다. 변경 사항은 업데이트된 날짜와 함께 이 페이지에 게시됩니다.",
+                contact_title: "연락처",
+                contact_content: "이 개인정보 보호정책에 대해 질문이 있으시면 다음으로 연락해 주세요:",
+                last_updated: "최종 업데이트: 2026년 3월"
+            }
+        };
+
+        function setLang(lang) {
+            const t = translations[lang];
+            document.querySelectorAll('[data-i18n]').forEach(el => {
+                const key = el.getAttribute('data-i18n');
+                if (t[key]) {
+                    el.textContent = t[key];
+                }
+            });
+            
+            // Update active button
+            document.querySelectorAll('.lang-switch button').forEach(btn => {
+                btn.classList.remove('active');
+            });
+            document.getElementById('btn-' + lang).classList.add('active');
+            
+            // Update html lang attribute
+            document.documentElement.lang = lang;
+        }
+
+        // Initialize with English
+        setLang('en');
+    </script>
+</body>
+</html>
