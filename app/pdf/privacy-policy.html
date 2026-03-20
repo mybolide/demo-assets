@@ -121,7 +121,7 @@
 
             <section class="highlight">
                 <h2 data-i18n="offline_title">100% Offline Processing</h2>
-                <p data-i18n="offline_content">All PDF operations (merge, compress, split, reorder, convert to image) are performed entirely on your device. Your files never leave your device and are never uploaded to any server.</p>
+                <p data-i18n="offline_content">All PDF operations (merge, compress, split, reorder, convert to image) are performed entirely on your device. Your files never leave your device and are never uploaded to any server. No internet connection is required.</p>
             </section>
 
             <section>
@@ -139,7 +139,9 @@
                 <h2 data-i18n="permissions_title">Permissions</h2>
                 <p data-i18n="permissions_content">We only request the following permissions to enable core functionality:</p>
                 <ul>
-                    <li><strong data-i18n="perm_storage">Storage Access</strong>: <span data-i18n="perm_storage_desc">To read and save PDF files on your device</span></li>
+                    <li><strong data-i18n="perm_read">Read Storage</strong>: <span data-i18n="perm_read_desc">To read PDF files on your device</span></li>
+                    <li><strong data-i18n="perm_write">Write Storage</strong>: <span data-i18n="perm_write_desc">To save processed PDF files and images</span></li>
+                    <li><strong data-i18n="perm_images">Image Access (Android 13+)</strong>: <span data-i18n="perm_images_desc">To save PDF-to-image conversions to your gallery</span></li>
                 </ul>
             </section>
 
@@ -151,6 +153,7 @@
                     <li data-i18n="tp_item2">No advertising networks</li>
                     <li data-i18n="tp_item3">No social media integrations</li>
                     <li data-i18n="tp_item4">No crash reporting services</li>
+                    <li data-i18n="tp_item5">No network requests of any kind</li>
                 </ul>
             </section>
 
@@ -167,6 +170,18 @@
             <section>
                 <h2 data-i18n="changes_title">Changes to This Policy</h2>
                 <p data-i18n="changes_content">We may update this privacy policy from time to time. Any changes will be posted on this page with an updated revision date.</p>
+            </section>
+
+            <section>
+                <h2 data-i18n="opensource_title">Open Source Licenses</h2>
+                <p data-i18n="opensource_content">This application uses open source software libraries licensed under permissive licenses (MIT, BSD). These licenses allow free use in commercial and non-commercial applications without requiring source code disclosure.</p>
+                <p data-i18n="opensource_list">Key open source libraries used:</p>
+                <ul>
+                    <li><strong>pdf_combiner</strong> (MIT) - PDF merging and image conversion</li>
+                    <li><strong>pdfrx</strong> (MIT) - PDF viewing and page manipulation</li>
+                    <li><strong>image</strong> (MIT) - Image processing</li>
+                </ul>
+                <p data-i18n="opensource_note">Full license texts are available in the application's settings menu.</p>
             </section>
 
             <section>
@@ -190,7 +205,7 @@
                 intro_title: "Introduction",
                 intro_content: "Thank you for using Offline PDF Tools. This privacy policy explains how our application handles your data.",
                 offline_title: "100% Offline Processing",
-                offline_content: "All PDF operations (merge, compress, split, reorder, convert to image) are performed entirely on your device. Your files never leave your device and are never uploaded to any server.",
+                offline_content: "All PDF operations (merge, compress, split, reorder, convert to image) are performed entirely on your device. Your files never leave your device and are never uploaded to any server. No internet connection is required.",
                 data_title: "Data Collection",
                 data_content: "Our application does not collect, store, or transmit any personal data. We do not have access to your files or any information about you.",
                 data_item1: "No user accounts or registration required",
@@ -199,20 +214,29 @@
                 data_item4: "No internet connection required",
                 permissions_title: "Permissions",
                 permissions_content: "We only request the following permissions to enable core functionality:",
-                perm_storage: "Storage Access",
-                perm_storage_desc: "To read and save PDF files on your device",
+                perm_read: "Read Storage",
+                perm_read_desc: "To read PDF files on your device",
+                perm_write: "Write Storage",
+                perm_write_desc: "To save processed PDF files and images",
+                perm_images: "Image Access (Android 13+)",
+                perm_images_desc: "To save PDF-to-image conversions to your gallery",
                 thirdparty_title: "Third-Party Services",
                 thirdparty_content: "Our application does not integrate any third-party services, including:",
                 tp_item1: "No analytics services (Google Analytics, Firebase, etc.)",
                 tp_item2: "No advertising networks",
                 tp_item3: "No social media integrations",
                 tp_item4: "No crash reporting services",
+                tp_item5: "No network requests of any kind",
                 children_title: "Children's Privacy",
                 children_content: "Our application is safe for users of all ages, including children. Since we do not collect any data, our app is compliant with children's privacy regulations including COPPA.",
                 security_title: "Security",
                 security_content: "Since all processing happens locally on your device, your files remain under your complete control. We recommend keeping your device secure and up-to-date.",
                 changes_title: "Changes to This Policy",
                 changes_content: "We may update this privacy policy from time to time. Any changes will be posted on this page with an updated revision date.",
+                opensource_title: "Open Source Licenses",
+                opensource_content: "This application uses open source software libraries licensed under permissive licenses (MIT, BSD). These licenses allow free use in commercial and non-commercial applications without requiring source code disclosure.",
+                opensource_list: "Key open source libraries used:",
+                opensource_note: "Full license texts are available in the application's settings menu.",
                 contact_title: "Contact Us",
                 contact_content: "If you have any questions about this privacy policy, please contact us at:",
                 last_updated: "Last updated: March 2026"
@@ -223,7 +247,7 @@
                 intro_title: "简介",
                 intro_content: "感谢您使用离线 PDF 工具箱。本隐私政策说明我们的应用如何处理您的数据。",
                 offline_title: "100% 离线处理",
-                offline_content: "所有 PDF 操作（合并、压缩、拆分、重排序、转换为图片）完全在您的设备上进行。您的文件永远不会离开您的设备，也不会上传到任何服务器。",
+                offline_content: "所有 PDF 操作（合并、压缩、拆分、重排序、转换为图片）完全在您的设备上进行。您的文件永远不会离开您的设备，也不会上传到任何服务器。无需网络连接。",
                 data_title: "数据收集",
                 data_content: "我们的应用不收集、存储或传输任何个人数据。我们无法访问您的文件或任何关于您的信息。",
                 data_item1: "无需用户账户或注册",
@@ -232,20 +256,29 @@
                 data_item4: "无需网络连接",
                 permissions_title: "权限",
                 permissions_content: "我们仅请求以下权限以启用核心功能：",
-                perm_storage: "存储访问",
-                perm_storage_desc: "用于在您的设备上读取和保存 PDF 文件",
+                perm_read: "读取存储",
+                perm_read_desc: "用于读取您设备上的 PDF 文件",
+                perm_write: "写入存储",
+                perm_write_desc: "用于保存处理后的 PDF 文件和图片",
+                perm_images: "图片访问权限 (Android 13+)",
+                perm_images_desc: "用于将 PDF 转换的图片保存到相册",
                 thirdparty_title: "第三方服务",
                 thirdparty_content: "我们的应用不集成任何第三方服务，包括：",
                 tp_item1: "无分析服务（Google Analytics、Firebase 等）",
                 tp_item2: "无广告网络",
                 tp_item3: "无社交媒体集成",
                 tp_item4: "无崩溃报告服务",
+                tp_item5: "无任何形式的网络请求",
                 children_title: "儿童隐私",
                 children_content: "我们的应用对所有年龄段的用户都是安全的，包括儿童。由于我们不收集任何数据，我们的应用符合儿童隐私法规，包括 COPPA。",
                 security_title: "安全",
                 security_content: "由于所有处理都在您的设备本地进行，您的文件完全由您控制。我们建议保持您的设备安全并及时更新。",
                 changes_title: "政策变更",
                 changes_content: "我们可能会不时更新本隐私政策。任何变更将在本页面发布，并附上更新日期。",
+                opensource_title: "开源许可证",
+                opensource_content: "本应用使用的开源软件库均采用宽松许可证（MIT、BSD）。这些许可证允许在商业和非商业应用中免费使用，无需公开源代码。",
+                opensource_list: "主要使用的开源库：",
+                opensource_note: "完整许可证文本可在应用的设置菜单中查看。",
                 contact_title: "联系我们",
                 contact_content: "如果您对本隐私政策有任何疑问，请通过以下方式联系我们：",
                 last_updated: "最后更新：2026年3月"
@@ -256,7 +289,7 @@
                 intro_title: "簡介",
                 intro_content: "感謝您使用離線 PDF 工具箱。本隱私政策說明我們的應用程式如何處理您的資料。",
                 offline_title: "100% 離線處理",
-                offline_content: "所有 PDF 操作（合併、壓縮、分割、重新排序、轉換為圖片）完全在您的裝置上進行。您的檔案永遠不會離開您的裝置，也不會上傳到任何伺服器。",
+                offline_content: "所有 PDF 操作（合併、壓縮、分割、重新排序、轉換為圖片）完全在您的裝置上進行。您的檔案永遠不會離開您的裝置，也不會上傳到任何伺服器。無需網路連線。",
                 data_title: "資料收集",
                 data_content: "我們的應用程式不收集、儲存或傳輸任何個人資料。我們無法存取您的檔案或任何關於您的資訊。",
                 data_item1: "無需使用者帳戶或註冊",
@@ -265,20 +298,29 @@
                 data_item4: "無需網路連線",
                 permissions_title: "權限",
                 permissions_content: "我們僅請求以下權限以啟用核心功能：",
-                perm_storage: "儲存存取",
-                perm_storage_desc: "用於在您的裝置上讀取和儲存 PDF 檔案",
+                perm_read: "讀取儲存",
+                perm_read_desc: "用於讀取您裝置上的 PDF 檔案",
+                perm_write: "寫入儲存",
+                perm_write_desc: "用於儲存處理後的 PDF 檔案和圖片",
+                perm_images: "圖片存取權限 (Android 13+)",
+                perm_images_desc: "用於將 PDF 轉換的圖片儲存到相簿",
                 thirdparty_title: "第三方服務",
                 thirdparty_content: "我們的應用程式不整合任何第三方服務，包括：",
                 tp_item1: "無分析服務（Google Analytics、Firebase 等）",
                 tp_item2: "無廣告網路",
                 tp_item3: "無社交媒體整合",
                 tp_item4: "無當機報告服務",
+                tp_item5: "無任何形式的網路請求",
                 children_title: "兒童隱私",
                 children_content: "我們的應用程式對所有年齡層的使用者都是安全的，包括兒童。由於我們不收集任何資料，我們的應用程式符合兒童隱私法規，包括 COPPA。",
                 security_title: "安全",
                 security_content: "由於所有處理都在您的裝置本機進行，您的檔案完全由您控制。我們建議保持您的裝置安全並及時更新。",
                 changes_title: "政策變更",
                 changes_content: "我們可能會不時更新本隱私政策。任何變更將在本頁面發布，並附上更新日期。",
+                opensource_title: "開源授權條款",
+                opensource_content: "本應用程式使用的開源軟體函式庫均採用寬鬆授權條款（MIT、BSD）。這些授權條款允許在商業和非商業應用程式中免費使用，無需公開原始碼。",
+                opensource_list: "主要使用的開源函式庫：",
+                opensource_note: "完整授權條款文字可在應用程式的設定選單中查看。",
                 contact_title: "聯絡我們",
                 contact_content: "如果您對本隱私政策有任何疑問，請透過以下方式聯絡我們：",
                 last_updated: "最後更新：2026年3月"
@@ -289,7 +331,7 @@
                 intro_title: "はじめに",
                 intro_content: "オフラインPDFツールをご利用いただきありがとうございます。このプライバシーポリシーは、当アプリがデータをどのように処理するかを説明します。",
                 offline_title: "100%オフライン処理",
-                offline_content: "すべてのPDF操作（結合、圧縮、分割、並べ替え、画像変換）は、お使いのデバイス上で完全に実行されます。ファイルがデバイスから離れることや、サーバーにアップロードされることはありません。",
+                offline_content: "すべてのPDF操作（結合、圧縮、分割、並べ替え、画像変換）は、お使いのデバイス上で完全に実行されます。ファイルがデバイスから離れることや、サーバーにアップロードされることはありません。インターネット接続は必要ありません。",
                 data_title: "データ収集",
                 data_content: "当アプリは、個人データを収集、保存、または送信しません。お客様のファイルやお客様に関する情報にアクセスすることはできません。",
                 data_item1: "ユーザーアカウントや登録は不要",
@@ -298,20 +340,29 @@
                 data_item4: "インターネット接続不要",
                 permissions_title: "権限",
                 permissions_content: "コア機能を有効にするために、以下の権限のみを要求します：",
-                perm_storage: "ストレージアクセス",
-                perm_storage_desc: "デバイス上のPDFファイルの読み取りと保存のため",
+                perm_read: "ストレージ読み取り",
+                perm_read_desc: "デバイス上のPDFファイルを読み取るため",
+                perm_write: "ストレージ書き込み",
+                perm_write_desc: "処理したPDFファイルと画像を保存するため",
+                perm_images: "画像アクセス (Android 13+)",
+                perm_images_desc: "PDFから画像変換したファイルをギャラリーに保存するため",
                 thirdparty_title: "サードパーティサービス",
                 thirdparty_content: "当アプリは以下を含むサードパーティサービスを統合していません：",
                 tp_item1: "分析サービスなし（Google Analytics、Firebaseなど）",
                 tp_item2: "広告ネットワークなし",
                 tp_item3: "ソーシャルメディア統合なし",
                 tp_item4: "クラッシュ報告サービスなし",
+                tp_item5: "いかなる種類のネットワークリクエストもなし",
                 children_title: "子供のプライバシー",
                 children_content: "当アプリは子供を含むすべての年齢層のユーザーに安全です。データを収集しないため、COPPAを含む子供のプライバシー規制に準拠しています。",
                 security_title: "セキュリティ",
                 security_content: "すべての処理がデバイス上でローカルに行われるため、ファイルは完全にあなたの管理下にあります。デバイスを安全に保ち、最新の状態に保つことをお勧めします。",
                 changes_title: "ポリシーの変更",
                 changes_content: "このプライバシーポリシーを随時更新する場合があります。変更は更新日とともにこのページに掲載されます。",
+                opensource_title: "オープンソースライセンス",
+                opensource_content: "このアプリケーションで使用されているオープンソースソフトウェアライブラリは、寛容なライセンス（MIT、BSD）の下で提供されています。これらのライセンスは、ソースコードの公開を必要とせず、商用・非商用アプリケーションでの無料使用を許可しています。",
+                opensource_list: "主なオープンソースライブラリ：",
+                opensource_note: "完全なライセンス条文はアプリの設定メニューで確認できます。",
                 contact_title: "お問い合わせ",
                 contact_content: "このプライバシーポリシーについてご質問がある場合は、以下までご連絡ください：",
                 last_updated: "最終更新：2026年3月"
@@ -322,7 +373,7 @@
                 intro_title: "소개",
                 intro_content: "오프라인 PDF 도구를 사용해 주셔서 감사합니다. 이 개인정보 보호정책은 당사 애플리케이션이 데이터를 처리하는 방법을 설명합니다.",
                 offline_title: "100% 오프라인 처리",
-                offline_content: "모든 PDF 작업(병합, 압축, 분할, 재정렬, 이미지 변환)은 기기에서 완전히 수행됩니다. 파일이 기기를 떠나거나 서버에 업로드되지 않습니다.",
+                offline_content: "모든 PDF 작업(병합, 압축, 분할, 재정렬, 이미지 변환)은 기기에서 완전히 수행됩니다. 파일이 기기를 떠나거나 서버에 업로드되지 않습니다. 인터넷 연결이 필요하지 않습니다.",
                 data_title: "데이터 수집",
                 data_content: "당사 애플리케이션은 개인 데이터를 수집, 저장 또는 전송하지 않습니다. 귀하의 파일이나 귀하에 대한 정보에 액세스할 수 없습니다.",
                 data_item1: "사용자 계정 또는 등록 불필요",
@@ -331,20 +382,29 @@
                 data_item4: "인터넷 연결 불필요",
                 permissions_title: "권한",
                 permissions_content: "핵심 기능을 활성화하기 위해 다음 권한만 요청합니다:",
-                perm_storage: "저장소 액세스",
-                perm_storage_desc: "기기에서 PDF 파일을 읽고 저장하기 위해",
+                perm_read: "저장소 읽기",
+                perm_read_desc: "기기에서 PDF 파일을 읽기 위해",
+                perm_write: "저장소 쓰기",
+                perm_write_desc: "처리된 PDF 파일 및 이미지를 저장하기 위해",
+                perm_images: "이미지 액세스 (Android 13+)",
+                perm_images_desc: "PDF를 이미지로 변환하여 갤러리에 저장하기 위해",
                 thirdparty_title: "타사 서비스",
                 thirdparty_content: "당사 애플리케이션은 다음을 포함한 타사 서비스를 통합하지 않습니다:",
                 tp_item1: "분석 서비스 없음 (Google Analytics, Firebase 등)",
                 tp_item2: "광고 네트워크 없음",
                 tp_item3: "소셜 미디어 통합 없음",
                 tp_item4: "충돌 보고 서비스 없음",
+                tp_item5: "모든 종류의 네트워크 요청 없음",
                 children_title: "아동 개인정보 보호",
                 children_content: "당사 애플리케이션은 아동을 포함한 모든 연령대의 사용자에게 안전합니다. 데이터를 수집하지 않으므로 COPPA를 포함한 아동 개인정보 보호 규정을 준수합니다.",
                 security_title: "보안",
                 security_content: "모든 처리가 기기에서 로컬로 수행되므로 파일은 완전히 귀하의 통제하에 있습니다. 기기를 안전하게 유지하고 최신 상태로 유지하는 것이 좋습니다.",
                 changes_title: "정책 변경",
                 changes_content: "이 개인정보 보호정책은 수시로 업데이트될 수 있습니다. 변경 사항은 업데이트된 날짜와 함께 이 페이지에 게시됩니다.",
+                opensource_title: "오픈 소스 라이선스",
+                opensource_content: "이 애플리케이션에서 사용되는 오픈 소스 소프트웨어 라이브러리는 허용적 라이선스(MIT, BSD) 하에 제공됩니다. 이러한 라이선스는 소스 코드 공개 없이 상용 및 비상용 애플리케이션에서 무료 사용을 허용합니다.",
+                opensource_list: "주요 오픈 소스 라이브러리:",
+                opensource_note: "전체 라이선스 텍스트는 애플리케이션의 설정 메뉴에서 확인할 수 있습니다.",
                 contact_title: "연락처",
                 contact_content: "이 개인정보 보호정책에 대해 질문이 있으시면 다음으로 연락해 주세요:",
                 last_updated: "최종 업데이트: 2026년 3월"
