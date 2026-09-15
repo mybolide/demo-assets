@@ -17,14 +17,14 @@ Static legal documents for the **PromptPier** Chrome extension.
 After deployment on `demo-assets` (CNAME: `gt-assets.bytezonex.com`):
 
 ```text
-https://gt-assets.bytezonex.com/PromptPier/privacy-policy.html
-https://gt-assets.bytezonex.com/PromptPier/privacy-policy.zh-CN.html
-https://gt-assets.bytezonex.com/PromptPier/terms-of-service.html
-https://gt-assets.bytezonex.com/PromptPier/terms-of-service.zh-CN.html
+https://gt-assets.bytezonex.com/app/PromptPier/privacy-policy.html
+https://gt-assets.bytezonex.com/app/PromptPier/privacy-policy.zh-CN.html
+https://gt-assets.bytezonex.com/app/PromptPier/terms-of-service.html
+https://gt-assets.bytezonex.com/app/PromptPier/terms-of-service.zh-CN.html
 ```
 
 Use the English privacy policy URL in the Chrome Web Store listing.
 
 ## Contact
 
-Privacy / legal inquiries: develop@hosemi.cn
+Privacy / legal inquiries: bolidezjb@gmail.com
