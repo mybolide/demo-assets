@@ -1,0 +1,188 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Privacy Policy — PromptPier</title>
+    <meta
+      name="description"
+      content="Privacy Policy for PromptPier, a Chrome extension for saving, syncing, and inserting AI prompts."
+    />
+    <link rel="stylesheet" href="legal.css" />
+  </head>
+  <body>
+    <main class="wrap">
+      <header class="hero">
+        <div class="eyebrow">PromptPier</div>
+        <h1>Privacy Policy</h1>
+        <p class="lead">
+          This Privacy Policy explains how PromptPier collects, uses, stores, and protects
+          information when you use the Chrome extension and related cloud sync services.
+        </p>
+        <p class="meta">
+          Last updated: April 16, 2026<br />
+          Contact:
+          <a href="mailto:develop@hosemi.cn">develop@hosemi.cn</a><br />
+          <a href="privacy-policy.zh-CN.html">简体中文版本</a>
+          ·
+          <a href="index.html">All legal documents</a>
+        </p>
+      </header>
+
+      <div class="sections">
+        <section>
+          <h2>1. Who We Are</h2>
+          <p>
+            PromptPier is a browser extension and related service that helps you save, organize,
+            sync, and insert AI prompts into supported websites such as ChatGPT and DeepSeek.
+          </p>
+        </section>
+
+        <section>
+          <h2>2. Information We Collect</h2>
+          <p>Depending on how you use PromptPier, we may process the following information:</p>
+          <ul>
+            <li>
+              <strong>Google account information</strong> — when you sign in with Google, we receive
+              basic profile data permitted by your authorization (such as email address, display name,
+              and profile picture) to identify your account.
+            </li>
+            <li>
+              <strong>Prompt content you create</strong> — titles, body text, tags, color markers,
+              favorites, and timestamps for prompts you save in PromptPier.
+            </li>
+            <li>
+              <strong>Sync metadata</strong> — revision counters and change records needed to keep
+              your prompts consistent across devices.
+            </li>
+            <li>
+              <strong>Local extension data</strong> — session tokens, cached prompt lists, adapter
+              configuration, and language preferences stored in your browser.
+            </li>
+          </ul>
+          <p>
+            We do <strong>not</strong> require a separate password. We do <strong>not</strong> read
+            your full chat history on third-party AI websites. The extension only interacts with input
+            fields when you explicitly insert a prompt or use the in-page picker.
+          </p>
+        </section>
+
+        <section>
+          <h2>3. How We Use Information</h2>
+          <p>We use the information above to:</p>
+          <ul>
+            <li>authenticate you and associate data with your account;</li>
+            <li>store and sync your prompts across the extension and web client;</li>
+            <li>insert selected prompt text into supported pages at your request;</li>
+            <li>provide search, filtering, and organization features;</li>
+            <li>maintain service security and troubleshoot errors.</li>
+          </ul>
+          <p>We do not sell your personal information.</p>
+        </section>
+
+        <section>
+          <h2>4. Where Data Is Stored</h2>
+          <ul>
+            <li>
+              <strong>Cloud storage</strong> — account metadata and synced prompts are stored on
+              Cloudflare Workers KV infrastructure operated for PromptPier.
+            </li>
+            <li>
+              <strong>Your browser</strong> — the extension stores session and cache data locally
+              using Chrome extension storage APIs.
+            </li>
+          </ul>
+          <p>
+            When you are offline, the extension may continue to show locally cached prompts. Changes
+            are synced when connectivity is restored.
+          </p>
+        </section>
+
+        <section>
+          <h2>5. Permissions and On-Page Behavior</h2>
+          <p>The Chrome extension may request permissions such as:</p>
+          <ul>
+            <li><strong>identity</strong> — Google sign-in;</li>
+            <li><strong>storage</strong> — save prompts and settings locally;</li>
+            <li><strong>activeTab</strong> — interact with the current tab when you insert a prompt;</li>
+            <li><strong>clipboardWrite</strong> — copy prompt text when a page cannot be injected;</li>
+            <li><strong>sidePanel</strong> — show the PromptPier management panel;</li>
+            <li><strong>host access</strong> — connect to the PromptPier API and run content scripts on web pages you visit.</li>
+          </ul>
+          <p>
+            Content scripts are used only to detect supported chat inputs, show the optional
+            <code>~</code> prompt picker, and insert text you choose. They are not used to collect
+            unrelated page content.
+          </p>
+        </section>
+
+        <section>
+          <h2>6. Third-Party Services</h2>
+          <p>PromptPier relies on third-party services including:</p>
+          <ul>
+            <li><strong>Google</strong> — OAuth sign-in and account verification;</li>
+            <li><strong>Cloudflare</strong> — API hosting and prompt storage.</li>
+          </ul>
+          <p>
+            Your use of Google sign-in is also subject to
+            <a href="https://policies.google.com/privacy" rel="noopener noreferrer">Google's Privacy Policy</a>.
+          </p>
+        </section>
+
+        <section>
+          <h2>7. Data Retention and Deletion</h2>
+          <p>
+            We retain your account data and prompts while your account remains active and as needed
+            to provide the service. Deleted prompts are handled using soft-delete semantics in sync
+            data and may remain in backups for a limited period consistent with operational practices.
+          </p>
+          <p>
+            To request account or data deletion, contact
+            <a href="mailto:develop@hosemi.cn">develop@hosemi.cn</a>. You can also remove local
+            extension data by uninstalling the extension and clearing browser extension storage.
+          </p>
+        </section>
+
+        <section>
+          <h2>8. Security</h2>
+          <p>
+            We use HTTPS for API communication and issue authenticated access tokens after Google
+            sign-in. No method of transmission or storage is completely secure, but we take
+            reasonable measures to protect your information.
+          </p>
+        </section>
+
+        <section>
+          <h2>9. Children's Privacy</h2>
+          <p>
+            PromptPier is not directed to children under the age required by applicable law. If you
+            believe a child has provided personal information through the service, contact us and we
+            will take appropriate steps.
+          </p>
+        </section>
+
+        <section>
+          <h2>10. Changes to This Policy</h2>
+          <p>
+            We may update this Privacy Policy from time to time. The "Last updated" date at the top
+            will reflect the latest revision. Continued use of PromptPier after changes become
+            effective constitutes acceptance of the updated policy.
+          </p>
+        </section>
+
+        <section>
+          <h2>11. Contact</h2>
+          <p>
+            For privacy questions or requests, email
+            <a href="mailto:develop@hosemi.cn">develop@hosemi.cn</a>.
+          </p>
+        </section>
+      </div>
+
+      <p class="footer">
+        This page is intended to be hosted as the public privacy policy URL for PromptPier on the
+        Chrome Web Store and in-product legal links.
+      </p>
+    </main>
+  </body>
+</html>

@@ -1,0 +1,158 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>隐私政策 — PromptPier</title>
+    <meta name="description" content="PromptPier 隐私政策，说明 Chrome 扩展与云端同步服务如何处理您的信息。" />
+    <link rel="stylesheet" href="legal.css" />
+  </head>
+  <body>
+    <main class="wrap">
+      <header class="hero">
+        <div class="eyebrow">PromptPier</div>
+        <h1>隐私政策</h1>
+        <p class="lead">
+          本隐私政策说明 PromptPier 在您使用 Chrome 扩展及相关云端同步服务时，如何收集、使用、存储和保护您的信息。
+        </p>
+        <p class="meta">
+          最后更新：2026 年 4 月 16 日<br />
+          联系邮箱：
+          <a href="mailto:develop@hosemi.cn">develop@hosemi.cn</a><br />
+          <a href="privacy-policy.html">English version</a>
+          ·
+          <a href="index.html">全部法律文档</a>
+        </p>
+      </header>
+
+      <div class="sections">
+        <section>
+          <h2>1. 我们是谁</h2>
+          <p>
+            PromptPier 是一款浏览器扩展及相关服务，帮助您保存、整理、同步 AI 提示词，并在 ChatGPT、DeepSeek
+            等支持的网站中一键插入。
+          </p>
+        </section>
+
+        <section>
+          <h2>2. 我们收集的信息</h2>
+          <p>根据您的使用情况，我们可能处理以下信息：</p>
+          <ul>
+            <li>
+              <strong>Google 账号信息</strong> — 当您使用 Google 登录时，我们会获取您授权范围内的基本资料（如邮箱、昵称、头像），用于识别您的账号。
+            </li>
+            <li>
+              <strong>您创建的提示词内容</strong> — 标题、正文、标签、颜色标记、收藏状态及时间戳。
+            </li>
+            <li>
+              <strong>同步元数据</strong> — 用于多端保持数据一致的版本号与变更记录。
+            </li>
+            <li>
+              <strong>扩展本地数据</strong> — 会话令牌、缓存的提示词列表、站点适配器配置、语言偏好等，保存在浏览器中。
+            </li>
+          </ul>
+          <p>
+            我们<strong>不会</strong>要求您设置独立密码，也<strong>不会</strong>读取第三方 AI 网站的完整聊天记录。扩展仅在您主动插入提示词或使用页面内
+            <code>~</code> 选择器时，与输入框进行交互。
+          </p>
+        </section>
+
+        <section>
+          <h2>3. 信息的使用方式</h2>
+          <p>我们使用上述信息用于：</p>
+          <ul>
+            <li>验证身份并将数据与您的账号关联；</li>
+            <li>在扩展与 Web 端之间存储和同步提示词；</li>
+            <li>按您的操作将选定文本插入支持的页面；</li>
+            <li>提供搜索、筛选与分类功能；</li>
+            <li>维护服务安全并排查故障。</li>
+          </ul>
+          <p>我们不会出售您的个人信息。</p>
+        </section>
+
+        <section>
+          <h2>4. 数据存储位置</h2>
+          <ul>
+            <li><strong>云端</strong> — 账号元数据与已同步的提示词存储在 PromptPier 使用的 Cloudflare Workers KV 基础设施中。</li>
+            <li><strong>您的浏览器</strong> — 扩展通过 Chrome 存储 API 在本地保存会话与缓存数据。</li>
+          </ul>
+          <p>离线时，扩展可能继续显示本地缓存；网络恢复后会尝试同步。</p>
+        </section>
+
+        <section>
+          <h2>5. 权限与页面行为</h2>
+          <p>扩展可能申请以下权限：</p>
+          <ul>
+            <li><strong>identity</strong> — Google 登录；</li>
+            <li><strong>storage</strong> — 本地保存提示词与设置；</li>
+            <li><strong>activeTab</strong> — 在您插入提示词时与当前标签页交互；</li>
+            <li><strong>clipboardWrite</strong> — 在无法注入页面时复制到剪贴板；</li>
+            <li><strong>sidePanel</strong> — 显示侧栏管理界面；</li>
+            <li><strong>主机访问权限</strong> — 连接 PromptPier API，并在您访问的网页上运行内容脚本。</li>
+          </ul>
+          <p>
+            内容脚本仅用于识别支持的聊天输入框、显示可选的 <code>~</code> 提示词选择器，以及插入您选择的内容，不会用于采集无关页面内容。
+          </p>
+        </section>
+
+        <section>
+          <h2>6. 第三方服务</h2>
+          <p>PromptPier 依赖的第三方服务包括：</p>
+          <ul>
+            <li><strong>Google</strong> — OAuth 登录与账号验证；</li>
+            <li><strong>Cloudflare</strong> — API 托管与提示词存储。</li>
+          </ul>
+          <p>
+            您使用 Google 登录时，亦受
+            <a href="https://policies.google.com/privacy" rel="noopener noreferrer">Google 隐私政策</a>
+            约束。
+          </p>
+        </section>
+
+        <section>
+          <h2>7. 数据保留与删除</h2>
+          <p>
+            在您的账号处于活跃状态期间，我们会保留账号数据与提示词以提供服务。删除的提示词在同步数据中采用软删除方式处理，备份中可能短期保留。
+          </p>
+          <p>
+            如需申请删除账号或数据，请发送邮件至
+            <a href="mailto:develop@hosemi.cn">develop@hosemi.cn</a>。您也可通过卸载扩展并清除浏览器扩展存储来移除本地数据。
+          </p>
+        </section>
+
+        <section>
+          <h2>8. 安全</h2>
+          <p>
+            我们通过 HTTPS 传输 API 数据，并在 Google 登录后签发访问令牌。尽管无法保证绝对安全，我们会采取合理措施保护您的信息。
+          </p>
+        </section>
+
+        <section>
+          <h2>9. 儿童隐私</h2>
+          <p>
+            PromptPier 不面向适用法律所规定年龄以下的儿童。如您认为儿童通过本服务提供了个人信息，请联系我们，我们将采取适当措施。
+          </p>
+        </section>
+
+        <section>
+          <h2>10. 政策变更</h2>
+          <p>
+            我们可能不时更新本政策，顶部「最后更新」日期将反映最新版本。变更生效后继续使用 PromptPier，即表示您接受更新后的政策。
+          </p>
+        </section>
+
+        <section>
+          <h2>11. 联系我们</h2>
+          <p>
+            如有隐私相关问题或请求，请发送邮件至
+            <a href="mailto:develop@hosemi.cn">develop@hosemi.cn</a>。
+          </p>
+        </section>
+      </div>
+
+      <p class="footer">
+        本页面作为 PromptPier 在 Chrome 应用商店及产品内法律链接的公开隐私政策地址使用。
+      </p>
+    </main>
+  </body>
+</html>
