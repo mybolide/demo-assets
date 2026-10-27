@@ -103,16 +103,23 @@
           <p>The Chrome extension may request permissions such as:</p>
           <ul>
             <li><strong>identity</strong> — Google sign-in;</li>
-            <li><strong>storage</strong> — save prompts and settings locally;</li>
-            <li><strong>activeTab</strong> — interact with the current tab when you insert a prompt;</li>
+            <li><strong>storage</strong> — save prompts, settings and interface preferences locally;</li>
             <li><strong>clipboardWrite</strong> — copy prompt text when a page cannot be injected;</li>
+            <li><strong>contextMenus</strong> — add a right-click item that saves the text you have selected as a prompt;</li>
             <li><strong>sidePanel</strong> — show the AI Pier Kit management panel;</li>
+            <li><strong>tabs</strong> — identify the tab you are viewing so a prompt is inserted there, and re-apply your Site Settings profile when you switch tabs;</li>
+            <li><strong>scripting</strong> — apply your Site Settings language and time zone to a site, and only where you have granted access to that site;</li>
+            <li><strong>declarativeNetRequest</strong> — set the <code>Accept-Language</code> request header for the sites you configure, and only for those sites;</li>
+            <li><strong>webNavigation</strong> — detect when a configured site finishes loading so the settings can be applied without a manual reload;</li>
             <li><strong>host access</strong> — connect to the AI Pier Kit API and run content scripts on web pages you visit.</li>
           </ul>
           <p>
             Content scripts are used only to detect supported chat inputs, show the optional
             <code>~</code> prompt picker, and insert text you choose. They are not used to collect
-            unrelated page content.
+            unrelated page content. To decide whether the <code>~</code> trigger was typed, the
+            extension reads the text immediately before your cursor inside the input field — at
+            most the last 128 characters. That check runs on your device; the text is neither
+            stored nor transmitted.
           </p>
         </section>
 

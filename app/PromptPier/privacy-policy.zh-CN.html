@@ -84,14 +84,18 @@
           <p>扩展可能申请以下权限：</p>
           <ul>
             <li><strong>identity</strong> — Google 登录；</li>
-            <li><strong>storage</strong> — 本地保存提示词与设置；</li>
-            <li><strong>activeTab</strong> — 在您插入提示词时与当前标签页交互；</li>
+            <li><strong>storage</strong> — 本地保存提示词、设置与界面偏好；</li>
             <li><strong>clipboardWrite</strong> — 在无法注入页面时复制到剪贴板；</li>
+            <li><strong>contextMenus</strong> — 添加右键菜单项，将您选中的文字保存为提示词；</li>
             <li><strong>sidePanel</strong> — 显示侧栏管理界面；</li>
+            <li><strong>tabs</strong> — 识别您正在查看的标签页以便向其中插入提示词，并在切换标签页时重新应用站点设置；</li>
+            <li><strong>scripting</strong> — 对您开启的站点应用语言与时区设置，且仅限您已授权访问的站点；</li>
+            <li><strong>declarativeNetRequest</strong> — 为您配置的站点设置 <code>Accept-Language</code> 请求头，且仅限这些站点；</li>
+            <li><strong>webNavigation</strong> — 检测已配置的站点何时加载完成，无需手动刷新即可应用设置；</li>
             <li><strong>主机访问权限</strong> — 连接 AI Pier Kit API，并在您访问的网页上运行内容脚本。</li>
           </ul>
           <p>
-            内容脚本仅用于识别支持的聊天输入框、显示可选的 <code>~</code> 提示词选择器，以及插入您选择的内容，不会用于采集无关页面内容。
+            内容脚本仅用于识别支持的聊天输入框、显示可选的 <code>~</code> 提示词选择器，以及插入您选择的内容，不会用于采集无关页面内容。为判断是否输入了 <code>~</code> 触发符，扩展会读取输入框内光标前方的文字（最多最后 128 个字符）。该判断完全在您的设备上进行，文字不会被保存，也不会被上传。
           </p>
         </section>
 
